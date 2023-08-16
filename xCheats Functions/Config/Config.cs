@@ -1,48 +1,32 @@
-﻿//using System;
-//using System.Windows.Forms;
-//using xCheatsFunctions;
-//namespace xCheatsFunctions
-//{
-//    public class MyConfig
-//    {
-//        //private readonly IniConfig iniConfig;
-//        //private static readonly string configFilePath = "data\\Config\\App.ini";
-//        private static readonly string configFilePath = Path.Combine("data", "Config", "App.ini");
+﻿namespace xCheatsFunctions
+{
+    public static class GlobalSettings
+    {
+        private static readonly IniConfig config;
+        private static readonly string configFilePath;
 
-//        private static readonly IniConfig iniConfig = new IniConfig(configFilePath);
-//        public static string ConfigFilePath => configFilePath;
-//        public static string GetConfigFilePath()
-//        {
-//            return configFilePath;
-//        }
+        static GlobalSettings() // Static constructor
+        {
+            config = new IniConfig();
+             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+             string appFolderPath = Path.Combine(appDataPath, "xCheats");
+             configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
+            LoadSettings();
+        }
 
-//        public static void SaveConfiguration(string sectionName, string keyName, string value)
-//        {
-//            if (File.Exists(configFilePath))
-//            {
-//                // Write the value to the INI file
-//                iniConfig.Write(sectionName, keyName, value);
-//            }
-//            else
-//            {
-//                // Log an error or display a message indicating that the file does not exist
-//                MessageBox.Show(configFilePath + "INI file not found: ");
-//            }
-//        }
-//        public static string ReadConfiguration(string sectionName, string keyName)
-//        {
-//            // Check if the INI file exists
-//            if (File.Exists(configFilePath))
-//            {
-//                // Read the value from the INI file
-//                string value = iniConfig.Read(sectionName, keyName);
-//                return value;
-//            }
-//            else
-//            {
-//                // File does not exist, return an empty string or handle the missing file scenario
-//                return string.Empty;
-//            }
-//        }
-//    }
-//}
+        public static bool AdminMode { get; set; }
+        public static bool isOfflineMode { get; set; }
+        public static bool BackgroundWork { get; set; }
+
+        private static void LoadSettings()
+        {
+            config.Load(configFilePath);
+            bool.TryParse(config.GetValue("Settings", "AdminMode"), out bool adminModeValue);
+            bool.TryParse(config.GetValue("Settings", "OfflineMode"), out bool offlineModeValue);
+            bool.TryParse(config.GetValue("Settings", "BackgroundWork"), out bool backgroundWorkValue);
+            BackgroundWork = backgroundWorkValue;
+            AdminMode = adminModeValue;
+            isOfflineMode = offlineModeValue;
+        }
+    }
+}

@@ -50,7 +50,6 @@ namespace xCheats
             if (args.Length > 0 && args[0] == "-u6sq8#bhysa68@1c0&$")
             {
                 x.LoadConfiguration();
-                misc.folderexistcheck();
                 x.startup();
             }
             else

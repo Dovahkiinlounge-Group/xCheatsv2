@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Net.NetworkInformation;
 using System.Security.Principal;
 using System.Windows.Forms;
 using xCheatsFunctions;
@@ -14,23 +15,21 @@ namespace xCheats_Launcher
         static bool isAdmin;
         private bool isFunction1Active;
         private Timer clickTimer;
-        private readonly string configFilePath = "data\\Config\\config.ini";
+        static string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        static string appFolderPath = Path.Combine(appDataPath, "xCheats");
+        static string configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
         IniConfig config = new IniConfig();
         public Launcher()
         {
-            misc.folderexistcheck();
             System.Threading.Thread.Sleep(500);
-            if (!File.Exists(configFilePath))
-            {
-                config.SetValue("Settings", "OfflineMode", "false");
-                config.Save(configFilePath);
-            }
-            AutoUpdater.Start("https://xcheats.dovahkiinlounge.de/update.php");
-            AutoUpdater.ShowSkipButton = false;
-            AutoUpdater.LetUserSelectRemindLater = false;
-            AutoUpdater.RemindLaterTimeSpan = RemindLaterFormat.Hours;
-            AutoUpdater.RemindLaterAt = 1;
+            config.Check(configFilePath);
+            //AutoUpdater.Start("https://xcheats.dovahkiinlounge.de/update.php");
+            //AutoUpdater.ShowSkipButton = false;
+            //AutoUpdater.LetUserSelectRemindLater = false;
+            //AutoUpdater.RemindLaterTimeSpan = RemindLaterFormat.Hours;
+            //AutoUpdater.RemindLaterAt = 1;
             InitializeComponent();
+            
             using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
             {
                 WindowsPrincipal principal = new WindowsPrincipal(identity);
@@ -45,12 +44,13 @@ namespace xCheats_Launcher
             {
                 StartBtn.Text = "Start xCheats(Not Admin)";
             }
-            OffLbl.ForeColor = Color.Red;
+            OffTggl.ForeColor = Color.Red;
             clickTimer = new Timer();
             clickTimer.Interval = 1000;
             clickTimer.Tick += ClickTimer_Tick;
             config.Load(configFilePath);
-            if (bool.TryParse(config.GetValue("Settings", "OfflineMode", "false"), out bool isOfflineMode))
+            bool isOfflineMode = GlobalSettings.isOfflineMode;
+            if (isOfflineMode)
             {
                 isFunction1Active = !isOfflineMode; // Reverse the state for OffTggl
                 OffTggl.Checked = isOfflineMode; // Set the state for OffTggl
@@ -71,12 +71,28 @@ namespace xCheats_Launcher
 
         private void StartBtn_Click(object sender, EventArgs e)
         {
-          string arguments = "-u6sq8#bhysa68@1c0&$";
-          string mainAppPath = Environment.CurrentDirectory + "\\xCheats.exe";
-          Process.Start(mainAppPath, arguments);
-          Environment.Exit(0);
+            string arguments = "-u6sq8#bhysa68@1c0&$";
+            string mainAppPath = Environment.CurrentDirectory + "\\xCheats.exe";
 
+            ProcessStartInfo startInfo = new ProcessStartInfo(mainAppPath);
+            startInfo.Arguments = arguments;
+            bool isAdmin = GlobalSettings.AdminMode;
+            if (isAdmin)
+            {
+                startInfo.Verb = "runas"; // This indicates that the process should be run as an administrator
+            }
+            try
+            {
+                Process.Start(startInfo);
+                Environment.Exit(0);
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions if the process cannot be started
+                MessageBox.Show("Error starting the application: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void zeroitLollipopButton1_Click(object sender, EventArgs e)
         {
@@ -98,13 +114,13 @@ namespace xCheats_Launcher
         {
             if (isOfflineMode)
             {
-                OffLbl.Text = "Offline Enabled";
-                OffLbl.ForeColor = Color.Green;
+                OffTggl.Text = "Offline Enabled";
+                OffTggl.ForeColor = Color.Red;
             }
             else
             {
-                OffLbl.Text = "Offline Disabled";
-                OffLbl.ForeColor = Color.Red;
+                OffTggl.Text = "Online(Click Here to go Offline)";
+                OffTggl.ForeColor = Color.Green;
             }
         }
     }

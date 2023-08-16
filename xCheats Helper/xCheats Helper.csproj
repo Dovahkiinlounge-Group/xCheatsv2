@@ -20,7 +20,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
-    <SignAssembly>True</SignAssembly>
+    <SignAssembly>False</SignAssembly>
     <AssemblyOriginatorKeyFile>C:\Users\Finga Weg\Documents\Resetdata\source\repos\CelinaxCute\xCheatsSign.pfx</AssemblyOriginatorKeyFile>
     <BaseOutputPath>C:\Users\Finga Weg\Documents\Resetdata\source\repos\CelinaxCute\Build\Helper</BaseOutputPath>
   </PropertyGroup>
@@ -57,7 +57,7 @@
 
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>

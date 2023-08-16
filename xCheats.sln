@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xCheats", "xCheats\xCheats.csproj", "{784574E9-5C73-4E74-969B-DF53BDE923D2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6AA6B1A9-F574-43D9-B1EE-F28DA222A030} = {6AA6B1A9-F574-43D9-B1EE-F28DA222A030}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xCheats Helper", "xCheats Helper\xCheats Helper.csproj", "{A7F64909-AC1B-4120-9281-E8CD59294E9F}"
 EndProject

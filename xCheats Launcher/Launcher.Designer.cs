@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
             this.zeroitChromeForm1 = new Zeroit.Framework.Form.ZeroitChromeForm();
-            this.OffLbl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopLabel();
-            this.OffTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopToggle();
+            this.OffTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
+            this.BGTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
             this.zeroitLollipopButton1 = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AppText = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopLabel();
@@ -46,8 +46,8 @@
             this.zeroitChromeForm1.BorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.zeroitChromeForm1.ColorBackground1 = System.Drawing.Color.Violet;
             this.zeroitChromeForm1.ColorBackground2 = System.Drawing.Color.LightSeaGreen;
-            this.zeroitChromeForm1.Controls.Add(this.OffLbl);
             this.zeroitChromeForm1.Controls.Add(this.OffTggl);
+            this.zeroitChromeForm1.Controls.Add(this.BGTggl);
             this.zeroitChromeForm1.Controls.Add(this.zeroitLollipopButton1);
             this.zeroitChromeForm1.Controls.Add(this.pictureBox1);
             this.zeroitChromeForm1.Controls.Add(this.AppText);
@@ -69,38 +69,34 @@
             this.zeroitChromeForm1.TransparencyKey = System.Drawing.Color.Empty;
             this.zeroitChromeForm1.Transparent = false;
             // 
-            // OffLbl
-            // 
-            this.OffLbl.AllowTransparency = true;
-            this.OffLbl.AutoSize = true;
-            this.OffLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.OffLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.OffLbl.Location = new System.Drawing.Point(56, 75);
-            this.OffLbl.Name = "OffLbl";
-            this.OffLbl.Size = new System.Drawing.Size(49, 17);
-            this.OffLbl.TabIndex = 5;
-            this.OffLbl.Text = "Offline";
-            // 
             // OffTggl
             // 
             this.OffTggl.AllowTransparency = true;
             this.OffTggl.Checked = false;
-            this.OffTggl.DisabledBackColor = System.Drawing.Color.DimGray;
-            this.OffTggl.DisabledBorderBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(148)))), ((int)(((byte)(154)))));
-            this.OffTggl.EllipseBorderColor = System.Drawing.Color.Transparent;
-            this.OffTggl.EllipseColor = System.Drawing.Color.Lime;
-            this.OffTggl.EnabledUnCheckedColor = System.Drawing.Color.Red;
-            this.OffTggl.InactiveColor = System.Drawing.Color.Red;
-            this.OffTggl.Location = new System.Drawing.Point(12, 75);
+            this.OffTggl.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(142)))), ((int)(((byte)(245)))));
+            this.OffTggl.ForeColor = System.Drawing.Color.Magenta;
+            this.OffTggl.Location = new System.Drawing.Point(22, 75);
             this.OffTggl.Name = "OffTggl";
-            this.OffTggl.PolySides = 3;
-            this.OffTggl.RenderType = Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopToggle.DrawType.Circle;
-            this.OffTggl.Size = new System.Drawing.Size(47, 19);
-            this.OffTggl.StartingAngle = 150;
-            this.OffTggl.TabIndex = 4;
-            this.OffTggl.Text = "offline";
-            this.OffTggl.UnCheckedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(172)))), ((int)(((byte)(176)))));
+            this.OffTggl.RectangleWidth = 1;
+            this.OffTggl.Size = new System.Drawing.Size(65, 20);
+            this.OffTggl.TabIndex = 7;
+            this.OffTggl.Text = "Offline";
+            this.OffTggl.UncheckedColor = System.Drawing.Color.White;
             this.OffTggl.Click += new System.EventHandler(this.OffTggl_Click);
+            // 
+            // BGTggl
+            // 
+            this.BGTggl.AllowTransparency = true;
+            this.BGTggl.Checked = false;
+            this.BGTggl.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(142)))), ((int)(((byte)(245)))));
+            this.BGTggl.ForeColor = System.Drawing.Color.Green;
+            this.BGTggl.Location = new System.Drawing.Point(22, 101);
+            this.BGTggl.Name = "BGTggl";
+            this.BGTggl.RectangleWidth = 1;
+            this.BGTggl.Size = new System.Drawing.Size(98, 20);
+            this.BGTggl.TabIndex = 6;
+            this.BGTggl.Text = "Background";
+            this.BGTggl.UncheckedColor = System.Drawing.Color.White;
             // 
             // zeroitLollipopButton1
             // 
@@ -195,8 +191,8 @@
         private Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopLabel AppText;
         public Zeroit.Framework.Form.ZeroitChromeForm zeroitChromeForm1;
         private Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopButton zeroitLollipopButton1;
-        private Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopLabel OffLbl;
-        private Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopToggle OffTggl;
+        private Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox OffTggl;
+        private Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox BGTggl;
     }
 }
 

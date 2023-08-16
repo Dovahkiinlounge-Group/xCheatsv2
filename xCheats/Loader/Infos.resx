@@ -117,29 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="siticoneTextBox1.DefaultText" xml:space="preserve">
-    <value>- Disabled Discord Requests Because its buggy currently
-+Fixed Discord Label in info
-- Removed Feedback Suggestions
-- Cleared Changelog
-- Disabled RE5 Cheat Because Need Update...
-+ RDO Manager For Private Lobbys
-+ AutoStart
-+ AutoInject Dlls
-+ Security Signs to prevent Not allowed assemblys</value>
-  </data>
-  <data name="siticoneTextBox14.DefaultText" xml:space="preserve">
-    <value>+Finally Open Source 
-+Exclusion adder for Windows Defender
-+Recode the Programm
-+Credits to More
-+Discord Tag changes automatically after i change it on Discord
-+Feedback/Suggestion to More
-+Console Name show admin state
-+Fixed RE5 Mouse Bug
-+Changed RE5 Attach mode to Button
-+Changed Homefront the Revolution UI</value>
-  </data>
+  <metadata name="DeviceInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>14, 14</value>
+  </metadata>
+  <metadata name="BorderInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>101, 14</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>37</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="siticonePictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -501,15 +487,6 @@
         I2LUnwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="DeviceInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>14, 14</value>
-  </metadata>
-  <metadata name="BorderInfo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>101, 14</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>37</value>
-  </metadata>
   <metadata name="TaskPRogress.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>189, 14</value>
   </metadata>

@@ -93,5 +93,41 @@
                 }
             }
         }
+        public void Check(string filepath)
+        {
+            if (!File.Exists(filepath))
+            {
+                SetValue("Settings", "OfflineMode", "false");
+                SetValue("Settings", "AdminMode", "false");
+                SetValue("Settings", "BackgroundWorker", "false");
+                Save(filepath);
+            }
+            else
+            {
+                Load(filepath);
+                bool configChanged = false;
+
+                // Check and set missing values
+                if (GetValue("Settings", "OfflineMode") == "")
+                {
+                    SetValue("Settings", "OfflineMode", "false");
+                    configChanged = true;
+                }
+                if (GetValue("Settings", "AdminMode") == "")
+                {
+                    SetValue("Settings", "AdminMode", "false");
+                    configChanged = true;
+                }
+                if (GetValue("Settings", "BackgroundWorker") == "")
+                {
+                    SetValue("Settings", "BackgroundWorker", "false");
+                    configChanged = true;
+                }
+                if (configChanged)
+                {
+                    Save(filepath);
+                }
+            }
+        }
     }
 }

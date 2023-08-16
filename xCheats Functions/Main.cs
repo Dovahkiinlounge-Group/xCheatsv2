@@ -20,8 +20,9 @@ namespace xCheatsFunctions
             message += Environment.NewLine;
             message += "-----------------------------------------------------------";
             message += Environment.NewLine;
-
-            string path = "data\\logs\\Error.txt";
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string appFolderPath = Path.Combine(appDataPath, "xCheats");
+            string path = Path.Combine(appFolderPath,"data\\logs\\Error.txt");
 
             bool logFileExists = File.Exists(path);
 
@@ -36,9 +37,7 @@ namespace xCheatsFunctions
                 sw.WriteLine(message);
                 sw.Close();
             }
-
             MessageBox.Show("Send The error file to the support when u need help", "Warning");
-            Environment.Exit(1);
         }
     }
 
@@ -46,13 +45,15 @@ namespace xCheatsFunctions
     {
         public static void folderexistcheck()
         {
-            string path = Environment.CurrentDirectory + "\\data";
-            string path2 = Environment.CurrentDirectory + "\\data\\Installers";
-            string path3 = Environment.CurrentDirectory + "\\data\\Downloads";
-            string path4 = Environment.CurrentDirectory + "\\data\\logs";
-            string path5 = Environment.CurrentDirectory + "\\data\\Dlls";
-            string path6 = Environment.CurrentDirectory + "\\data\\Services";
-            string path7 = Environment.CurrentDirectory + "\\data\\Config";
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string appFolderPath = Path.Combine(appDataPath, "xCheats");
+            string path = Path.Combine(appFolderPath, "\\data");
+            string path2 = Path.Combine(appFolderPath, "\\data\\Installers");
+            string path3 = Path.Combine(appFolderPath, "\\data\\Downloads");
+            string path4 = Path.Combine(appFolderPath, "\\data\\logs");
+            string path5 = Path.Combine(appFolderPath, "\\data\\Dlls");
+            string path6 = Path.Combine(appFolderPath, "\\data\\Services");
+            string path7 = Path.Combine(appFolderPath, "\\data\\Config");
             try
             {
                 if (!Directory.Exists(path))

@@ -38,14 +38,16 @@ namespace xCheats.Calls
 
         private string DCUSERINFO1_DATA = "";
         private string DCUSERINFO2_DATA = "";
+        static  string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        static string appFolderPath = Path.Combine(appDataPath, "xCheats");
+        static string configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
+        static  bool isOfflineMode = GlobalSettings.isOfflineMode;
+        static  bool backgroundWork = GlobalSettings.BackgroundWork;
 
         public static void LoadConfiguration()
         {
-            IniConfig config = new IniConfig();
-            config.Load("data\\Config\\config.ini");
-            bool InternetOff = config.GetValue("Settings", "OfflineMode", "false").Equals("true", StringComparison.OrdinalIgnoreCase);
+         
 
-            GlobalConfig.Offline = InternetOff;
         }
 
         public void setDiscordUserdata()
@@ -78,7 +80,7 @@ namespace xCheats.Calls
             int timeout = 1000;
             PingOptions pingOptions = new PingOptions();
             PingReply reply = myPing.Send(host, timeout, buffer, pingOptions);
-            if(GlobalConfig.Offline == true)
+            if (isOfflineMode == true)
             {
                 Console.WriteLine($"Connection: Disabled in Settings");
                 Thread.Sleep(5000);
