@@ -1,0 +1,27 @@
+CELINE, INC. OPEN-SOURCE LICENSE
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, subject to the following conditions:
+
+1. Allowed Uses:
+   1.1 You are permitted to use, copy, and modify the Software for both personal and commercial purposes.
+   1.2 You may distribute the Software or its modified versions as part of your own projects or products.
+
+2. Disallowed Uses:
+   2.1 You may not use the name "Celine, Inc." or the names of its contributors to endorse or promote any products or services without prior written permission.
+   2.2 Redistribution of the Software, except as part of your own projects or products, is not allowed without explicit written permission from "Celine, Inc."
+   2.3 The Software may not be sublicensed, and any attempts to sublicense, sell, or lease the Software are expressly prohibited.
+
+3. Cheat Use:
+   3.1 Cheats and modifications to the Software are allowed solely for offline, single-player games or non-competitive game modes.
+   3.2 The use of cheats or modifications in online, multiplayer, or competitive games is strictly prohibited.
+
+4. Redistributions of source code must retain the above copyright notice, this list of conditions, and the following disclaimer.
+
+5. Redistributions in binary form must reproduce the above copyright notice, this list of conditions, and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+6. Warranty and Liability:
+   6.1 THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE CONTRIBUTORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+For more information about Celine, Inc., please visit: https://xcheats.dovahkiinlounge.de
