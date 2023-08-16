@@ -29,45 +29,50 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
-            this.zeroitChromeForm1 = new Zeroit.Framework.Form.ZeroitChromeForm();
+            this.Window = new Zeroit.Framework.Form.ZeroitChromeForm();
             this.OffTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
             this.BGTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
             this.zeroitLollipopButton1 = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AppText = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopLabel();
             this.StartBtn = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopButton();
-            this.zeroitChromeForm1.SuspendLayout();
+            this.AdminTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
+            this.Window.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // zeroitChromeForm1
+            // Window
             // 
-            this.zeroitChromeForm1.BackColor = System.Drawing.Color.Black;
-            this.zeroitChromeForm1.BorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.zeroitChromeForm1.ColorBackground1 = System.Drawing.Color.Violet;
-            this.zeroitChromeForm1.ColorBackground2 = System.Drawing.Color.LightSeaGreen;
-            this.zeroitChromeForm1.Controls.Add(this.OffTggl);
-            this.zeroitChromeForm1.Controls.Add(this.BGTggl);
-            this.zeroitChromeForm1.Controls.Add(this.zeroitLollipopButton1);
-            this.zeroitChromeForm1.Controls.Add(this.pictureBox1);
-            this.zeroitChromeForm1.Controls.Add(this.AppText);
-            this.zeroitChromeForm1.Controls.Add(this.StartBtn);
-            this.zeroitChromeForm1.Customization = "AAAA//////8AAP//";
-            this.zeroitChromeForm1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zeroitChromeForm1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.zeroitChromeForm1.Image = null;
-            this.zeroitChromeForm1.Location = new System.Drawing.Point(0, 0);
-            this.zeroitChromeForm1.Movable = false;
-            this.zeroitChromeForm1.Name = "zeroitChromeForm1";
-            this.zeroitChromeForm1.NoRounding = false;
-            this.zeroitChromeForm1.Sizable = false;
-            this.zeroitChromeForm1.Size = new System.Drawing.Size(800, 450);
-            this.zeroitChromeForm1.SmartBounds = true;
-            this.zeroitChromeForm1.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.zeroitChromeForm1.TabIndex = 0;
-            this.zeroitChromeForm1.Text = "xCheats";
-            this.zeroitChromeForm1.TransparencyKey = System.Drawing.Color.Empty;
-            this.zeroitChromeForm1.Transparent = false;
+            this.Window.BackColor = System.Drawing.Color.Black;
+            this.Window.BorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Window.ColorBackground1 = System.Drawing.Color.Violet;
+            this.Window.ColorBackground2 = System.Drawing.Color.LightSeaGreen;
+            this.Window.Controls.Add(this.AdminTggl);
+            this.Window.Controls.Add(this.OffTggl);
+            this.Window.Controls.Add(this.BGTggl);
+            this.Window.Controls.Add(this.zeroitLollipopButton1);
+            this.Window.Controls.Add(this.pictureBox1);
+            this.Window.Controls.Add(this.AppText);
+            this.Window.Controls.Add(this.StartBtn);
+            this.Window.Customization = "AAAA//////8AAP//";
+            this.Window.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Window.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Window.Image = null;
+            this.Window.Location = new System.Drawing.Point(0, 0);
+            this.Window.Movable = false;
+            this.Window.Name = "Window";
+            this.Window.NoRounding = false;
+            this.Window.Sizable = false;
+            this.Window.Size = new System.Drawing.Size(800, 450);
+            this.Window.SmartBounds = true;
+            this.Window.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Window.TabIndex = 0;
+            this.Window.Text = "xCheats";
+            this.Window.TransparencyKey = System.Drawing.Color.Empty;
+            this.Window.Transparent = false;
+            this.Window.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
+            this.Window.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
+            this.Window.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
             // 
             // OffTggl
             // 
@@ -97,6 +102,7 @@
             this.BGTggl.TabIndex = 6;
             this.BGTggl.Text = "Background";
             this.BGTggl.UncheckedColor = System.Drawing.Color.White;
+            this.BGTggl.Click += new System.EventHandler(this.BGTggl_Click);
             // 
             // zeroitLollipopButton1
             // 
@@ -168,18 +174,33 @@
             this.StartBtn.TextRendering = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.StartBtn.Click += new System.EventHandler(this.StartBtn_Click);
             // 
+            // AdminTggl
+            // 
+            this.AdminTggl.AllowTransparency = true;
+            this.AdminTggl.Checked = false;
+            this.AdminTggl.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(142)))), ((int)(((byte)(245)))));
+            this.AdminTggl.ForeColor = System.Drawing.Color.Green;
+            this.AdminTggl.Location = new System.Drawing.Point(22, 127);
+            this.AdminTggl.Name = "AdminTggl";
+            this.AdminTggl.RectangleWidth = 1;
+            this.AdminTggl.Size = new System.Drawing.Size(102, 20);
+            this.AdminTggl.TabIndex = 8;
+            this.AdminTggl.Text = "Admin Mode";
+            this.AdminTggl.UncheckedColor = System.Drawing.Color.White;
+            this.AdminTggl.Click += new System.EventHandler(this.AdminTggl_Click);
+            // 
             // Launcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.zeroitChromeForm1);
+            this.Controls.Add(this.Window);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Launcher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "zeroitGradientForm1";
-            this.zeroitChromeForm1.ResumeLayout(false);
-            this.zeroitChromeForm1.PerformLayout();
+            this.Window.ResumeLayout(false);
+            this.Window.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -189,10 +210,11 @@
         private Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopButton StartBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopLabel AppText;
-        public Zeroit.Framework.Form.ZeroitChromeForm zeroitChromeForm1;
+        public Zeroit.Framework.Form.ZeroitChromeForm Window;
         private Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopButton zeroitLollipopButton1;
         private Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox OffTggl;
         private Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox BGTggl;
+        private Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox AdminTggl;
     }
 }
 
