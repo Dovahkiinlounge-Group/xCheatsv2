@@ -65,7 +65,6 @@ namespace xCheats
             Version truncatedVersion = new Version(assemblyVersion.Major, assemblyVersion.Minor, assemblyVersion.Build);
             string AV = string.Format("{0}.{1}.{2}", truncatedVersion.Major, truncatedVersion.Minor, truncatedVersion.Build.ToString("D"));
             AppVer.Text = "Version: " + AV;
-            x.LoadConfiguration();
         }
 
         private void xCheatsBtn_Click(object sender, EventArgs e)

@@ -15,51 +15,44 @@ using xCheatsFunctions;
 
 namespace xCheats
 {
-
-    
     public static class Program
     {
-        static bool isAdmin;
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
-
         static void Main(string[] args)
         {
-            using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+            try
             {
-                WindowsPrincipal principal = new WindowsPrincipal(identity);
-                isAdmin = principal.IsInRole(WindowsBuiltInRole.Administrator);
-            }
+                // Customize the console appearance
+                Console.WindowHeight = 20;
+                Console.WindowWidth = 100;
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.CursorVisible = false;
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.Title = "xCheats";
 
-            if (isAdmin)
-            {
-                Console.Title = "xCheats Console(Admin)";
-            }
-            else
-            {
-                Console.Title = "xCheats Console(Not Admin)";
-            }
-            Console.WindowHeight = 20;
-            Console.WindowWidth = 100;
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.CursorVisible = false;
-            Console.BackgroundColor = ConsoleColor.Black;
+                // Temporarily set the buffer height to hide the vertical scrollbar
+                int originalBufferHeight = Console.BufferHeight;
+                Console.BufferHeight = Console.WindowHeight;
 
-            if (args.Length > 0 && args[0] == "-u6sq8#bhysa68@1c0&$")
-            {
-                x.LoadConfiguration();
-                x.startup();
-            }
-            else
-            {
-                Console.WriteLine("xCheats must be launched from the launcher.");
-                Console.WriteLine("Please use the launcher to start xCheats.");
-                Console.Read();
-            }
+                if (args.Length > 0 && args[0] == "-u6sq8#bhysa68@1c0&$")
+                {
+                    x.startup();
+                }
+                else
+                {
+                    Console.WriteLine("xCheats must be launched from the launcher.");
+                    Console.WriteLine("Please use the launcher to start xCheats.");
+                    Console.Read();
+                }
 
-
+                // Restore the original buffer height
+                Console.BufferHeight = originalBufferHeight;
+            }
+            catch (Exception ex)
+            {
+                // Log the error using your ErrorLog class library
+                ErrorLogv2.LogError(ex);
+            }
         }
     }
 }

@@ -33,37 +33,11 @@ namespace xCheats.Calls
         const int SW_HIDE = 0;
         const int SW_SHOW = 5;
 
-        private const string DCUSERINFO1 = "https://streamzone.app/api/getuser.php?userid=749592637455073300";
-        private const string DCUSERINFO2 = "https://streamzone.app/api/getuser.php?userid=405427472436559884";
-
-        private string DCUSERINFO1_DATA = "";
-        private string DCUSERINFO2_DATA = "";
         static  string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         static string appFolderPath = Path.Combine(appDataPath, "xCheats");
         static string configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
-        static  bool isOfflineMode = GlobalSettings.isOfflineMode;
-        static  bool backgroundWork = GlobalSettings.BackgroundWork;
-
-        public static void LoadConfiguration()
-        {
-         
-
-        }
-
-        public void setDiscordUserdata()
-        {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(DCUSERINFO1);
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            StreamReader reader = new StreamReader(response.GetResponseStream());
-            string responseText = reader.ReadToEnd();
-            DCUSERINFO1_DATA = responseText;
-
-            request = (HttpWebRequest)WebRequest.Create(DCUSERINFO2);
-            response = (HttpWebResponse)request.GetResponse();
-            reader = new StreamReader(response.GetResponseStream());
-            responseText = reader.ReadToEnd();
-            DCUSERINFO2_DATA = responseText;
-        }
+        public static  bool isOfflineMode = GlobalSettings.isOfflineMode;
+        public static  bool backgroundWork = GlobalSettings.BackgroundWork;
 
         public static void Sleep()
         {

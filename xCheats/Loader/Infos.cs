@@ -24,6 +24,7 @@ using File = System.IO.File;
 using xCheatsHelper;
 using xCheatsFunctions;
 using xCheats.Calls;
+using System.ComponentModel;
 
 namespace xCheats.Loader
 {
@@ -32,8 +33,8 @@ namespace xCheats.Loader
         private const string DOWNLOAD_URL = "https://github.com/CelinaxCute/xCheats/raw/main/Assets/Game%20Fix%20Tools/GFWL/Release.zip";
         private const string DOWNLOAD_URL2 = "https://github.com/CelinaxCute/xCheats/raw/main/Assets/Game%20Fix%20Tools/4GB%20Patch%20for%2032bit%20Games/Release.zip";
         public string Message = "Offline Mode enabled";
-        private const string DCUSERINFO1 = "";
-        private const string DCUSERINFO2 = "";
+        private const string DCUSERINFO1 = "https://api.auvos.app/getdiscorduser/749592637455073300";
+        private const string DCUSERINFO2 = "https://api.auvos.app/getdiscorduser/405427472436559884";
 
         private string DCUSERINFO1_DATA = "";
         private string DCUSERINFO2_DATA = "";
@@ -106,8 +107,7 @@ namespace xCheats.Loader
         public Infos()
         {
             InitializeComponent();
-            setDiscordUserdata();
-            Automation.RunWorkerAsync();
+            
             TestLabel.Text = "OS Version: " + HardwareInfo.GetOSInformation() + ".";
             GPU.Text = "GPU: " + DeviceInfo.GetGPUName + ".";
             CPU.Text = "CPU: " + DeviceInfo.GetProcessorName + ".";
@@ -128,22 +128,22 @@ namespace xCheats.Loader
         }
         private void setDiscordUserdata()
         {
-            //    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(DCUSERINFO1);
-            //    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            //    StreamReader reader = new StreamReader(response.GetResponseStream());
-            //    string responseText = reader.ReadToEnd();
-            //    byte[] bytes = Encoding.Default.GetBytes(responseText);
-            //    responseText = Encoding.UTF8.GetString(bytes);
-            //    DCUSERINFO1_DATA = responseText;
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(DCUSERINFO1);
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            string responseText = reader.ReadToEnd();
+            byte[] bytes = Encoding.Default.GetBytes(responseText);
+            responseText = Encoding.UTF8.GetString(bytes);
+            DCUSERINFO1_DATA = responseText;
 
-            //    request = (HttpWebRequest)WebRequest.Create(DCUSERINFO2);
-            //    response = (HttpWebResponse)request.GetResponse();
-            //    reader = new StreamReader(response.GetResponseStream());
-            //    responseText = reader.ReadToEnd();
-            //    bytes = Encoding.Default.GetBytes(responseText);
-            //    responseText = Encoding.UTF8.GetString(bytes);
-            //    DCUSERINFO2_DATA = responseText;
-            }
+            request = (HttpWebRequest)WebRequest.Create(DCUSERINFO2);
+            response = (HttpWebResponse)request.GetResponse();
+            reader = new StreamReader(response.GetResponseStream());
+            responseText = reader.ReadToEnd();
+            bytes = Encoding.Default.GetBytes(responseText);
+            responseText = Encoding.UTF8.GetString(bytes);
+            DCUSERINFO2_DATA = responseText;
+        }
             public async void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
             {
                 try
@@ -162,7 +162,7 @@ namespace xCheats.Loader
         private void Infos_Load(object sender, EventArgs e)
         {
             UpdateToggleButtonLabel();
-            if (Properties.Settings.Default.BackgroundWork == true)
+            if (API.backgroundWork == true)
             {
                 AutoStartBtn.Enabled = true;
             }
@@ -171,7 +171,7 @@ namespace xCheats.Loader
                 AutoStartBtn.Enabled= false;
             }
 
-            if (GlobalConfig.Offline == true)
+            if (API.isOfflineMode == true)
             {
                 ConInfo.ForeColor = Color.Red;
                 ConInfo.Text = "Offline";
@@ -185,24 +185,7 @@ namespace xCheats.Loader
                 PingOptions pingOptions = new PingOptions();
                 PingReply reply = myPing.Send(host, timeout, buffer, pingOptions);
 
-                //try
-                //{
-                //    //Cèline
-                //    dynamic jsonResponse = Newtonsoft.Json.JsonConvert.DeserializeObject(DCUSERINFO1_DATA);
-                //    DCName.Text = jsonResponse.username + "\n#" + jsonResponse.discriminator;
-                //    DCCopyTag.Text = jsonResponse.username + "#" + jsonResponse.discriminator;
-                //    DCAV1.ImageLocation = jsonResponse.icon;
-                //    CRA.Text = "Created At:" + jsonResponse.created_at;
 
-                //    //Apy
-                //    jsonResponse = Newtonsoft.Json.JsonConvert.DeserializeObject(DCUSERINFO2_DATA);
-                //    DCName2.Text = jsonResponse.usernames + "\n#" + jsonResponse.discriminator;
-                //    DCAV2.ImageLocation = jsonResponse.icon;
-                //    CRA2.Text = "Created At:" + jsonResponse.created_at;
-                //}
-                //catch (Exception ex)
-                //{
-                //}
                 if (reply.Status == IPStatus.Success)
                 {
                     ConInfo.ForeColor = Color.Green;
@@ -216,14 +199,6 @@ namespace xCheats.Loader
             }
         }
 
-        private void DeleteFileWhenExist(string name)
-        {
-            if (File.Exists($"{Environment.CurrentDirectory}\\{name}"))
-            {
-                File.Delete($"{Environment.CurrentDirectory}\\{name}");
-            }
-        }
-
         private void ProgressChange(object sender, AltoHttp.ProgressChangedEventArgs e)
         {
             this.DwnBar.Value = (int)e.Progress;
@@ -231,38 +206,45 @@ namespace xCheats.Loader
 
         private void DwnCompleted(object sender, EventArgs e)
         {
-            try
+            if (API.isOfflineMode == true)
             {
-                ZipFile.ExtractToDirectory(Environment.CurrentDirectory + "\\data\\Downloads\\Release.zip", Environment.CurrentDirectory + "\\data\\Downloads");
-                System.IO.File.Delete(Environment.CurrentDirectory + "\\data\\Downloads\\Release.zip");
+                MessageBox.Show(Message, "Warning");
             }
-            catch (Exception ex)
+            else
             {
-                ErrorLog.LogError(ex);
-                MessageBox.Show(ex.Message, "Unpack zip error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                try
+                {
+                    ZipFile.ExtractToDirectory(Environment.CurrentDirectory + "\\data\\Downloads\\Release.zip", Environment.CurrentDirectory + "\\data\\Downloads");
+                    System.IO.File.Delete(Environment.CurrentDirectory + "\\data\\Downloads\\Release.zip");
+                }
+                catch (Exception ex)
+                {
+                    ErrorLog.LogError(ex);
+                    MessageBox.Show(ex.Message, "Unpack zip error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                }
+                DwnBar.Visible = false;
+                dlgHookProc = new HookProc(DialogHookProc);
+
+                _hook = SetWindowsHookEx((int)WH_CBT, dlgHookProc, (IntPtr)0, (int)GetCurrentThreadId());
+
+                DialogResult dlgEmptyCheck = MessageBox.Show("Open: Open Directory\nIgnore: Ignore The Message", "Download Finished", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
+                if (dlgEmptyCheck == DialogResult.OK)
+                {
+                    System.Diagnostics.Process.Start("explorer.exe", Environment.CurrentDirectory + "\\data\\Downloads");
+                }
+                else if (dlgEmptyCheck == DialogResult.Cancel)
+                {
+
+                }
+
+                UnhookWindowsHookEx(_hook);
             }
-            DwnBar.Visible = false;
-            dlgHookProc = new HookProc(DialogHookProc);
-
-            _hook = SetWindowsHookEx((int)WH_CBT, dlgHookProc, (IntPtr)0, (int)GetCurrentThreadId());
-
-            DialogResult dlgEmptyCheck = MessageBox.Show("Open: Open Directory\nIgnore: Ignore The Message", "Download Finished", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-
-            if (dlgEmptyCheck == DialogResult.OK)
-            {
-                System.Diagnostics.Process.Start("explorer.exe", Environment.CurrentDirectory + "\\data\\Downloads");
-            }
-            else if (dlgEmptyCheck == DialogResult.Cancel)
-            {
-
-            }
-
-            UnhookWindowsHookEx(_hook);
         }
 
         private void GamesWinLiveDwn_Click(object sender, EventArgs e)
         {
-            if (GlobalConfig.Offline == true)
+            if (API.isOfflineMode == true)
             {
                 MessageBox.Show(Message, "Warning");
             }
@@ -304,7 +286,7 @@ namespace xCheats.Loader
 
         private void PatchDwn_Click(object sender, EventArgs e)
         {
-            if (GlobalConfig.Offline == true)
+            if (API.isOfflineMode == true)
             {
                 MessageBox.Show(Message, "Warning");
             }
@@ -382,28 +364,30 @@ namespace xCheats.Loader
 
         private void Automation_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
+            setDiscordUserdata();
+            Thread.Sleep(50);
             try
             {
+                //Cèline
                 dynamic jsonResponse = Newtonsoft.Json.JsonConvert.DeserializeObject(DCUSERINFO1_DATA);
-                DCName.Text = jsonResponse.username + "#" + jsonResponse.discriminator;
-                DCAV1.Image = jsonResponse.icon;
-                DCCopyTag.Text = "Discord Tag: " + jsonResponse.username + "#" + jsonResponse.discriminator;
+                DCName.Text = jsonResponse.name;
+                DCCopyTag.Text = "Discord Tag: " + jsonResponse.name;
+                GLName.Text = "DisplayName: " + jsonResponse.global_name;
+                DCAV1.ImageLocation = jsonResponse.avatar_url;
+                CRA.Text = "Created At:" + jsonResponse.created_at;
 
-                //jsonResponse = Newtonsoft.Json.JsonConvert.DeserializeObject(DCUSERINFO2_DATA);
-                //DCName2.Text = jsonResponse.usernames + "#" + jsonResponse.discriminators;
-                //DCAV2.ImageLocation = jsonResponse.icon;
+                //Apy
+                jsonResponse = Newtonsoft.Json.JsonConvert.DeserializeObject(DCUSERINFO2_DATA);
+                DCName2.Text = jsonResponse.name;
+                GLName2.Text = "DisplayName: " + jsonResponse.global_name;
+                DCAV2.ImageLocation = jsonResponse.avatar_url;
+                CRA2.Text = "Created At:" + jsonResponse.created_at;
             }
             catch (Exception ex)
             {
-
+                ErrorLog.LogError(ex);
             }
         }
-
-        private void UpdateContact_Click(object sender, EventArgs e)
-        {
-            //Automation.RunWorkerAsync();
-        }
-
 
         private void ToggleButton_Click(object sender, EventArgs e)
         {
@@ -433,7 +417,7 @@ namespace xCheats.Loader
 
             shortcut.TargetPath = targetPath;
             shortcut.Description = description;
-            shortcut.WindowStyle = (int)WshWindowStyle.WshMinimizedNoFocus; // Oder WshWindowStyle.WshMinimized für den minimierten Start
+            shortcut.WindowStyle = (int)WshWindowStyle.WshMinimizedNoFocus; 
             shortcut.Save();
 
             MessageBox.Show("Programm start now after PC Restart");
@@ -467,6 +451,17 @@ namespace xCheats.Loader
         private void ExodusBtn_Click(object sender, EventArgs e)
         {
             Process.Start("https://exodusmenu.com/");
+        }
+
+        private void siticoneTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (siticoneTabControl1.SelectedTab == Credits)
+            {
+                if (!Automation.IsBusy)
+                {
+                    Automation.RunWorkerAsync();
+                }
+            }
         }
     }
 }
