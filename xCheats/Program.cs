@@ -34,16 +34,16 @@ namespace xCheats
                 int originalBufferHeight = Console.BufferHeight;
                 Console.BufferHeight = Console.WindowHeight;
 
-                if (args.Length > 0 && args[0] == "-u6sq8#bhysa68@1c0&$")
-                {
+                //if (args.Length > 0 && args[0] == "-u6sq8#bhysa68@1c0&$")
+                //{
                     x.startup();
-                }
-                else
-                {
-                    Console.WriteLine("xCheats must be launched from the launcher.");
-                    Console.WriteLine("Please use the launcher to start xCheats.");
-                    Console.Read();
-                }
+                //}
+                //else
+                //{
+                //    Console.WriteLine("xCheats must be launched from the launcher.");
+                //    Console.WriteLine("Please use the launcher to start xCheats.");
+                //    Console.Read();
+                //}
 
                 // Restore the original buffer height
                 Console.BufferHeight = originalBufferHeight;

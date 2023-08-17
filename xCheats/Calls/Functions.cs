@@ -36,9 +36,10 @@ namespace xCheats.Calls
         static  string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         static string appFolderPath = Path.Combine(appDataPath, "xCheats");
         static string configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
-        public static  bool isOfflineMode = GlobalSettings.isOfflineMode;
-        public static  bool backgroundWork = GlobalSettings.BackgroundWork;
-
+        public static bool isOfflineMode = GlobalSettings.isOfflineMode;
+        public static bool backgroundWork = GlobalSettings.BackgroundWork;
+        public static bool isAdmin = GlobalSettings.AdminMode;
+ 
         public static void Sleep()
         {
             Thread.Sleep(1000);
@@ -69,7 +70,7 @@ namespace xCheats.Calls
                 if (reply.Status == IPStatus.Success)
                 {
                     Console.WriteLine($"Connection: Online");
-                    Thread.Sleep(5000);
+                    //Thread.Sleep(5000);
                     Console.WriteLine("Check Registry...");
                     try
                     {
@@ -94,7 +95,7 @@ namespace xCheats.Calls
                         ErrorLog.LogError(ex);
                     }
 
-                    Thread.Sleep(6000);
+                    //Thread.Sleep(6000);
                     Application.Run(new LoaderMain());
                 }
             }

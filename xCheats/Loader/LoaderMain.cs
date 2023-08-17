@@ -31,26 +31,17 @@ namespace xCheats
         //public static string DllName = Properties.Settings.Default.DllName;// Pfad zu deinem Programm
         //private string programArguments = $"--process-name RDR2.exe --inject {DllName}.dll"; // Argumente für dein Programm
         private bool isRDR2Running = true;
-        bool isAdmin;
         static Process targetProcess;
         //static string programPath;
         //static string programArguments;
         static bool isProcessRunning = false;
 
         bool ProcOpen = false;
-        public Mem m = new Mem();
         public LoaderMain()
         {
             InitializeComponent();
             x.hide();
             Console.WriteLine("Welcome to xCheats");
-            using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
-            {
-                WindowsPrincipal principal = new WindowsPrincipal(identity);
-
-                // If is administrator, the variable updates from False to True
-                isAdmin = principal.IsInRole(WindowsBuiltInRole.Administrator);
-            }
             System.Timers.Timer timer = new System.Timers.Timer
             {
                 Interval = 2 * 60 * 1000,
@@ -111,20 +102,9 @@ namespace xCheats
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
-            //if (Properties.Settings.Default.BackgroundWork == true)
-            //{
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    Environment.Exit(0);
-            //}
-
-            if (GlobalConfig.BackgroundWork)
+            if (API.backgroundWork)
             {
-                //this.Close();
-                MessageBox.Show("Jippie");
-                Environment.Exit(0);
+                this.Close();
             }
             else
             {
@@ -154,7 +134,7 @@ namespace xCheats
             {
                 BWO.RunWorkerAsync();
             }
-            if (isAdmin)
+            if (API.isAdmin)
             {
                 xCheats.Visible = true;
             }
@@ -217,7 +197,7 @@ namespace xCheats
             int timeout = 1000;
             PingOptions pingOptions = new PingOptions();
             PingReply reply = myPing.Send(host, timeout, buffer, pingOptions);
-            if (GlobalConfig.Offline == true)
+            if (API.isOfflineMode == true)
             {
                 OffImg.Visible = true;
                 Thread.Sleep(50);

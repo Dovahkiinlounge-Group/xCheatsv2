@@ -30,8 +30,8 @@ namespace xCheats.Loader
 {
     public partial class Infos : Form
     {
-        private const string DOWNLOAD_URL = "https://github.com/CelinaxCute/xCheats/raw/main/Assets/Game%20Fix%20Tools/GFWL/Release.zip";
-        private const string DOWNLOAD_URL2 = "https://github.com/CelinaxCute/xCheats/raw/main/Assets/Game%20Fix%20Tools/4GB%20Patch%20for%2032bit%20Games/Release.zip";
+        private const string DOWNLOAD_URL = "https://github.com/CelinaxCute/xCheatsv2/releases/download/GFWLInstaller/Release.zip";
+        private const string DOWNLOAD_URL2 = "https://github.com/CelinaxCute/xCheatsv2/releases/download/4GBx64Patch/Release.zip";
         public string Message = "Offline Mode enabled";
         private const string DCUSERINFO1 = "https://api.auvos.app/getdiscorduser/749592637455073300";
         private const string DCUSERINFO2 = "https://api.auvos.app/getdiscorduser/405427472436559884";
@@ -40,6 +40,7 @@ namespace xCheats.Loader
         private string DCUSERINFO2_DATA = "";
        
         private HttpDownloader httpDwn;
+        private DownloadManager downloadManager = new DownloadManager();
 
         [DllImport("kernel32.dll")]
         static extern uint GetCurrentThreadId();
@@ -114,6 +115,8 @@ namespace xCheats.Loader
             CPUStat.Text = "CPU-Status: " + DeviceInfo.GetProcessorStatus + ".";
             MBoard.Text = "M-Board: " + DeviceInfo.GetProduct + ".";
             int buttonMode = Properties.Settings.Default.Autostart;
+            downloadManager.ProgressChanged += DownloadManager_ProgressChanged;
+            downloadManager.DownloadCompleted += DownloadManager_DownloadCompleted;
         }
 
 
@@ -199,46 +202,26 @@ namespace xCheats.Loader
             }
         }
 
-        private void ProgressChange(object sender, AltoHttp.ProgressChangedEventArgs e)
+        private void DownloadManager_ProgressChanged(object sender, xCheatsFunctions.ProgressChangedEventArgs e)
         {
-            this.DwnBar.Value = (int)e.Progress;
+            // Update your progress bar based on the progress percentage
+            DwnBar.Visible = true;
+            DwnBar.Value = e.ProgressPercentage;
         }
 
-        private void DwnCompleted(object sender, EventArgs e)
+        private void DownloadManager_DownloadCompleted(object sender, DownloadCompletedEventArgs e)
         {
-            if (API.isOfflineMode == true)
+            if (e.Error == null)
             {
-                MessageBox.Show(Message, "Warning");
+                // Successful download and extraction
+                string downloadFolderPath = Path.GetDirectoryName(e.FilePath);
+                MessageBox.Show("Download and extraction completed successfully.");
+                DwnBar.Visible = false;
             }
             else
             {
-                try
-                {
-                    ZipFile.ExtractToDirectory(Environment.CurrentDirectory + "\\data\\Downloads\\Release.zip", Environment.CurrentDirectory + "\\data\\Downloads");
-                    System.IO.File.Delete(Environment.CurrentDirectory + "\\data\\Downloads\\Release.zip");
-                }
-                catch (Exception ex)
-                {
-                    ErrorLog.LogError(ex);
-                    MessageBox.Show(ex.Message, "Unpack zip error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                }
-                DwnBar.Visible = false;
-                dlgHookProc = new HookProc(DialogHookProc);
-
-                _hook = SetWindowsHookEx((int)WH_CBT, dlgHookProc, (IntPtr)0, (int)GetCurrentThreadId());
-
-                DialogResult dlgEmptyCheck = MessageBox.Show("Open: Open Directory\nIgnore: Ignore The Message", "Download Finished", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-
-                if (dlgEmptyCheck == DialogResult.OK)
-                {
-                    System.Diagnostics.Process.Start("explorer.exe", Environment.CurrentDirectory + "\\data\\Downloads");
-                }
-                else if (dlgEmptyCheck == DialogResult.Cancel)
-                {
-
-                }
-
-                UnhookWindowsHookEx(_hook);
+                // Error occurred during download or extraction
+                MessageBox.Show("An error occurred during download or extraction. Please check the error log.");
             }
         }
 
@@ -250,72 +233,30 @@ namespace xCheats.Loader
             }
             else
             {
-                if (File.Exists(Environment.CurrentDirectory + "\\data\\Downloads" + "\\" + "Release.zip"))
+                string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string xCheatsDownloadsPath = Path.Combine(appDataPath, "xCheats", "data", "Downloads");
+                string xCheatsDownloadsPath2 = Path.Combine(appDataPath, "xCheats", "data", "Downloads", "Games For Windows LIve");
+                string zipFilePath = Path.Combine(xCheatsDownloadsPath, "Release.zip");
+
+                // Delete the ZIP file if it exists
+                if (File.Exists(zipFilePath))
                 {
-                    File.Delete(Environment.CurrentDirectory + "\\data\\Downloads" + "\\" + "Release.zip");
+                    File.Delete(zipFilePath);
                 }
 
-                if (!Directory.Exists(Environment.CurrentDirectory + "\\data\\Downloads\\Games For Windows Live"))
+                // Delete the entire target directory if it exists
+                if (Directory.Exists(xCheatsDownloadsPath2))
                 {
-                    DirectoryInfo di = Directory.CreateDirectory(Environment.CurrentDirectory + "\\data\\Downloads\\Games For Windows Live");
+                    Directory.Delete(xCheatsDownloadsPath2, true);
                 }
 
-
-                try
-                {
-                    DirectoryInfo di = new DirectoryInfo(Environment.CurrentDirectory + "\\data\\Downloads\\Games For Windows Live");
-                    FileInfo[] files = di.GetFiles();
-                    foreach (FileInfo file in files)
-                    {
-                        file.Delete();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    ErrorLog.LogError(ex);
-                }
-
-                DwnBar.Visible = true;
-                httpDwn = new HttpDownloader(DOWNLOAD_URL, Environment.CurrentDirectory + "\\data\\Downloads" + "\\" + "Release.zip");
-                this.httpDwn.DownloadCompleted += this.DwnCompleted;
-                this.httpDwn.ProgressChanged += this.ProgressChange;
-                this.httpDwn.Start();
-            }
-
-        }
-
-        private void PatchDwn_Click(object sender, EventArgs e)
-        {
-            if (API.isOfflineMode == true)
-            {
-                MessageBox.Show(Message, "Warning");
-            }
-            else
-            {
-
-
-                if (File.Exists(Environment.CurrentDirectory + "\\data\\Downloads" + "\\" + "Release.zip"))
-                {
-                    File.Delete(Environment.CurrentDirectory + "\\data\\Downloads" + "\\" + "Release.zip");
-                }
-                if (!Directory.Exists(Environment.CurrentDirectory + "\\data\\Downloads\\4GB Patch for 32bit Games"))
-                {
-                    DirectoryInfo tidi = Directory.CreateDirectory(Environment.CurrentDirectory + "\\data\\Downloads\\4GB Patch for 32bit Games");
-                }
-
-                DirectoryInfo di = new DirectoryInfo(Environment.CurrentDirectory + "\\data\\Downloads\\4GB Patch for 32bit Games");
-                FileInfo[] files = di.GetFiles();
-                foreach (FileInfo file in files)
-                {
-                    file.Delete();
-                }
-                DwnBar.Visible = true;
-                httpDwn = new HttpDownloader(DOWNLOAD_URL2, Environment.CurrentDirectory + "\\data\\Downloads" + "\\" + "Release.zip");
-                this.httpDwn.DownloadCompleted += this.DwnCompleted;
-                this.httpDwn.ProgressChanged += this.ProgressChange;
-                this.httpDwn.Start();
+                // Start the download and extraction
+                downloadManager.DownloadAndExtractZip(DOWNLOAD_URL, xCheatsDownloadsPath);
             }
         }
+
+
+
 
         private void SaveSet_Click(object sender, EventArgs e)
         {
@@ -461,6 +402,36 @@ namespace xCheats.Loader
                 {
                     Automation.RunWorkerAsync();
                 }
+            }
+        }
+
+        private void PatchDwn_Click(object sender, EventArgs e)
+        {
+            if (API.isOfflineMode == true)
+            {
+                MessageBox.Show(Message, "Warning");
+            }
+            else
+            {
+                string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string xCheatsDownloadsPath = Path.Combine(appDataPath, "xCheats", "data", "Downloads");
+                string xCheatsDownloadsPath2 = Path.Combine(appDataPath, "xCheats", "data", "Downloads", "4GB Patch for 32bit Games");
+                string zipFilePath = Path.Combine(xCheatsDownloadsPath, "Release.zip");
+
+                // Delete the ZIP file if it exists
+                if (File.Exists(zipFilePath))
+                {
+                    File.Delete(zipFilePath);
+                }
+
+                // Delete the entire target directory if it exists
+                if (Directory.Exists(xCheatsDownloadsPath2))
+                {
+                    Directory.Delete(xCheatsDownloadsPath2, true);
+                }
+
+                // Start the download and extraction
+                downloadManager.DownloadAndExtractZip(DOWNLOAD_URL2, xCheatsDownloadsPath);
             }
         }
     }

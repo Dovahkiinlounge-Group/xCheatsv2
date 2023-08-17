@@ -37,6 +37,8 @@
             this.FolderDial = new System.Windows.Forms.FolderBrowserDialog();
             this.Automation = new System.ComponentModel.BackgroundWorker();
             this.Credits = new System.Windows.Forms.TabPage();
+            this.GLName2 = new System.Windows.Forms.Label();
+            this.GLName = new System.Windows.Forms.Label();
             this.CRA2 = new System.Windows.Forms.Label();
             this.CRA = new System.Windows.Forms.Label();
             this.PhilInfo = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
@@ -54,13 +56,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.AutoInjectCB = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
             this.AutoInjTB = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
-            this.siticoneCheckBox2 = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
-            this.siticoneTextBox2 = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
             this.AutoStartBtn = new Siticone.Desktop.UI.WinForms.SiticoneGradientButton();
             this.WS = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
             this.siticoneButton1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.ConnectionBox = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
-            this.siticoneTextBox12 = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
             this.SaveSet = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.ConsoleHideBox = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
             this.siticoneTextBox11 = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
@@ -90,8 +88,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.siticonePictureBox1 = new Siticone.Desktop.UI.WinForms.SiticonePictureBox();
             this.siticoneTabControl1 = new Siticone.Desktop.UI.WinForms.SiticoneTabControl();
-            this.GLName = new System.Windows.Forms.Label();
-            this.GLName2 = new System.Windows.Forms.Label();
             this.Credits.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DCAV2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DCAV1)).BeginInit();
@@ -158,6 +154,28 @@
             this.Credits.Size = new System.Drawing.Size(780, 413);
             this.Credits.TabIndex = 7;
             this.Credits.Text = "Credits";
+            // 
+            // GLName2
+            // 
+            this.GLName2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GLName2.ForeColor = System.Drawing.Color.White;
+            this.GLName2.Location = new System.Drawing.Point(167, 201);
+            this.GLName2.Name = "GLName2";
+            this.GLName2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.GLName2.Size = new System.Drawing.Size(126, 29);
+            this.GLName2.TabIndex = 46;
+            this.GLName2.Text = "DisplayName: ";
+            // 
+            // GLName
+            // 
+            this.GLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GLName.ForeColor = System.Drawing.Color.White;
+            this.GLName.Location = new System.Drawing.Point(11, 201);
+            this.GLName.Name = "GLName";
+            this.GLName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.GLName.Size = new System.Drawing.Size(126, 29);
+            this.GLName.TabIndex = 45;
+            this.GLName.Text = "DisplayName: ";
             // 
             // CRA2
             // 
@@ -302,13 +320,9 @@
             this.Settings.Controls.Add(this.label3);
             this.Settings.Controls.Add(this.AutoInjectCB);
             this.Settings.Controls.Add(this.AutoInjTB);
-            this.Settings.Controls.Add(this.siticoneCheckBox2);
-            this.Settings.Controls.Add(this.siticoneTextBox2);
             this.Settings.Controls.Add(this.AutoStartBtn);
             this.Settings.Controls.Add(this.WS);
             this.Settings.Controls.Add(this.siticoneButton1);
-            this.Settings.Controls.Add(this.ConnectionBox);
-            this.Settings.Controls.Add(this.siticoneTextBox12);
             this.Settings.Controls.Add(this.SaveSet);
             this.Settings.Controls.Add(this.ConsoleHideBox);
             this.Settings.Controls.Add(this.siticoneTextBox11);
@@ -334,7 +348,7 @@
             this.DllNameBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.DllNameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.DllNameBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DllNameBox.Location = new System.Drawing.Point(425, 138);
+            this.DllNameBox.Location = new System.Drawing.Point(219, 141);
             this.DllNameBox.Name = "DllNameBox";
             this.DllNameBox.PasswordChar = '\0';
             this.DllNameBox.PlaceholderText = "Dll Name? dont include .dll";
@@ -378,7 +392,7 @@
             this.Sterni.BackColor = System.Drawing.Color.Transparent;
             this.Sterni.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sterni.ForeColor = System.Drawing.Color.Magenta;
-            this.Sterni.Location = new System.Drawing.Point(585, 74);
+            this.Sterni.Location = new System.Drawing.Point(379, 77);
             this.Sterni.Name = "Sterni";
             this.Sterni.Size = new System.Drawing.Size(26, 24);
             this.Sterni.TabIndex = 36;
@@ -405,7 +419,7 @@
             this.AutoInjectCB.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.AutoInjectCB.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::xCheats.Properties.Settings.Default, "BGInj", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.AutoInjectCB.ForeColor = System.Drawing.Color.Magenta;
-            this.AutoInjectCB.Location = new System.Drawing.Point(425, 115);
+            this.AutoInjectCB.Location = new System.Drawing.Point(219, 118);
             this.AutoInjectCB.Name = "AutoInjectCB";
             this.AutoInjectCB.Size = new System.Drawing.Size(113, 17);
             this.AutoInjectCB.TabIndex = 33;
@@ -430,7 +444,7 @@
             this.AutoInjTB.ForeColor = System.Drawing.Color.Fuchsia;
             this.AutoInjTB.HideSelection = false;
             this.AutoInjTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.AutoInjTB.Location = new System.Drawing.Point(412, 73);
+            this.AutoInjTB.Location = new System.Drawing.Point(206, 74);
             this.AutoInjTB.Multiline = true;
             this.AutoInjTB.Name = "AutoInjTB";
             this.AutoInjTB.PasswordChar = '\0';
@@ -439,51 +453,6 @@
             this.AutoInjTB.SelectedText = "";
             this.AutoInjTB.Size = new System.Drawing.Size(200, 99);
             this.AutoInjTB.TabIndex = 34;
-            // 
-            // siticoneCheckBox2
-            // 
-            this.siticoneCheckBox2.AutoSize = true;
-            this.siticoneCheckBox2.Checked = global::xCheats.Properties.Settings.Default.BackgroundWork;
-            this.siticoneCheckBox2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.siticoneCheckBox2.CheckedState.BorderRadius = 0;
-            this.siticoneCheckBox2.CheckedState.BorderThickness = 0;
-            this.siticoneCheckBox2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.siticoneCheckBox2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::xCheats.Properties.Settings.Default, "BackgroundWork", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.siticoneCheckBox2.ForeColor = System.Drawing.Color.Magenta;
-            this.siticoneCheckBox2.Location = new System.Drawing.Point(219, 115);
-            this.siticoneCheckBox2.Name = "siticoneCheckBox2";
-            this.siticoneCheckBox2.Size = new System.Drawing.Size(149, 17);
-            this.siticoneCheckBox2.TabIndex = 31;
-            this.siticoneCheckBox2.Text = "Enable Background Work";
-            this.siticoneCheckBox2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.siticoneCheckBox2.UncheckedState.BorderRadius = 0;
-            this.siticoneCheckBox2.UncheckedState.BorderThickness = 0;
-            this.siticoneCheckBox2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            // 
-            // siticoneTextBox2
-            // 
-            this.siticoneTextBox2.Animated = true;
-            this.siticoneTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.siticoneTextBox2.DefaultText = "Here you can allow the background status";
-            this.siticoneTextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.siticoneTextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.siticoneTextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.siticoneTextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.siticoneTextBox2.FillColor = System.Drawing.Color.Black;
-            this.siticoneTextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.siticoneTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.siticoneTextBox2.ForeColor = System.Drawing.Color.Fuchsia;
-            this.siticoneTextBox2.HideSelection = false;
-            this.siticoneTextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.siticoneTextBox2.Location = new System.Drawing.Point(206, 73);
-            this.siticoneTextBox2.Multiline = true;
-            this.siticoneTextBox2.Name = "siticoneTextBox2";
-            this.siticoneTextBox2.PasswordChar = '\0';
-            this.siticoneTextBox2.PlaceholderText = "";
-            this.siticoneTextBox2.ReadOnly = true;
-            this.siticoneTextBox2.SelectedText = "";
-            this.siticoneTextBox2.Size = new System.Drawing.Size(200, 62);
-            this.siticoneTextBox2.TabIndex = 32;
             // 
             // AutoStartBtn
             // 
@@ -543,48 +512,6 @@
             this.siticoneButton1.TabIndex = 28;
             this.siticoneButton1.Text = "Add Exclusion to Windows Defender";
             this.siticoneButton1.Click += new System.EventHandler(this.Defender_Click);
-            // 
-            // ConnectionBox
-            // 
-            this.ConnectionBox.AutoSize = true;
-            this.ConnectionBox.Checked = global::xCheats.Properties.Settings.Default.Internet;
-            this.ConnectionBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ConnectionBox.CheckedState.BorderRadius = 0;
-            this.ConnectionBox.CheckedState.BorderThickness = 0;
-            this.ConnectionBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ConnectionBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::xCheats.Properties.Settings.Default, "Internet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ConnectionBox.ForeColor = System.Drawing.Color.Magenta;
-            this.ConnectionBox.Location = new System.Drawing.Point(425, 41);
-            this.ConnectionBox.Name = "ConnectionBox";
-            this.ConnectionBox.Size = new System.Drawing.Size(157, 17);
-            this.ConnectionBox.TabIndex = 6;
-            this.ConnectionBox.Text = "Disable Internet Connection";
-            this.ConnectionBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.ConnectionBox.UncheckedState.BorderRadius = 0;
-            this.ConnectionBox.UncheckedState.BorderThickness = 0;
-            this.ConnectionBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            // 
-            // siticoneTextBox12
-            // 
-            this.siticoneTextBox12.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.siticoneTextBox12.DefaultText = "Disable the Internet Connection\r\nand Update/Version Check";
-            this.siticoneTextBox12.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.siticoneTextBox12.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.siticoneTextBox12.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.siticoneTextBox12.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.siticoneTextBox12.FillColor = System.Drawing.Color.Black;
-            this.siticoneTextBox12.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.siticoneTextBox12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.siticoneTextBox12.ForeColor = System.Drawing.Color.Fuchsia;
-            this.siticoneTextBox12.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.siticoneTextBox12.Location = new System.Drawing.Point(412, 0);
-            this.siticoneTextBox12.Multiline = true;
-            this.siticoneTextBox12.Name = "siticoneTextBox12";
-            this.siticoneTextBox12.PasswordChar = '\0';
-            this.siticoneTextBox12.PlaceholderText = "";
-            this.siticoneTextBox12.SelectedText = "";
-            this.siticoneTextBox12.Size = new System.Drawing.Size(200, 67);
-            this.siticoneTextBox12.TabIndex = 7;
             // 
             // SaveSet
             // 
@@ -1053,28 +980,6 @@
             this.siticoneTabControl1.TabMenuOrientation = Siticone.Desktop.UI.WinForms.TabMenuOrientation.HorizontalTop;
             this.siticoneTabControl1.SelectedIndexChanged += new System.EventHandler(this.siticoneTabControl1_SelectedIndexChanged);
             // 
-            // GLName
-            // 
-            this.GLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GLName.ForeColor = System.Drawing.Color.White;
-            this.GLName.Location = new System.Drawing.Point(11, 201);
-            this.GLName.Name = "GLName";
-            this.GLName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.GLName.Size = new System.Drawing.Size(126, 29);
-            this.GLName.TabIndex = 45;
-            this.GLName.Text = "DisplayName: ";
-            // 
-            // GLName2
-            // 
-            this.GLName2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GLName2.ForeColor = System.Drawing.Color.White;
-            this.GLName2.Location = new System.Drawing.Point(167, 201);
-            this.GLName2.Name = "GLName2";
-            this.GLName2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.GLName2.Size = new System.Drawing.Size(126, 29);
-            this.GLName2.TabIndex = 46;
-            this.GLName2.Text = "DisplayName: ";
-            // 
             // Infos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1141,13 +1046,9 @@
         private System.Windows.Forms.Label label3;
         private Siticone.Desktop.UI.WinForms.SiticoneCheckBox AutoInjectCB;
         private Siticone.Desktop.UI.WinForms.SiticoneTextBox AutoInjTB;
-        private Siticone.Desktop.UI.WinForms.SiticoneCheckBox siticoneCheckBox2;
-        private Siticone.Desktop.UI.WinForms.SiticoneTextBox siticoneTextBox2;
         private Siticone.Desktop.UI.WinForms.SiticoneGradientButton AutoStartBtn;
         private Siticone.Desktop.UI.WinForms.SiticoneTextBox WS;
         private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton1;
-        private Siticone.Desktop.UI.WinForms.SiticoneCheckBox ConnectionBox;
-        private Siticone.Desktop.UI.WinForms.SiticoneTextBox siticoneTextBox12;
         private Siticone.Desktop.UI.WinForms.SiticoneButton SaveSet;
         private Siticone.Desktop.UI.WinForms.SiticoneCheckBox ConsoleHideBox;
         private Siticone.Desktop.UI.WinForms.SiticoneTextBox siticoneTextBox11;
