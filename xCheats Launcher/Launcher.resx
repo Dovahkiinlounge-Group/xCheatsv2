@@ -142,6 +142,9 @@
   <data name="Launcher.de" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Launcher.de.resx;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Launcher.pl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Launcher.pl.resx;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
