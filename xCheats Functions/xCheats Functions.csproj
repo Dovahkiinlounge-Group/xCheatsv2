@@ -9,6 +9,7 @@
     <NoWin32Manifest>true</NoWin32Manifest>
     <SignAssembly>False</SignAssembly>
     <AssemblyOriginatorKeyFile>C:\Users\Finga Weg\Documents\Resetdata\source\repos\CelinaxCute\xCheatsSign.pfx</AssemblyOriginatorKeyFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
