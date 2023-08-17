@@ -117,6 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="admintggltxtoff" xml:space="preserve">
+    <value>Admin Disabled</value>
+  </data>
+  <data name="admintggltxton" xml:space="preserve">
+    <value>Admin Enabled</value>
+  </data>
+  <data name="appname" xml:space="preserve">
+    <value>xCheats Launcher EN</value>
+  </data>
+  <data name="backgroundworkeroff" xml:space="preserve">
+    <value>Backgroundworker Off</value>
+  </data>
+  <data name="backgroundworkeron" xml:space="preserve">
+    <value>Backgroundworker On</value>
+  </data>
+  <data name="inetoff" xml:space="preserve">
+    <value>xCheats Is Offline</value>
+  </data>
+  <data name="ineton" xml:space="preserve">
+    <value>xCheats Is Online</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Launcher.de" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Launcher.de.resx;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -205,5 +230,11 @@
         H1qOo4YTYrBSSDwu4Nz2/vu3oEs1fcYLMZiEE1R+NNvocYx78LxG85zEKRzgn9qVNKgl+lWeQryGiMEG
         2UYMNsg2YrBBZsmZ/wedmwSLhZWA5wAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="startbtn1" xml:space="preserve">
+    <value>Start xCheats Admin</value>
+  </data>
+  <data name="startbtn2" xml:space="preserve">
+    <value>Start xCheats Normal</value>
   </data>
 </root>

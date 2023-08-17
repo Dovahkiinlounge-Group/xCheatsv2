@@ -116,7 +116,6 @@ namespace xCheats
             xCheats.Items.Add("----Deep Silver----");
             xCheats.Items.Add("HomeFront TR");
             RDR2InjST.Text = $"Inject {GameList.DllName}";
-
         }
 
         private void Main_Load(object sender, EventArgs e)

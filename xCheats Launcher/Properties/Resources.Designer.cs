@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Globalization;
+
 namespace xCheats_Launcher.Properties
 {
 
@@ -66,6 +69,11 @@ namespace xCheats_Launcher.Properties
             {
                 resourceCulture = value;
             }
+        }
+
+        internal static object GetString(string v, CultureInfo currentCulture)
+        {
+            throw new NotImplementedException();
         }
     }
 }

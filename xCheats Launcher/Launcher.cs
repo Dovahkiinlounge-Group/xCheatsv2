@@ -1,11 +1,14 @@
 ﻿using AutoUpdaterDotNET;
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Net.NetworkInformation;
 using System.Security.Principal;
 using System.Windows.Forms;
+using xCheats_Launcher.Properties;
 using xCheatsFunctions;
 
 namespace xCheats_Launcher
@@ -23,8 +26,12 @@ namespace xCheats_Launcher
         static string appFolderPath = Path.Combine(appDataPath, "xCheats");
         static string configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
         IniConfig config = new IniConfig();
+        CultureInfo lang = CultureInfo.CurrentCulture;
+        public ComponentResourceManager resources { get; } = new ComponentResourceManager(typeof(Launcher));
+
         public Launcher()
         {
+            var resources = new ComponentResourceManager(typeof(Launcher));
             System.Threading.Thread.Sleep(500);
             config.Check(configFilePath);
             //AutoUpdater.Start("https://xcheats.dovahkiinlounge.de/update.php");
@@ -41,6 +48,9 @@ namespace xCheats_Launcher
             bool isOfflineMode = GlobalSettings.isOfflineMode;
             bool isAdminMode = GlobalSettings.AdminMode;
             bool backgroundMode = GlobalSettings.BackgroundWork;
+            AppText.Text = string.Format(resources.GetString("appname", lang));
+
+
 
             if (isOfflineMode && isAdminMode && backgroundMode)
             {
@@ -173,12 +183,12 @@ namespace xCheats_Launcher
         {
             if (isOfflineMode)
             {
-                OffTggl.Text = "Offline Enabled";
+                OffTggl.Text = string.Format(resources.GetString("inetoff", lang));
                 OffTggl.ForeColor = Color.Red;
             }
             else
             {
-                OffTggl.Text = "Online(Click Here to go Offline)";
+                OffTggl.Text = string.Format(resources.GetString("ineton", lang));
                 OffTggl.ForeColor = Color.Green;
             }
         }
@@ -198,14 +208,15 @@ namespace xCheats_Launcher
         {
             if (isAdminMode)
             {
-                AdminTggl.Text = "Admin Enabled";
-                StartBtn.Text = "Start xCheats Admin";
+                
+                AdminTggl.Text = string.Format(resources.GetString("admintggltxton", lang));
+                StartBtn.Text = string.Format(resources.GetString("startbtn1", lang));
                 AdminTggl.ForeColor = Color.Green;
             }
             else
             {
-                AdminTggl.Text = "Admin Disabled";
-                StartBtn.Text = "Start xCheats";
+                AdminTggl.Text = string.Format(resources.GetString("admintggltxtoff", lang));
+                StartBtn.Text = string.Format(resources.GetString("startbtn2", lang));
                 AdminTggl.ForeColor = Color.Red;
             }
         }
@@ -214,12 +225,13 @@ namespace xCheats_Launcher
         {
             if (backgroundMode)
             {
-                BGTggl.Text = "BG Enabled";
+               
+                BGTggl.Text = string.Format(resources.GetString("backgroundworkeron", lang));
                 BGTggl.ForeColor = Color.Green;
             }
             else
             {
-                BGTggl.Text = "BG Disabled";
+                BGTggl.Text = string.Format(resources.GetString("backgroundworkeroff", lang));
                 BGTggl.ForeColor = Color.Red;
             }
         }

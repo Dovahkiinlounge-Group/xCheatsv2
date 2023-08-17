@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
             this.Window = new Zeroit.Framework.Form.ZeroitChromeForm();
+            this.AdminTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
             this.OffTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
             this.BGTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
             this.zeroitLollipopButton1 = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AppText = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopLabel();
             this.StartBtn = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopButton();
-            this.AdminTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
             this.Window.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,21 @@
             this.Window.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.Window.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
             this.Window.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
+            // 
+            // AdminTggl
+            // 
+            this.AdminTggl.AllowTransparency = true;
+            this.AdminTggl.Checked = false;
+            this.AdminTggl.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(142)))), ((int)(((byte)(245)))));
+            this.AdminTggl.ForeColor = System.Drawing.Color.Green;
+            this.AdminTggl.Location = new System.Drawing.Point(22, 127);
+            this.AdminTggl.Name = "AdminTggl";
+            this.AdminTggl.RectangleWidth = 1;
+            this.AdminTggl.Size = new System.Drawing.Size(102, 20);
+            this.AdminTggl.TabIndex = 8;
+            this.AdminTggl.Text = "Admin Mode";
+            this.AdminTggl.UncheckedColor = System.Drawing.Color.White;
+            this.AdminTggl.Click += new System.EventHandler(this.AdminTggl_Click);
             // 
             // OffTggl
             // 
@@ -173,21 +188,6 @@
             this.StartBtn.Text = "Start xCheats";
             this.StartBtn.TextRendering = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.StartBtn.Click += new System.EventHandler(this.StartBtn_Click);
-            // 
-            // AdminTggl
-            // 
-            this.AdminTggl.AllowTransparency = true;
-            this.AdminTggl.Checked = false;
-            this.AdminTggl.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(142)))), ((int)(((byte)(245)))));
-            this.AdminTggl.ForeColor = System.Drawing.Color.Green;
-            this.AdminTggl.Location = new System.Drawing.Point(22, 127);
-            this.AdminTggl.Name = "AdminTggl";
-            this.AdminTggl.RectangleWidth = 1;
-            this.AdminTggl.Size = new System.Drawing.Size(102, 20);
-            this.AdminTggl.TabIndex = 8;
-            this.AdminTggl.Text = "Admin Mode";
-            this.AdminTggl.UncheckedColor = System.Drawing.Color.White;
-            this.AdminTggl.Click += new System.EventHandler(this.AdminTggl_Click);
             // 
             // Launcher
             // 
