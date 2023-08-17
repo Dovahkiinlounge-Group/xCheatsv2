@@ -1,4 +1,4 @@
-﻿using xCheatsHelper;
+﻿using xCheatsFunctions.mem;
 using System.ComponentModel;
 using System.Windows.Forms;
 using x = xCheats.Calls.API;
@@ -8,7 +8,7 @@ namespace xCheats
 {
     public partial class RE4 : Form
     {
-        public Mem m = new Mem();
+        memory m = new memory();
         bool ProcOpen = false;
 
 

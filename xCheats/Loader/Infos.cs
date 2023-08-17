@@ -21,7 +21,6 @@ using System.Threading;
 using IWshRuntimeLibrary;
 using Microsoft.Win32;
 using File = System.IO.File;
-using xCheatsHelper;
 using xCheatsFunctions;
 using xCheats.Calls;
 using System.ComponentModel;

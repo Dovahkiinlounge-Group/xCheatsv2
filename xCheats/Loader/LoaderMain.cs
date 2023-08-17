@@ -14,7 +14,6 @@ using Microsoft.Win32;
 using xCheats;
 using System.Management;
 using System.ComponentModel;
-using xCheatsHelper;
 using System.Timers;
 using Timer = System.Windows.Forms.Timer;
 using xCheats.Calls;

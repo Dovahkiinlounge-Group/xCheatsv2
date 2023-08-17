@@ -306,10 +306,6 @@
       <Project>{efe6b4bd-db1e-40f3-afff-c969b4f8498f}</Project>
       <Name>xCheats Functions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\xCheats Helper\xCheats Helper.csproj">
-      <Project>{a7f64909-ac1b-4120-9281-e8cd59294e9f}</Project>
-      <Name>xCheats Helper</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

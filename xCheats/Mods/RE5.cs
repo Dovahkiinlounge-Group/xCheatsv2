@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
-using xCheatsHelper;
+using xCheatsFunctions.mem;
 using x = xCheats.Calls.API;
 
 namespace xCheats
@@ -12,7 +12,7 @@ namespace xCheats
         private KeyboardListener _listener;
         private bool validNumber = false;
         private int temporaryNumb = 0;
-        private Mem m = new Mem();
+        private memory m = new memory();
         private int processID;
         private bool processOpen = false;
 

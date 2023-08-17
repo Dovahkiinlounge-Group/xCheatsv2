@@ -1,4 +1,4 @@
-﻿using xCheatsHelper;
+﻿using xCheatsFunctions .mem;
 using System.ComponentModel;
 using System.Windows.Forms;
 using x = xCheats.Calls.API;
@@ -8,8 +8,8 @@ using System;
 namespace xCheats
 {
     public partial class HFTR : Form
-    {
-        public Mem m = new Mem();
+    {   
+        public memory m = new memory();
         bool ProcOpen = false;
         private KeyboardListener _listener;
 

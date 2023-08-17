@@ -1,4 +1,4 @@
-﻿using xCheatsHelper;
+﻿using xCheatsFunctions.mem;
 using System.ComponentModel;
 using System.Windows.Forms;
 using xCheats;
@@ -7,7 +7,7 @@ namespace xCheats
 {
     public partial class GTAVC : Form
     {
-        public Mem m = new Mem();
+        public memory m = new memory();
         bool ProcOpen = false;
 
         public GTAVC()

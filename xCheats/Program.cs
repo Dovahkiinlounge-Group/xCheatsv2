@@ -5,7 +5,6 @@ using System.Management.Automation.Remoting;
 using System.Security.Principal;
 using System.Windows.Forms;
 using x = xCheats.Calls.API;
-using static xCheatsHelper.Imps;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
