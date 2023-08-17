@@ -11,6 +11,8 @@ using Microsoft.Win32;
 using System.Configuration;
 using System.IO;
 using Newtonsoft.Json;
+using xCheatsFunctions;
+using System.Threading;
 // ...
 
 
@@ -18,14 +20,17 @@ namespace xCheats.Loader
 {
     public partial class RDRO : Form
     {
-
-
+        static string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        static string appFolderPath = Path.Combine(appDataPath, "xCheats");
+        static string configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
+        IniConfig config = new IniConfig();
         private string JsonFilePath;
         public RDRO()
         {
             InitializeComponent();
             string roamingFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            JsonFilePath = Path.Combine(roamingFolderPath + "\\Exodus Client\\", "Credentials - Kopie.json");
+            JsonFilePath = Path.Combine(roamingFolderPath + "\\Exodus Client\\", "Credentials.json");
+            config.Load(configFilePath);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -36,21 +41,21 @@ namespace xCheats.Loader
         private void RDRO_Load(object sender, EventArgs e)
         {
             
-            Pfad.Text = "Installationspfad: " + Properties.Settings.Default.SelectedInstallPath;
+            Pfad.Text = "Installationspfad: " + GlobalSettings.SelectedInstallPath;
             // Check if the SelectedInstallPath setting is not empty
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.SelectedInstallPath))
+            if (!string.IsNullOrEmpty(GlobalSettings.SelectedInstallPath))
             {
                 // Disable the button when the path is already set
                 //PfadBtn.Enabled = false;
             }
-            int buttonMode = Properties.Settings.Default.ResetPfad;
+            int buttonModes = GlobalSettings.buttonMode;
 
-            if (buttonMode == 1)
+            if (buttonModes == 1)
             {
                 // Set button text to "Reset Path"
                 PfadBtn.Text = "Reset Path";
             }
-            else if (buttonMode == 0)
+            else if (buttonModes == 0)
             {
                 // Set button text to "Get Path"
                 PfadBtn.Text = "Get Path";
@@ -77,7 +82,7 @@ namespace xCheats.Loader
             string steamInstallPath = GetValueFromRegistry(keyPath, "InstallFolderSteam");
 
             // Retrieve the previously selected installation path from application settings
-            string savedPath = Properties.Settings.Default.SelectedInstallPath;
+            string savedPath = GlobalSettings.SelectedInstallPath;
 
             if (!string.IsNullOrEmpty(installPath) && !string.IsNullOrEmpty(steamInstallPath))
             {
@@ -117,8 +122,7 @@ namespace xCheats.Loader
             }
 
             // Save the selected installation path in application settings
-            Properties.Settings.Default.SelectedInstallPath = installPath;
-            Properties.Settings.Default.Save();
+            GlobalSettings.SelectedInstallPath = installPath;
 
             return installPath;
         }
@@ -127,7 +131,7 @@ namespace xCheats.Loader
         {
             // Retrieve the installation path
 
-            string installPath = Properties.Settings.Default.SelectedInstallPath;
+            string installPath = GlobalSettings.SelectedInstallPath;
 
             if (!string.IsNullOrEmpty(installPath))
             {
@@ -248,13 +252,13 @@ namespace xCheats.Loader
         private void PfadBtn_Click(object sender, EventArgs e)
         {
 
-            int buttonMode = Properties.Settings.Default.ResetPfad;
+            int buttonModes = GlobalSettings.buttonMode;
 
-            if (buttonMode == 1)
+            if (buttonModes == 1)
             {
                ResetPath();
             }
-            else if (buttonMode == 0)
+            else if (buttonModes == 0)
             {
                 SetPath();
             }
@@ -265,30 +269,27 @@ namespace xCheats.Loader
             string installPath = GetRedDeadRedemption2InstallPath();
 
             // Save the installation path in the application settings
-            Properties.Settings.Default.SelectedInstallPath = installPath;
-            Properties.Settings.Default.ResetPfad = 1;
-            Properties.Settings.Default.Save();
-
-            // Disable the button after the path is set
-            //PfadBtn.Enabled = false;
-
-            // Display a message to indicate successful retrieval and saving
+            config.SetValue("Path", "RedDead2", installPath.ToString());
+            config.SetValue("Path", "RedDead2Btn", "1");
+            config.Save(configFilePath);
             MessageBox.Show("Installation path retrieved and saved successfully.");
+            Thread.Sleep(200);
             ReloadForm();
         }
 
         private void ResetPath()
         {
-            Properties.Settings.Default.SelectedInstallPath = string.Empty;
-            Properties.Settings.Default.ResetPfad = 0;
-            Properties.Settings.Default.Save();
+            config.SetValue("Path", "RedDead2", string.Empty);
+            config.SetValue("Path", "RedDead2Btn", "0");
+            config.Save(configFilePath);
+            Thread.Sleep(200);
             ReloadForm();
         }
 
         private void GoPublicBtn_Click(object sender, EventArgs e)
         {
             // Retrieve the installation path
-            string installPath = Properties.Settings.Default.SelectedInstallPath;
+            string installPath = GlobalSettings.SelectedInstallPath;
 
             if (!string.IsNullOrEmpty(installPath))
             {

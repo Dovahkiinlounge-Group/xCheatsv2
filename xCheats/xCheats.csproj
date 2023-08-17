@@ -131,9 +131,6 @@
     <Reference Include="Cake.Powershell, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Cake.Powershell.1.0.1\lib\net46\Cake.Powershell.dll</HintPath>
     </Reference>
-    <Reference Include="GameOverlay, Version=4.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GameOverlay.Net.4.3.1\lib\net48\GameOverlay.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Dynamic, Version=1.3.4.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamicLanguageRuntime.1.3.4\lib\net452\Microsoft.Dynamic.dll</HintPath>
     </Reference>
@@ -200,7 +197,6 @@
   <ItemGroup>
     <Compile Include="Calls\Functions.cs" />
     <Compile Include="Calls\GameList.cs" />
-    <Compile Include="Calls\HardwareInfo.cs" />
     <Compile Include="Calls\Injector.cs" />
     <Compile Include="Loader\RDRO.cs">
       <SubType>Form</SubType>
@@ -232,7 +228,6 @@
     <Compile Include="Mods\RE5.Designer.cs">
       <DependentUpon>RE5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calls\KeyboardListener.cs" />
     <Compile Include="Loader\Infos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -305,6 +300,10 @@
     <ProjectReference Include="..\xCheats Functions\xCheats Functions.csproj">
       <Project>{efe6b4bd-db1e-40f3-afff-c969b4f8498f}</Project>
       <Name>xCheats Functions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xCheats Launcher\xCheats Launcher.csproj">
+      <Project>{6aa6b1a9-f574-43d9-b1ee-f28da222a030}</Project>
+      <Name>xCheats Launcher</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
