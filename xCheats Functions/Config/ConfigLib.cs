@@ -54,12 +54,39 @@
             {
                 if (sectionData.TryGetValue(key, out var value))
                 {
-                    // Automatically detect boolean values
                     if (bool.TryParse(value, out bool boolValue))
                     {
                         return boolValue.ToString();
                     }
                     return value;
+                }
+            }
+
+            return defaultValue;
+        }
+        public string GetStringValue(string section, string key, string defaultValue = "")
+        {
+            if (sections.TryGetValue(section, out var sectionData))
+            {
+                if (sectionData.TryGetValue(key, out var value))
+                {
+                    return value;
+                }
+            }
+
+            return defaultValue;
+        }
+
+        public int GetIntValue(string section, string key, int defaultValue = 0)
+        {
+            if (sections.TryGetValue(section, out var sectionData))
+            {
+                if (sectionData.TryGetValue(key, out var value))
+                {
+                    if (int.TryParse(value, out int intValue))
+                    {
+                        return intValue;
+                    }
                 }
             }
 
@@ -100,6 +127,8 @@
                 SetValue("Settings", "OfflineMode", "false");
                 SetValue("Settings", "AdminMode", "false");
                 SetValue("Settings", "BackgroundWorker", "false");
+                SetValue("Path", "RedDead2", "");
+                SetValue("Path", "RedDead2Btn", "0"); // Changed default value to "0"
                 Save(filepath);
             }
             else
@@ -123,11 +152,22 @@
                     SetValue("Settings", "BackgroundWorker", "false");
                     configChanged = true;
                 }
+                if (GetValue("Path", "RedDead2") == "")
+                {
+                    SetValue("Path", "RedDead2", "");
+                    configChanged = true;
+                }
+                if (GetValue("Path", "RedDead2Btn") == "")
+                {
+                    SetValue("Path", "RedDead2Btn", "0");
+                    configChanged = true;
+                }
                 if (configChanged)
                 {
                     Save(filepath);
                 }
             }
         }
+
     }
 }
