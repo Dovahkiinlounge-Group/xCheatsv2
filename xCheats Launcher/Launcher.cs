@@ -49,6 +49,7 @@ namespace xCheats_Launcher
             bool isAdminMode = GlobalSettings.AdminMode;
             bool backgroundMode = GlobalSettings.BackgroundWork;
             AppText.Text = string.Format(resources.GetString("appname", lang));
+            MessageBox.Show("" + GlobalSettings.SelectedInstallPath, "TestNotify" );
 
 
 
