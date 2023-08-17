@@ -91,13 +91,6 @@ namespace xCheats
                 Notify.Dispose();
                 this.Hide();
             }
-            else if (xCheats.Text == "CSGO(Insecure)")
-            {
-                CSGO CS = new CSGO();
-                CS.Show();
-                Notify.Dispose();
-                this.Hide();
-            }
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -122,8 +115,6 @@ namespace xCheats
             xCheats.Items.Add("Vice City");
             xCheats.Items.Add("----Deep Silver----");
             xCheats.Items.Add("HomeFront TR");
-            xCheats.Items.Add("---Alpha States---");
-            xCheats.Items.Add("CSGO(Insecure)");
             RDR2InjST.Text = $"Inject {GameList.DllName}";
 
         }
