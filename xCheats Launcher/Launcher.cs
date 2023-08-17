@@ -187,7 +187,6 @@ namespace xCheats_Launcher
         {
             BGTggl.Enabled = false;
             isFunction3Active = !isFunction3Active;
-            
             clickTimer.Start();
             BGTggl.Checked = isFunction3Active;
             UpdateBackground(BGTggl.Checked);
