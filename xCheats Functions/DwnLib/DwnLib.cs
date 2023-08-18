@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Net;
+﻿using System.Net;
 using System.IO.Compression;
 
 namespace xCheatsFunctions
@@ -13,6 +11,15 @@ namespace xCheatsFunctions
         public void DownloadAndExtractZip(string url, string downloadFolderPath)
         {
             string zipFilePath = Path.Combine(downloadFolderPath, "Release.zip");
+
+            DownloadFile(url, zipFilePath);
+        }
+
+        public void DownloadAndExtractZipv2(string url, string downloadFolderPath)
+        {
+            // Generiere einen zufälligen Dateinamen für die heruntergeladene ZIP-Datei
+            string zipFileName = Guid.NewGuid().ToString() + ".zip";
+            string zipFilePath = Path.Combine(downloadFolderPath, zipFileName);
 
             DownloadFile(url, zipFilePath);
         }
