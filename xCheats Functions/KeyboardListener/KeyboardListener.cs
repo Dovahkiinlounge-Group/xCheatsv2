@@ -1,7 +1,4 @@
-﻿using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
-namespace xCheatsFunctions
+﻿namespace xCheatsFunctions
 {
     public class KeyboardListener
     {

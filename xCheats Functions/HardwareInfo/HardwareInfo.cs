@@ -1,5 +1,4 @@
-﻿using System.Management;
-namespace xCheatsFunctions
+﻿namespace xCheatsFunctions
 {
 
     public static class HardwareInfo
