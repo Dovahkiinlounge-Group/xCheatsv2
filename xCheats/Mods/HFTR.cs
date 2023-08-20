@@ -1,4 +1,5 @@
-﻿using xCheatsFunctions .mem;
+﻿using xCheatsFunctions.mem;
+using xCheatsFunctions;
 using System.ComponentModel;
 using System.Windows.Forms;
 using x = xCheats.Calls.API;
@@ -33,7 +34,7 @@ namespace xCheats
             }
         }
 
-        private void BOWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void BOWorker_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
         {
             if (ProcOpen)
             {

@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using xCheatsFunctions.mem;
+using xCheatsFunctions;
 using x = xCheats.Calls.API;
 
 namespace xCheats

@@ -430,7 +430,7 @@ namespace xCheats.Loader
                 }
 
                 // Start the download and extraction
-                downloadManager.DownloadAndExtractZip(DOWNLOAD_URL2, xCheatsDownloadsPath);
+                downloadManager.DownloadAndExtractZipv2(DOWNLOAD_URL2, xCheatsDownloadsPath);
             }
         }
     }
