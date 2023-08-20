@@ -25,6 +25,7 @@ namespace xCheats_Launcher
         static string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         static string appFolderPath = Path.Combine(appDataPath, "xCheats");
         static string configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
+        static string error = Path.Combine(appDataPath, "data\\logs");
         IniConfig config = new IniConfig();
         CultureInfo lang = CultureInfo.CurrentCulture;
         public ComponentResourceManager resources { get; } = new ComponentResourceManager(typeof(Launcher));
@@ -148,7 +149,7 @@ namespace xCheats_Launcher
             }
             catch (Exception ex)
             {
-                ErrorLog.LogError(ex);
+                ErrorLogv2.LogError(ex, error);
             }
         }
 
