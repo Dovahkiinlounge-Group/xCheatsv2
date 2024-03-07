@@ -1,4 +1,4 @@
-CELINE, INC. OPEN-SOURCE LICENSE
+DovahkiinLounge Group. OPEN-SOURCE LICENSE
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, subject to the following conditions:
 
@@ -7,8 +7,8 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
    1.2 You may distribute the Software or its modified versions as part of your own projects or products.
 
 2. Disallowed Uses:
-   2.1 You may not use the name "Celine, Inc." or the names of its contributors to endorse or promote any products or services without prior written permission.
-   2.2 Redistribution of the Software, except as part of your own projects or products, is not allowed without explicit written permission from "Celine, Inc."
+   2.1 You may not use the name "DovahkiinLounge Group." or the names of its contributors to endorse or promote any products or services without prior written permission.
+   2.2 Redistribution of the Software, except as part of your own projects or products, is not allowed without explicit written permission from "DovahkiinLounge Group."
    2.3 The Software may not be sublicensed, and any attempts to sublicense, sell, or lease the Software are expressly prohibited.
 
 3. Cheat Use:
@@ -24,4 +24,4 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 ---
 
-For more information about Celine, Inc., please visit: https://xcheats.dovahkiinlounge.de
+For more information about DovahkiinLounge Group., please visit: https://dovahkiinlounge.de
