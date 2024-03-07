@@ -64,7 +64,7 @@
             Window.Name = "Window";
             Window.NoRounding = true;
             Window.Sizable = false;
-            Window.Size = new System.Drawing.Size(976, 538);
+            Window.Size = new System.Drawing.Size(898, 538);
             Window.SmartBounds = true;
             Window.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Window.TabIndex = 0;
@@ -152,7 +152,7 @@
             // 
             pictureBox1.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pictureBox1.Location = new System.Drawing.Point(372, 155);
+            pictureBox1.Location = new System.Drawing.Point(336, 155);
             pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(224, 220);
@@ -166,7 +166,7 @@
             AppText.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             AppText.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             AppText.ForeColor = System.Drawing.Color.Fuchsia;
-            AppText.Location = new System.Drawing.Point(284, 83);
+            AppText.Location = new System.Drawing.Point(256, 83);
             AppText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             AppText.Name = "AppText";
             AppText.Size = new System.Drawing.Size(391, 52);
@@ -191,7 +191,7 @@
             StartBtn.Name = "StartBtn";
             StartBtn.RippleEffectColor = System.Drawing.Color.Black;
             StartBtn.RippleOpacity = 25;
-            StartBtn.Size = new System.Drawing.Size(976, 35);
+            StartBtn.Size = new System.Drawing.Size(898, 35);
             StartBtn.Smoothing = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             StartBtn.TabIndex = 0;
             StartBtn.Text = "Start xCheats";
@@ -202,7 +202,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(976, 538);
+            ClientSize = new System.Drawing.Size(898, 538);
             Controls.Add(Window);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
