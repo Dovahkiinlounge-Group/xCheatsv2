@@ -29,181 +29,190 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
-            this.Window = new Zeroit.Framework.Form.ZeroitChromeForm();
-            this.AdminTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
-            this.OffTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
-            this.BGTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
-            this.zeroitLollipopButton1 = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.AppText = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopLabel();
-            this.StartBtn = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopButton();
-            this.Window.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            Window = new Zeroit.Framework.Form.ZeroitChromeForm();
+            AdminTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
+            OffTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
+            BGTggl = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopCheckBox();
+            zeroitLollipopButton1 = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopButton();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            AppText = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopLabel();
+            StartBtn = new Zeroit.Framework.LollipopControls.Controls.ZeroitLollipopButton();
+            Window.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // Window
             // 
-            this.Window.BackColor = System.Drawing.Color.Black;
-            this.Window.BorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Window.ColorBackground1 = System.Drawing.Color.Violet;
-            this.Window.ColorBackground2 = System.Drawing.Color.LightSeaGreen;
-            this.Window.Controls.Add(this.AdminTggl);
-            this.Window.Controls.Add(this.OffTggl);
-            this.Window.Controls.Add(this.BGTggl);
-            this.Window.Controls.Add(this.zeroitLollipopButton1);
-            this.Window.Controls.Add(this.pictureBox1);
-            this.Window.Controls.Add(this.AppText);
-            this.Window.Controls.Add(this.StartBtn);
-            this.Window.Customization = "AAAA//////8AAP//";
-            this.Window.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Window.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Window.Image = null;
-            this.Window.Location = new System.Drawing.Point(0, 0);
-            this.Window.Movable = false;
-            this.Window.Name = "Window";
-            this.Window.NoRounding = false;
-            this.Window.Sizable = false;
-            this.Window.Size = new System.Drawing.Size(800, 450);
-            this.Window.SmartBounds = true;
-            this.Window.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Window.TabIndex = 0;
-            this.Window.Text = "xCheats";
-            this.Window.TransparencyKey = System.Drawing.Color.Empty;
-            this.Window.Transparent = false;
-            this.Window.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
-            this.Window.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
-            this.Window.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
+            Window.BackColor = System.Drawing.Color.Black;
+            Window.BorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Window.ColorBackground1 = System.Drawing.Color.Violet;
+            Window.ColorBackground2 = System.Drawing.Color.LightSeaGreen;
+            Window.Controls.Add(AdminTggl);
+            Window.Controls.Add(OffTggl);
+            Window.Controls.Add(BGTggl);
+            Window.Controls.Add(zeroitLollipopButton1);
+            Window.Controls.Add(pictureBox1);
+            Window.Controls.Add(AppText);
+            Window.Controls.Add(StartBtn);
+            Window.Customization = "AAAA//////8AAP//";
+            Window.Dock = System.Windows.Forms.DockStyle.Fill;
+            Window.Font = new System.Drawing.Font("Segoe UI", 9F);
+            Window.Image = null;
+            Window.Location = new System.Drawing.Point(0, 0);
+            Window.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Window.Movable = false;
+            Window.Name = "Window";
+            Window.NoRounding = true;
+            Window.Sizable = false;
+            Window.Size = new System.Drawing.Size(1067, 680);
+            Window.SmartBounds = true;
+            Window.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Window.TabIndex = 0;
+            Window.Text = "xCheats";
+            Window.TransparencyKey = System.Drawing.Color.Empty;
+            Window.Transparent = false;
+            Window.MouseDown += MainForm_MouseDown;
+            Window.MouseMove += MainForm_MouseMove;
+            Window.MouseUp += MainForm_MouseUp;
             // 
             // AdminTggl
             // 
-            this.AdminTggl.AllowTransparency = true;
-            this.AdminTggl.Checked = false;
-            this.AdminTggl.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(142)))), ((int)(((byte)(245)))));
-            this.AdminTggl.ForeColor = System.Drawing.Color.Green;
-            this.AdminTggl.Location = new System.Drawing.Point(22, 127);
-            this.AdminTggl.Name = "AdminTggl";
-            this.AdminTggl.RectangleWidth = 1;
-            this.AdminTggl.Size = new System.Drawing.Size(102, 20);
-            this.AdminTggl.TabIndex = 8;
-            this.AdminTggl.Text = "Admin Mode";
-            this.AdminTggl.UncheckedColor = System.Drawing.Color.White;
-            this.AdminTggl.Click += new System.EventHandler(this.AdminTggl_Click);
+            AdminTggl.AllowTransparency = true;
+            AdminTggl.Checked = false;
+            AdminTggl.CheckedColor = System.Drawing.Color.FromArgb(80, 142, 245);
+            AdminTggl.ForeColor = System.Drawing.Color.Green;
+            AdminTggl.Location = new System.Drawing.Point(29, 195);
+            AdminTggl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            AdminTggl.Name = "AdminTggl";
+            AdminTggl.RectangleWidth = 1;
+            AdminTggl.Size = new System.Drawing.Size(123, 20);
+            AdminTggl.TabIndex = 8;
+            AdminTggl.Text = "Admin Mode";
+            AdminTggl.UncheckedColor = System.Drawing.Color.White;
+            AdminTggl.Click += AdminTggl_Click;
             // 
             // OffTggl
             // 
-            this.OffTggl.AllowTransparency = true;
-            this.OffTggl.Checked = false;
-            this.OffTggl.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(142)))), ((int)(((byte)(245)))));
-            this.OffTggl.ForeColor = System.Drawing.Color.Magenta;
-            this.OffTggl.Location = new System.Drawing.Point(22, 75);
-            this.OffTggl.Name = "OffTggl";
-            this.OffTggl.RectangleWidth = 1;
-            this.OffTggl.Size = new System.Drawing.Size(65, 20);
-            this.OffTggl.TabIndex = 7;
-            this.OffTggl.Text = "Offline";
-            this.OffTggl.UncheckedColor = System.Drawing.Color.White;
-            this.OffTggl.Click += new System.EventHandler(this.OffTggl_Click);
+            OffTggl.AllowTransparency = true;
+            OffTggl.Checked = false;
+            OffTggl.CheckedColor = System.Drawing.Color.FromArgb(80, 142, 245);
+            OffTggl.ForeColor = System.Drawing.Color.Magenta;
+            OffTggl.Location = new System.Drawing.Point(29, 115);
+            OffTggl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            OffTggl.Name = "OffTggl";
+            OffTggl.RectangleWidth = 1;
+            OffTggl.Size = new System.Drawing.Size(77, 20);
+            OffTggl.TabIndex = 7;
+            OffTggl.Text = "Offline";
+            OffTggl.UncheckedColor = System.Drawing.Color.White;
+            OffTggl.Click += OffTggl_Click;
             // 
             // BGTggl
             // 
-            this.BGTggl.AllowTransparency = true;
-            this.BGTggl.Checked = false;
-            this.BGTggl.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(142)))), ((int)(((byte)(245)))));
-            this.BGTggl.ForeColor = System.Drawing.Color.Green;
-            this.BGTggl.Location = new System.Drawing.Point(22, 101);
-            this.BGTggl.Name = "BGTggl";
-            this.BGTggl.RectangleWidth = 1;
-            this.BGTggl.Size = new System.Drawing.Size(98, 20);
-            this.BGTggl.TabIndex = 6;
-            this.BGTggl.Text = "Background";
-            this.BGTggl.UncheckedColor = System.Drawing.Color.White;
-            this.BGTggl.Click += new System.EventHandler(this.BGTggl_Click);
+            BGTggl.AllowTransparency = true;
+            BGTggl.Checked = false;
+            BGTggl.CheckedColor = System.Drawing.Color.FromArgb(80, 142, 245);
+            BGTggl.ForeColor = System.Drawing.Color.Green;
+            BGTggl.Location = new System.Drawing.Point(29, 155);
+            BGTggl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            BGTggl.Name = "BGTggl";
+            BGTggl.RectangleWidth = 1;
+            BGTggl.Size = new System.Drawing.Size(118, 20);
+            BGTggl.TabIndex = 6;
+            BGTggl.Text = "Background";
+            BGTggl.UncheckedColor = System.Drawing.Color.White;
+            BGTggl.Click += BGTggl_Click;
             // 
             // zeroitLollipopButton1
             // 
-            this.zeroitLollipopButton1.AllowTransparency = true;
-            this.zeroitLollipopButton1.AnimationInterval = 1;
-            this.zeroitLollipopButton1.BackColor = System.Drawing.Color.Transparent;
-            this.zeroitLollipopButton1.BGColor = "#508ef5";
-            this.zeroitLollipopButton1.Corners = 1F;
-            this.zeroitLollipopButton1.DisabledBGColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(178)))), ((int)(((byte)(181)))));
-            this.zeroitLollipopButton1.DoubleRipple = false;
-            this.zeroitLollipopButton1.EnabledBGColor = System.Drawing.Color.Black;
-            this.zeroitLollipopButton1.FontColor = "#ffffff";
-            this.zeroitLollipopButton1.ForeColor = System.Drawing.Color.Red;
-            this.zeroitLollipopButton1.Location = new System.Drawing.Point(776, 0);
-            this.zeroitLollipopButton1.Name = "zeroitLollipopButton1";
-            this.zeroitLollipopButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.zeroitLollipopButton1.RippleEffectColor = System.Drawing.Color.Black;
-            this.zeroitLollipopButton1.RippleOpacity = 25;
-            this.zeroitLollipopButton1.Size = new System.Drawing.Size(24, 22);
-            this.zeroitLollipopButton1.Smoothing = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.zeroitLollipopButton1.TabIndex = 3;
-            this.zeroitLollipopButton1.Text = "X";
-            this.zeroitLollipopButton1.TextRendering = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.zeroitLollipopButton1.Click += new System.EventHandler(this.zeroitLollipopButton1_Click);
+            zeroitLollipopButton1.AllowTransparency = true;
+            zeroitLollipopButton1.AnimationInterval = 1;
+            zeroitLollipopButton1.BackColor = System.Drawing.Color.Transparent;
+            zeroitLollipopButton1.BGColor = "#508ef5";
+            zeroitLollipopButton1.Corners = 1F;
+            zeroitLollipopButton1.DisabledBGColor = System.Drawing.Color.FromArgb(176, 178, 181);
+            zeroitLollipopButton1.DoubleRipple = false;
+            zeroitLollipopButton1.EnabledBGColor = System.Drawing.Color.Black;
+            zeroitLollipopButton1.FontColor = "#ffffff";
+            zeroitLollipopButton1.ForeColor = System.Drawing.Color.Red;
+            zeroitLollipopButton1.Location = new System.Drawing.Point(1035, 0);
+            zeroitLollipopButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            zeroitLollipopButton1.Name = "zeroitLollipopButton1";
+            zeroitLollipopButton1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            zeroitLollipopButton1.RippleEffectColor = System.Drawing.Color.Black;
+            zeroitLollipopButton1.RippleOpacity = 25;
+            zeroitLollipopButton1.Size = new System.Drawing.Size(32, 34);
+            zeroitLollipopButton1.Smoothing = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            zeroitLollipopButton1.TabIndex = 3;
+            zeroitLollipopButton1.Text = "X";
+            zeroitLollipopButton1.TextRendering = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            zeroitLollipopButton1.Click += zeroitLollipopButton1_Click;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(316, 129);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 158);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.BackgroundImage = (System.Drawing.Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Location = new System.Drawing.Point(421, 198);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(224, 243);
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
             // 
             // AppText
             // 
-            this.AppText.AllowTransparency = false;
-            this.AppText.AutoSize = true;
-            this.AppText.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.AppText.Font = new System.Drawing.Font("Aharoni", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AppText.ForeColor = System.Drawing.Color.Fuchsia;
-            this.AppText.Location = new System.Drawing.Point(243, 75);
-            this.AppText.Name = "AppText";
-            this.AppText.Size = new System.Drawing.Size(310, 35);
-            this.AppText.TabIndex = 1;
-            this.AppText.Text = "xCheats Launcher";
+            AppText.AllowTransparency = false;
+            AppText.AutoSize = true;
+            AppText.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            AppText.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            AppText.ForeColor = System.Drawing.Color.Fuchsia;
+            AppText.Location = new System.Drawing.Point(324, 115);
+            AppText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            AppText.Name = "AppText";
+            AppText.Size = new System.Drawing.Size(391, 52);
+            AppText.TabIndex = 1;
+            AppText.Text = "xCheats Launcher";
             // 
             // StartBtn
             // 
-            this.StartBtn.AllowTransparency = true;
-            this.StartBtn.AnimationInterval = 1;
-            this.StartBtn.BackColor = System.Drawing.Color.Transparent;
-            this.StartBtn.BGColor = "#fffff";
-            this.StartBtn.Corners = 1F;
-            this.StartBtn.DisabledBGColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(178)))), ((int)(((byte)(181)))));
-            this.StartBtn.DoubleRipple = false;
-            this.StartBtn.EnabledBGColor = System.Drawing.Color.Transparent;
-            this.StartBtn.FontColor = "#ffffff";
-            this.StartBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.StartBtn.Location = new System.Drawing.Point(294, 415);
-            this.StartBtn.Name = "StartBtn";
-            this.StartBtn.RippleEffectColor = System.Drawing.Color.Black;
-            this.StartBtn.RippleOpacity = 25;
-            this.StartBtn.Size = new System.Drawing.Size(201, 23);
-            this.StartBtn.Smoothing = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            this.StartBtn.TabIndex = 0;
-            this.StartBtn.Text = "Start xCheats";
-            this.StartBtn.TextRendering = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.StartBtn.Click += new System.EventHandler(this.StartBtn_Click);
+            StartBtn.AllowTransparency = true;
+            StartBtn.AnimationInterval = 1;
+            StartBtn.BackColor = System.Drawing.Color.Transparent;
+            StartBtn.BGColor = "#fffff";
+            StartBtn.Corners = 1F;
+            StartBtn.DisabledBGColor = System.Drawing.Color.FromArgb(176, 178, 181);
+            StartBtn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            StartBtn.DoubleRipple = false;
+            StartBtn.EnabledBGColor = System.Drawing.Color.Transparent;
+            StartBtn.FontColor = "#ffffff";
+            StartBtn.ForeColor = System.Drawing.Color.FromArgb(192, 0, 192);
+            StartBtn.Location = new System.Drawing.Point(0, 634);
+            StartBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            StartBtn.Name = "StartBtn";
+            StartBtn.RippleEffectColor = System.Drawing.Color.Black;
+            StartBtn.RippleOpacity = 25;
+            StartBtn.Size = new System.Drawing.Size(1067, 46);
+            StartBtn.Smoothing = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            StartBtn.TabIndex = 0;
+            StartBtn.Text = "Start xCheats";
+            StartBtn.TextRendering = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            StartBtn.Click += StartBtn_Click;
             // 
             // Launcher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Window);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Launcher";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "zeroitGradientForm1";
-            this.Window.ResumeLayout(false);
-            this.Window.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1067, 680);
+            Controls.Add(Window);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Name = "Launcher";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "zeroitGradientForm1";
+            Window.ResumeLayout(false);
+            Window.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

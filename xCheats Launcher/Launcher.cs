@@ -1,21 +1,16 @@
-﻿using AutoUpdaterDotNET;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Net.NetworkInformation;
-using System.Security.Principal;
 using System.Windows.Forms;
-using xCheats_Launcher.Properties;
 using xCheatsFunctions;
 
 namespace xCheats_Launcher
 {
     public partial class Launcher : Form
     {
-        static bool isAdmin;
         private bool isFunction1Active;
         private bool isFunction2Active;
         private bool isFunction3Active;
@@ -23,9 +18,9 @@ namespace xCheats_Launcher
         private bool isDragging = false;
         private int mouseX, mouseY;
         static string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        static string appFolderPath = Path.Combine(appDataPath, "xCheats");
-        static string configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
-        static string error = Path.Combine(appDataPath, "data\\logs");
+        static string appFolderPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats");
+        static string configFilePath = Path.Combine(appFolderPath, "Config\\config.ini");
+        static string error = Path.Combine(appDataPath, "logs");
         IniConfig config = new IniConfig();
         CultureInfo lang = CultureInfo.CurrentCulture;
         public ComponentResourceManager resources { get; } = new ComponentResourceManager(typeof(Launcher));
@@ -46,11 +41,10 @@ namespace xCheats_Launcher
             clickTimer.Interval = 1000;
             clickTimer.Tick += ClickTimer_Tick;
             config.Load(configFilePath);
-            bool isOfflineMode = GlobalSettings.isOfflineMode;
+            bool isOfflineMode = GlobalSettings.IsOfflineMode;
             bool isAdminMode = GlobalSettings.AdminMode;
             bool backgroundMode = GlobalSettings.BackgroundWork;
             AppText.Text = string.Format(resources.GetString("appname", lang));
-            MessageBox.Show("" + GlobalSettings.SelectedInstallPath, "TestNotify" );
 
 
 
@@ -133,25 +127,32 @@ namespace xCheats_Launcher
         private void StartBtn_Click(object sender, EventArgs e)
         {
             string arguments = "-u6sq8#bhysa68@1c0&$";
-            string mainAppPath = Environment.CurrentDirectory + "\\xCheats.exe";
+            string mainAppPath = Path.Combine(Environment.CurrentDirectory, "xCheats.exe");
 
             ProcessStartInfo startInfo = new ProcessStartInfo(mainAppPath);
             startInfo.Arguments = arguments;
-            bool isAdmin = GlobalSettings.AdminMode;
-            if (isAdmin)
+
+            // Check if AdminMode is true and set the Verb accordingly
+            if (GlobalSettings.AdminMode)
             {
-                startInfo.Verb = "runas"; // This indicates that the process should be run as an administrator
+                startInfo.Verb = "runas"; // Indicates that the process should be run as an administrator
             }
+
             try
             {
+                // Start the process
                 Process.Start(startInfo);
+
+                // Exit the current process if needed
                 Environment.Exit(0);
             }
             catch (Exception ex)
             {
+                // Log the error
                 ErrorLogv2.LogError(ex, error);
             }
         }
+
 
 
         private void zeroitLollipopButton1_Click(object sender, EventArgs e)
@@ -202,7 +203,7 @@ namespace xCheats_Launcher
             clickTimer.Start();
             BGTggl.Checked = isFunction3Active;
             UpdateBackground(BGTggl.Checked);
-            config.SetValue("Settings", "BackgroundWorker", BGTggl.Checked.ToString().ToLower());
+            config.SetValue("Settings", "BackgroundWork", BGTggl.Checked.ToString().ToLower());
             config.Save(configFilePath);
         }
 
