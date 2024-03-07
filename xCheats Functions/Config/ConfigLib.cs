@@ -1,7 +1,17 @@
-﻿namespace xCheatsFunctions
+﻿
+using System.ComponentModel;
+using System.Globalization;
+using System.Resources;
+
+namespace xCheatsFunctions
 {
+
     public class IniConfig
     {
+        CultureInfo currentCulture = CultureInfo.CurrentCulture;
+        ResourceManager rm = new ResourceManager("xCheatsFunctions.Language.Functions", typeof(IniConfig).Assembly);
+
+
         private readonly Dictionary<string, Dictionary<string, string>> sections;
 
         public IniConfig()
@@ -122,49 +132,85 @@
         }
         public void Check(string filepath)
         {
-            if (!File.Exists(filepath))
+            try
             {
-                SetValue("Settings", "OfflineMode", "false");
-                SetValue("Settings", "AdminMode", "false");
-                SetValue("Settings", "BackgroundWorker", "false");
-                SetValue("Path", "RedDead2", "");
-                SetValue("Path", "RedDead2Btn", "0"); // Changed default value to "0"
-                Save(filepath);
-            }
-            else
-            {
-                Load(filepath);
-                bool configChanged = false;
-
-                // Check and set missing values
-                if (GetValue("Settings", "OfflineMode") == "")
+                if (!File.Exists(filepath))
                 {
+                    
                     SetValue("Settings", "OfflineMode", "false");
-                    configChanged = true;
-                }
-                if (GetValue("Settings", "AdminMode") == "")
-                {
                     SetValue("Settings", "AdminMode", "false");
-                    configChanged = true;
-                }
-                if (GetValue("Settings", "BackgroundWorker") == "")
-                {
-                    SetValue("Settings", "BackgroundWorker", "false");
-                    configChanged = true;
-                }
-                if (GetValue("Path", "RedDead2") == "")
-                {
+                    SetValue("Settings", "BackgroundWork", "false");
                     SetValue("Path", "RedDead2", "");
-                    configChanged = true;
-                }
-                if (GetValue("Path", "RedDead2Btn") == "")
-                {
-                    SetValue("Path", "RedDead2Btn", "0");
-                    configChanged = true;
-                }
-                if (configChanged)
-                {
+                    SetValue("Path", "RedDead2Btn", "0"); // Changed default value to "0"
+                    SetValue("IGNORE","First Start", "0");
                     Save(filepath);
+                }
+                else
+                {
+                    Load(filepath);
+                    bool configChanged = false;
+
+                    // Check and set missing values
+                    if (GetValue("Settings", "OfflineMode") == "")
+                    {
+                        SetValue("Settings", "OfflineMode", "false");
+                        configChanged = true;
+                    }
+                    if (GetValue("Settings", "AdminMode") == "")
+                    {
+                        SetValue("Settings", "AdminMode", "false");
+                        configChanged = true;
+                    }
+                    if (GetValue("Settings", "BackgroundWork") == "")
+                    {
+                        SetValue("Settings", "BackgroundWork", "false");
+                        configChanged = true;
+                    }
+                    if (GetValue("Path", "RedDead2") == "")
+                    {
+                        SetValue("Path", "RedDead2", "");
+                        configChanged = true;
+                    }
+                    if (GetValue("Path", "RedDead2Btn") == "")
+                    {
+                        SetValue("Path", "RedDead2Btn", "0");
+                        configChanged = true;
+                    }
+                    if (configChanged)
+                    {
+                        Save(filepath);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DialogResult result = ShowYesNoMessageBox(rm.GetString("Firsttime", currentCulture), rm.GetString("welcome", currentCulture));
+
+                if (result == DialogResult.Yes)
+                {
+                    string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                    string appFolderPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats");
+                    string configFilePathCC = Path.Combine(appFolderPath, "Config");
+                    string configFilePathCC2 = Path.Combine(appFolderPath, "Downloads");
+                    string configFilePathCC3 = Path.Combine(appFolderPath, "Dlls");
+                    Directory.CreateDirectory(configFilePathCC);
+                    Directory.CreateDirectory(configFilePathCC2);
+                    Directory.CreateDirectory(configFilePathCC3);
+                    Application.Restart();
+                }
+                else
+                {
+                    
+                    MessageBox.Show(rm.GetString("error", currentCulture), "Oh Noes!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
+                }
+
+                static DialogResult ShowYesNoMessageBox(string message, string caption)
+                {
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    MessageBoxIcon icon = MessageBoxIcon.Question;
+
+                    return MessageBox.Show(message, caption, buttons, icon);
                 }
             }
         }

@@ -3,53 +3,53 @@ namespace xCheatsFunctions
 {
     public class misc
     {
-        public static void folderexistcheck()
+        public static void Folderexistcheck()
         {
             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string appFolderPath = Path.Combine(appDataPath, "xCheats");
-            string path = Path.Combine(appFolderPath, "\\data");
-            string path2 = Path.Combine(appFolderPath, "\\data\\Installers");
-            string path3 = Path.Combine(appFolderPath, "\\data\\Downloads");
-            string path4 = Path.Combine(appFolderPath, "\\data\\logs");
-            string path5 = Path.Combine(appFolderPath, "\\data\\Dlls");
-            string path6 = Path.Combine(appFolderPath, "\\data\\Services");
-            string path7 = Path.Combine(appFolderPath, "\\data\\Config");
+            string data = Path.Combine(appFolderPath, "\\data");
+            string installer = Path.Combine(appFolderPath, "\\data\\Installers");
+            string downloads = Path.Combine(appFolderPath, "\\data\\Downloads");
+            string logs = Path.Combine(appFolderPath, "\\data\\logs");
+            string dlls = Path.Combine(appFolderPath, "\\data\\Dlls");
+            string services = Path.Combine(appFolderPath, "\\data\\Services");
+            string config = Path.Combine(appFolderPath, "\\data\\Config");
             try
             {
-                if (!Directory.Exists(path))
+                if (!Directory.Exists(data))
                 {
-                    DirectoryInfo di = Directory.CreateDirectory(path);
+                    DirectoryInfo di = Directory.CreateDirectory(data);
                 }
-                if (!Directory.Exists(path2))
+                if (!Directory.Exists(installer))
                 {
-                    DirectoryInfo di = Directory.CreateDirectory(path2);
+                    DirectoryInfo di = Directory.CreateDirectory(installer);
                 }
-                if (!Directory.Exists(path3))
+                if (!Directory.Exists(downloads))
                 {
-                    DirectoryInfo di = Directory.CreateDirectory(path3);
+                    DirectoryInfo di = Directory.CreateDirectory(downloads);
                 }
-                if (!Directory.Exists(path4))
+                if (!Directory.Exists(logs))
                 {
-                    DirectoryInfo di = Directory.CreateDirectory(path4);
+                    DirectoryInfo di = Directory.CreateDirectory(logs);
                 }
-                if (!Directory.Exists(path5))
+                if (!Directory.Exists(dlls))
                 {
-                    DirectoryInfo di = Directory.CreateDirectory(path5);
+                    DirectoryInfo di = Directory.CreateDirectory(dlls);
                 }
-                if (!Directory.Exists(path6))
+                if (!Directory.Exists(services))
                 {
-                    DirectoryInfo di = Directory.CreateDirectory(path6);
+                    DirectoryInfo di = Directory.CreateDirectory(services);
                 }
-                if (!Directory.Exists(path7))
+                if (!Directory.Exists(config))
                 {
-                    DirectoryInfo di = Directory.CreateDirectory(path7);
+                    DirectoryInfo di = Directory.CreateDirectory(config);
                 }
 
             }
             catch (IOException ioex)
             {
                 MessageBox.Show(ioex.Message, "Warning");
-                ErrorLog.LogError(ioex);
+                ErrorLogv2.LogError(ioex);
                 return;
             }
         }

@@ -9,13 +9,13 @@
         {
             config = new IniConfig();
              string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-             string appFolderPath = Path.Combine(appDataPath, "xCheats");
-             configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
+             string appFolderPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats");
+             configFilePath = Path.Combine(appFolderPath, "Config\\config.ini");
             LoadSettings();
         }
 
         public static bool AdminMode { get; set; }
-        public static bool isOfflineMode { get; set; }
+        public static bool IsOfflineMode { get; set; }
         public static bool BackgroundWork { get; set; }
         public static string SelectedInstallPath { get; set; }
         public static int buttonMode { get; set; }
@@ -30,7 +30,7 @@
             int btnmode = config.GetIntValue("Path", "RedDead2Btn");
             BackgroundWork = backgroundWorkValue;
             AdminMode = adminModeValue;
-            isOfflineMode = offlineModeValue;
+            IsOfflineMode = offlineModeValue;
             SelectedInstallPath = SelectedPath;
             buttonMode = btnmode;
         }
