@@ -31,13 +31,13 @@ namespace xCheats.Calls
         const int SW_HIDE = 0;
         const int SW_SHOW = 5;
 
-        static  string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        static string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         static string appFolderPath = Path.Combine(appDataPath, "xCheats");
         static string configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
         public static bool isOfflineMode = GlobalSettings.IsOfflineMode;
         public static bool backgroundWork = GlobalSettings.BackgroundWork;
         public static bool isAdmin = GlobalSettings.AdminMode;
- 
+
         public static void Sleep()
         {
             Thread.Sleep(1000);
@@ -73,7 +73,43 @@ namespace xCheats.Calls
             }
 
         }
+        public static void CleanTempFolder(string folderPath)
+        {
+            try
+            {
+                DirectoryInfo tempDir = new DirectoryInfo(folderPath);
 
+                foreach (FileInfo file in tempDir.GetFiles())
+                {
+                    try
+                    {
+                        file.Delete();
+                    }
+                    catch (Exception)
+                    {
+                        // Handle exceptions if needed
+                    }
+                }
+
+                foreach (DirectoryInfo dir in tempDir.GetDirectories())
+                {
+                    try
+                    {
+                        dir.Delete(true);
+                    }
+                    catch (Exception)
+                    {
+                        // Handle exceptions if needed
+                    }
+                }
+
+                // Optionally, you can indicate the completion of the operation here.
+            }
+            catch (Exception)
+            {
+                // Handle exceptions if needed
+            }
+        }
         public static void hide()
         {
 

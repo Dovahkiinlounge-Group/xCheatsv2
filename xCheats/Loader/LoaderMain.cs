@@ -28,6 +28,7 @@ using System.Text;
 using System.Globalization;
 using xCheats_Launcher;
 using System.Resources;
+using CustomControls.RJControls;
 namespace xCheats
 {
     public partial class LoaderMain : Form
@@ -45,6 +46,7 @@ namespace xCheats
         static bool isProcessRunning = false;
         CultureInfo lang = CultureInfo.CurrentCulture;
         ResourceManager rm = new ResourceManager("xCheats.Lang.Lang", typeof(LoaderMain).Assembly);
+
 
         bool ProcOpen = false;
         public LoaderMain()
@@ -331,28 +333,14 @@ namespace xCheats
 
         }
 
-        //private async void btnScan_Click(object sender, EventArgs e)
-        //{
-        //    await SendCommandToServiceAsync("test");
-        //}
+        private void NotifyMenu_MouseClick(object sender, MouseEventArgs e)
+        {
 
-        //private static async Task SendCommandToServiceAsync(string command)
-        //{
-        //    using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", "xCheatsPipe", PipeDirection.InOut))
-        //    {
-        //        await pipeClient.ConnectAsync();
+        }
 
-        //        using (StreamWriter writer = new StreamWriter(pipeClient, Encoding.UTF8))
-        //        {
-        //            await writer.WriteLineAsync(command);
-        //            writer.Flush();
-        //        }
-        //    }
-        //}
-
-        //private async void test11_Click(object sender, EventArgs e)
-        //{
-        //    await SendCommandToServiceAsync("test2");
-        //}
+        private void TmpCleaner_Click(object sender, EventArgs e)
+        {
+            x.CleanTempFolder(Path.GetTempPath());
+        }
     }
 }

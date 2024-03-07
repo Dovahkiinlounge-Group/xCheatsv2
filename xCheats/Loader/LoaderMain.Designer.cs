@@ -50,9 +50,13 @@ namespace xCheats
             RDOLobby = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             Notify = new NotifyIcon(components);
             NotifyMenu = new Siticone.Desktop.UI.WinForms.SiticoneContextMenuStrip();
+            TmpCleaner = new ToolStripMenuItem();
+            toolStripSeparator3 = new ToolStripSeparator();
             DynInjBtnNM = new ToolStripMenuItem();
             RDR2InjST = new ToolStripMenuItem();
+            toolStripSeparator2 = new ToolStripSeparator();
             OpenNM = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
             ExitNM = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)OnImg).BeginInit();
             ((System.ComponentModel.ISupportInitialize)UpdateImg).BeginInit();
@@ -303,8 +307,9 @@ namespace xCheats
             // NotifyMenu
             // 
             NotifyMenu.BackColor = Color.Black;
+            NotifyMenu.DropShadowEnabled = false;
             NotifyMenu.ImageScalingSize = new Size(24, 24);
-            NotifyMenu.Items.AddRange(new ToolStripItem[] { DynInjBtnNM, OpenNM, ExitNM });
+            NotifyMenu.Items.AddRange(new ToolStripItem[] { TmpCleaner, toolStripSeparator3, DynInjBtnNM, toolStripSeparator2, OpenNM, toolStripSeparator1, ExitNM });
             NotifyMenu.LayoutStyle = ToolStripLayoutStyle.HorizontalStackWithOverflow;
             NotifyMenu.Name = "NotifyMenu";
             NotifyMenu.RenderStyle.ArrowColor = Color.FromArgb(151, 143, 255);
@@ -312,11 +317,28 @@ namespace xCheats
             NotifyMenu.RenderStyle.ColorTable = null;
             NotifyMenu.RenderStyle.RoundedEdges = true;
             NotifyMenu.RenderStyle.SelectionArrowColor = Color.White;
-            NotifyMenu.RenderStyle.SelectionBackColor = Color.FromArgb(100, 88, 255);
-            NotifyMenu.RenderStyle.SelectionForeColor = Color.White;
+            NotifyMenu.RenderStyle.SelectionBackColor = Color.Transparent;
+            NotifyMenu.RenderStyle.SelectionForeColor = Color.Linen;
             NotifyMenu.RenderStyle.SeparatorColor = Color.FromArgb(64, 64, 64);
             NotifyMenu.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
-            NotifyMenu.Size = new Size(177, 76);
+            NotifyMenu.ShowImageMargin = false;
+            NotifyMenu.Size = new Size(186, 146);
+            // 
+            // TmpCleaner
+            // 
+            TmpCleaner.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TmpCleaner.ForeColor = Color.Fuchsia;
+            TmpCleaner.Name = "TmpCleaner";
+            TmpCleaner.Size = new Size(185, 24);
+            TmpCleaner.Text = "Clean Temp";
+            TmpCleaner.ToolTipText = "Clean Temp Folder";
+            TmpCleaner.Click += TmpCleaner_Click;
+            // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(182, 6);
+            toolStripSeparator3.Visible = false;
             // 
             // DynInjBtnNM
             // 
@@ -324,8 +346,9 @@ namespace xCheats
             DynInjBtnNM.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
             DynInjBtnNM.ForeColor = Color.Magenta;
             DynInjBtnNM.Name = "DynInjBtnNM";
-            DynInjBtnNM.Size = new Size(176, 24);
+            DynInjBtnNM.Size = new Size(185, 24);
             DynInjBtnNM.Text = "Injections";
+            DynInjBtnNM.Visible = false;
             // 
             // RDR2InjST
             // 
@@ -336,21 +359,31 @@ namespace xCheats
             RDR2InjST.Text = "RDR2 ";
             RDR2InjST.Click += RDR2InjST_Click;
             // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(182, 6);
+            // 
             // OpenNM
             // 
             OpenNM.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             OpenNM.ForeColor = Color.Magenta;
             OpenNM.Name = "OpenNM";
-            OpenNM.Size = new Size(176, 24);
+            OpenNM.Size = new Size(185, 24);
             OpenNM.Text = "Open xCheats";
             OpenNM.Click += OpenNM_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(182, 6);
             // 
             // ExitNM
             // 
             ExitNM.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             ExitNM.ForeColor = Color.Red;
             ExitNM.Name = "ExitNM";
-            ExitNM.Size = new Size(176, 24);
+            ExitNM.Size = new Size(185, 24);
             ExitNM.Text = "Exit";
             ExitNM.ToolTipText = "Terminate the Application";
             ExitNM.Click += ExitNM_Click;
@@ -410,12 +443,16 @@ namespace xCheats
         private Siticone.Desktop.UI.WinForms.SiticonePictureBox UpdateImg;
         private System.Windows.Forms.Label Admincheck;
         private Siticone.Desktop.UI.WinForms.SiticoneButton RDOLobby;
-        private System.Windows.Forms.NotifyIcon Notify;
         private Siticone.Desktop.UI.WinForms.SiticoneContextMenuStrip NotifyMenu;
         private System.Windows.Forms.ToolStripMenuItem ExitNM;
         private System.Windows.Forms.ToolStripMenuItem OpenNM;
         private System.Windows.Forms.ToolStripMenuItem DynInjBtnNM;
         private System.Windows.Forms.ToolStripMenuItem RDR2InjST;
+        public NotifyIcon Notify;
+        private ToolStripMenuItem TmpCleaner;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripSeparator toolStripSeparator1;
     }
 }
 

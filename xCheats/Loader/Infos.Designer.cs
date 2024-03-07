@@ -109,7 +109,7 @@
             ExitBtn.ControlBoxStyle = Siticone.Desktop.UI.WinForms.Enums.ControlBoxStyle.Custom;
             ExitBtn.FillColor = Color.Red;
             ExitBtn.IconColor = Color.Black;
-            ExitBtn.Location = new Point(978, 19);
+            ExitBtn.Location = new Point(976, 8);
             ExitBtn.Margin = new Padding(5, 4, 5, 4);
             ExitBtn.Name = "ExitBtn";
             ExitBtn.Size = new Size(59, 31);
@@ -156,7 +156,7 @@
             Credits.Location = new Point(4, 44);
             Credits.Margin = new Padding(5, 4, 5, 4);
             Credits.Name = "Credits";
-            Credits.Size = new Size(1042, 661);
+            Credits.Size = new Size(1036, 626);
             Credits.TabIndex = 7;
             Credits.Text = "Credits";
             // 
@@ -232,7 +232,7 @@
             PhilInfo.PlaceholderText = "";
             PhilInfo.ReadOnly = true;
             PhilInfo.SelectedText = "";
-            PhilInfo.Size = new Size(80, 36);
+            PhilInfo.Size = new Size(80, 44);
             PhilInfo.TabIndex = 42;
             // 
             // CeliInfo
@@ -258,7 +258,7 @@
             CeliInfo.PlaceholderText = "";
             CeliInfo.ReadOnly = true;
             CeliInfo.SelectedText = "";
-            CeliInfo.Size = new Size(90, 36);
+            CeliInfo.Size = new Size(90, 44);
             CeliInfo.TabIndex = 41;
             // 
             // label4
@@ -345,7 +345,7 @@
             Settings.Location = new Point(4, 44);
             Settings.Margin = new Padding(5, 4, 5, 4);
             Settings.Name = "Settings";
-            Settings.Size = new Size(1042, 661);
+            Settings.Size = new Size(1036, 626);
             Settings.TabIndex = 6;
             Settings.Text = "Settings";
             // 
@@ -378,6 +378,7 @@
             // 
             ExodusBtn.BackColor = Color.Transparent;
             ExodusBtn.CheckedState.ImageSize = new Size(64, 64);
+            ExodusBtn.Enabled = false;
             ExodusBtn.HoverState.ImageSize = new Size(50, 43);
             ExodusBtn.Image = (Image)resources.GetObject("ExodusBtn.Image");
             ExodusBtn.ImageOffset = new Point(0, 0);
@@ -392,11 +393,13 @@
             ExodusBtn.TabIndex = 38;
             ExodusBtn.TabStop = false;
             ExodusBtn.UseTransparentBackground = true;
+            ExodusBtn.Visible = false;
             ExodusBtn.Click += ExodusBtn_Click;
             // 
             // label5
             // 
             label5.BackColor = Color.Transparent;
+            label5.Enabled = false;
             label5.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Magenta;
             label5.Location = new Point(-1, 580);
@@ -405,6 +408,7 @@
             label5.Size = new Size(34, 37);
             label5.TabIndex = 37;
             label5.Text = "*";
+            label5.Visible = false;
             // 
             // Sterni
             // 
@@ -422,6 +426,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Enabled = false;
             label3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Magenta;
             label3.Location = new Point(22, 587);
@@ -430,6 +435,7 @@
             label3.Size = new Size(499, 20);
             label3.TabIndex = 35;
             label3.Text = "*You will need an Exodus account and a paid subscription.";
+            label3.Visible = false;
             // 
             // AutoInjectCB
             // 
@@ -532,7 +538,7 @@
             siticoneButton1.ForeColor = Color.Magenta;
             siticoneButton1.HoverState.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             siticoneButton1.HoverState.ForeColor = Color.Green;
-            siticoneButton1.Location = new Point(649, 573);
+            siticoneButton1.Location = new Point(615, 574);
             siticoneButton1.Margin = new Padding(5, 4, 5, 4);
             siticoneButton1.Name = "siticoneButton1";
             siticoneButton1.Size = new Size(311, 41);
@@ -551,7 +557,7 @@
             SaveSet.ForeColor = Color.White;
             SaveSet.HoverState.BorderColor = Color.Magenta;
             SaveSet.HoverState.ForeColor = Color.Magenta;
-            SaveSet.Location = new Point(955, 576);
+            SaveSet.Location = new Point(926, 574);
             SaveSet.Margin = new Padding(5, 4, 5, 4);
             SaveSet.Name = "SaveSet";
             SaveSet.Size = new Size(97, 40);
@@ -660,7 +666,7 @@
             FixTool.Location = new Point(4, 44);
             FixTool.Margin = new Padding(5, 4, 5, 4);
             FixTool.Name = "FixTool";
-            FixTool.Size = new Size(1042, 661);
+            FixTool.Size = new Size(1036, 626);
             FixTool.TabIndex = 5;
             FixTool.Text = "Fix Tools";
             FixTool.Click += FixTool_Click;
@@ -890,7 +896,7 @@
             About.Margin = new Padding(5, 4, 5, 4);
             About.Name = "About";
             About.Padding = new Padding(5, 4, 5, 4);
-            About.Size = new Size(1042, 661);
+            About.Size = new Size(1036, 626);
             About.TabIndex = 4;
             About.Text = "About";
             // 
@@ -899,7 +905,7 @@
             Repo2.AutoSize = true;
             Repo2.Font = new Font("Arial Black", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Repo2.LinkColor = Color.Magenta;
-            Repo2.Location = new Point(729, 601);
+            Repo2.Location = new Point(711, 583);
             Repo2.Margin = new Padding(5, 0, 5, 0);
             Repo2.Name = "Repo2";
             Repo2.Size = new Size(304, 27);
@@ -913,7 +919,7 @@
             CPUStat.AutoSize = true;
             CPUStat.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CPUStat.ForeColor = Color.Fuchsia;
-            CPUStat.Location = new Point(1, 579);
+            CPUStat.Location = new Point(4, 552);
             CPUStat.Margin = new Padding(5, 0, 5, 0);
             CPUStat.Name = "CPUStat";
             CPUStat.Size = new Size(150, 20);
@@ -925,7 +931,7 @@
             MBoard.AutoSize = true;
             MBoard.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             MBoard.ForeColor = Color.Fuchsia;
-            MBoard.Location = new Point(1, 607);
+            MBoard.Location = new Point(4, 580);
             MBoard.Margin = new Padding(5, 0, 5, 0);
             MBoard.Name = "MBoard";
             MBoard.Size = new Size(123, 20);
@@ -937,7 +943,7 @@
             CPU.AutoSize = true;
             CPU.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CPU.ForeColor = Color.Fuchsia;
-            CPU.Location = new Point(1, 551);
+            CPU.Location = new Point(4, 524);
             CPU.Margin = new Padding(5, 0, 5, 0);
             CPU.Name = "CPU";
             CPU.Size = new Size(89, 20);
@@ -949,7 +955,7 @@
             GPU.AutoSize = true;
             GPU.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             GPU.ForeColor = Color.Fuchsia;
-            GPU.Location = new Point(1, 524);
+            GPU.Location = new Point(4, 497);
             GPU.Margin = new Padding(5, 0, 5, 0);
             GPU.Name = "GPU";
             GPU.Size = new Size(90, 20);
@@ -961,7 +967,7 @@
             TestLabel.AutoSize = true;
             TestLabel.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TestLabel.ForeColor = Color.Fuchsia;
-            TestLabel.Location = new Point(2, 501);
+            TestLabel.Location = new Point(5, 474);
             TestLabel.Margin = new Padding(5, 0, 5, 0);
             TestLabel.Name = "TestLabel";
             TestLabel.Size = new Size(147, 20);
@@ -1070,11 +1076,11 @@
             siticoneTabControl1.Controls.Add(Settings);
             siticoneTabControl1.Controls.Add(Credits);
             siticoneTabControl1.ItemSize = new Size(125, 40);
-            siticoneTabControl1.Location = new Point(0, 0);
+            siticoneTabControl1.Location = new Point(0, 3);
             siticoneTabControl1.Margin = new Padding(5, 4, 5, 4);
             siticoneTabControl1.Name = "siticoneTabControl1";
             siticoneTabControl1.SelectedIndex = 0;
-            siticoneTabControl1.Size = new Size(1050, 709);
+            siticoneTabControl1.Size = new Size(1044, 674);
             siticoneTabControl1.TabButtonHoverState.BorderColor = Color.Empty;
             siticoneTabControl1.TabButtonHoverState.FillColor = Color.Black;
             siticoneTabControl1.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F);
@@ -1101,7 +1107,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1043, 681);
+            ClientSize = new Size(1043, 677);
             Controls.Add(ExitBtn);
             Controls.Add(siticoneTabControl1);
             FormBorderStyle = FormBorderStyle.None;
