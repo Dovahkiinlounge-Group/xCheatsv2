@@ -17,7 +17,7 @@ namespace xCheats_Launcher
         private Timer clickTimer;
         private bool isDragging = false;
         private int mouseX, mouseY;
-        static string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        static string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         static string appFolderPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats");
         static string configFilePath = Path.Combine(appFolderPath, "Config\\config.ini");
         static string error = Path.Combine(appDataPath, "logs");
