@@ -125,8 +125,10 @@
 
 Möchten Sie den Ordner mit den Anwendungsdaten erstellen?</value>
   </data>
+  <data name="oldpath" xml:space="preserve">
+    <value>Die Konfigurationsdateien wurden von AppData/Roaming nach AppData/Local verschoben. Der alte AppData Roaming-Ordner wird nicht mehr verwendet, und die Daten von xCheats wurden verschoben und die Konfiguration zurückgesetzt.</value>
+  </data>
   <data name="welcome" xml:space="preserve">
     <value>Willkommen :)</value>
-    <comment> </comment>
   </data>
 </root>

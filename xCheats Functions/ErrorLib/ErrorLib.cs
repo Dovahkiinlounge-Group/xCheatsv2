@@ -41,7 +41,7 @@ namespace xCheatsFunctions
         private static string GetDefaultLogPath()
         {
             string appName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
-            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string appFolderPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats");
             string logsFolderPath = Path.Combine(appFolderPath, "logs");
             Directory.CreateDirectory(logsFolderPath); // Create the directory if it doesn't exist
@@ -79,7 +79,7 @@ namespace xCheatsFunctions
         private static string GetDefaultLogPath(string fileName)
         {
             string appName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
-            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             string appFolderPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats");
             string logsFolderPath = Path.Combine(appFolderPath, "logs");
             Directory.CreateDirectory(logsFolderPath); // Create the directory if it doesn't exist

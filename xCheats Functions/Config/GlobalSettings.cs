@@ -8,7 +8,7 @@
         static GlobalSettings() // Static constructor
         {
             config = new IniConfig();
-             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+             string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
              string appFolderPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats");
              configFilePath = Path.Combine(appFolderPath, "Config\\config.ini");
             LoadSettings();

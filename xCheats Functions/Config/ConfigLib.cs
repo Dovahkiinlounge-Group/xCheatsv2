@@ -188,14 +188,27 @@ namespace xCheatsFunctions
 
                 if (result == DialogResult.Yes)
                 {
-                    string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                    string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
                     string appFolderPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats");
                     string configFilePathCC = Path.Combine(appFolderPath, "Config");
                     string configFilePathCC2 = Path.Combine(appFolderPath, "Downloads");
                     string configFilePathCC3 = Path.Combine(appFolderPath, "Dlls");
+                    string oldPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DovahkiinLounge Group");
                     Directory.CreateDirectory(configFilePathCC);
                     Directory.CreateDirectory(configFilePathCC2);
                     Directory.CreateDirectory(configFilePathCC3);
+                    if (Directory.Exists(oldPath))
+                    {
+                        try
+                        {
+                            Directory.Delete(oldPath, true);
+                            MessageBox.Show(rm.GetString("oldpath", currentCulture), "Oh Yeah.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+                    }
                     Application.Restart();
                 }
                 else
