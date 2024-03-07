@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using xCheatsFunctions.mem;
+using Dovahkiin.Memory.mem;
+using xCheats.Overlay;
 using xCheatsFunctions;
 using x = xCheats.Calls.API;
 
@@ -16,12 +20,13 @@ namespace xCheats
         private memory m = new memory();
         private int processID;
         private bool processOpen = false;
-
+        private RE5___Overlay overlayForm;
         public RE5()
         {
             //x.RPC_RE5();
             InitializeComponent();
-            
+            overlayForm = new RE5___Overlay(this);
+
         }
         private void SaveMoneyButton_Click(object sender, EventArgs e)
         {
@@ -64,87 +69,122 @@ namespace xCheats
             RE5Worker.ReportProgress(0);
         }
 
+        public string GetMoneyText()
+        {
+            string moneyText = "";
+
+            // Use Invoke to safely access UI controls from another thread
+            try
+            {
+                MoneyV?.Invoke((MethodInvoker)delegate
+                {
+                    if (MoneyV.IsDisposed || MoneyV.Disposing)
+                        return;
+
+                    moneyText = MoneyV.Text;
+                });
+            }
+            catch (Exception ex)
+            {
+                // Handle or log the exception
+                Console.WriteLine($"Exception in GetMoneyText: {ex.Message}");
+            }
+
+            return moneyText;
+        }
+
         private void RE5Worker_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
         {
 
-            //int my = m.ReadInt("base+00DA23D8,1c0");
-            //MoneyV.Text = "Money: " + my;
+            int my = m.ReadInt("base+00DB2158,1c0");
+            MoneyV.Invoke((MethodInvoker)delegate
+            {
+                MoneyV.Text = "Money: " + my;
+            });
             //int Health = m.ReadInt("base+77CB40");
             //HealthV.Text = "Health: " + Health;
 
-            if (GodMode.Checked)
+            //if (GodMode.Checked)
+            //{
+            //    m.WriteMemory("base+77CB40", "bytes", "90 90 90 90 90 90 90");
+            //}
+            //else
+            //{
+            //    m.WriteMemory("base+77CB40", "bytes", "66 29 8E 64 13 00 00");
+            //}
+            //if (Ammo.Checked)
+            //{
+            //    m.WriteMemory("base+84B8FB", "bytes", "90 90 90");
+            //    m.WriteMemory("base+3EC402", "byte", "EB");
+            //    m.WriteMemory("base+3EBC3E", "byte", "EB");
+            //}
+            //else
+            //{
+            //    m.WriteMemory("base+84C1EF", "bytes", "89 41 08");
+            //    m.WriteMemory("base+3EC402", "byte", "75");
+            //    m.WriteMemory("base+3EBC3E", "byte", "75");
+            //}
+            //if (AmmoR.Checked)
+            //{
+            //    m.WriteMemory("base+84D3DB", "bytes", "90 90 90");
+            //}
+            //else
+            //{
+            //    m.WriteMemory("base+84D3DB", "bytes", "29 6E 08");
+            //}
+            //if (MoneyF.Checked)
+            //{
+            //    m.WriteMemory("base+8EEACB", "bytes", "90 90 90 90 90 90");
+            //}
+            //else
+            //{
+            //    m.WriteMemory("base+8EEACB", "bytes", "89 81 88 01 00 00");
+            //}
+            //if (EatEggs.Checked)
+            //{
+            //    m.WriteMemory("base+3EB64B", "bytes", "90 90 90");
+            //}
+            //else
+            //{
+            //    m.WriteMemory("base+3EB64B", "bytes", "89 71 08");
+            //}
+            //if (ComboTimer.Checked)
+            //{
+            //    m.WriteMemory("base+321A31", "bytes", "90 90 90 90 90 90 90 90 90");
+            //}
+            //else
+            //{
+            //    m.WriteMemory("base+321A31", "bytes", "F3 0F 11 84 31 A0 06 00 00");
+            //}
+            //if (CountdownTimer.Checked)
+            //{
+            //    m.WriteMemory("base+31CCBF", "bytes", "90 90 90 90 90 90 90 90");
+            //}
+            //else
+            //{
+            //    m.WriteMemory("base+31CCBF", "bytes", "F3 0F 11 87 DC 04 00 00");
+            //}
+            //if (OnOffSlider.Checked)
+            //{
+            //    MoneySlider.Enabled = true;
+            //    SliderV.Visible = true;
+            //    SliderV.Text = "" + MoneySlider.Value;
+            //    m.WriteMemory("base+00DA23D8,1c0", "int", SliderV.Text);
+            //    saveMoneyButton.Enabled = false;
+            //}
+            //else
+            //{
+            //    MoneySlider.Enabled = false;
+            //    saveMoneyButton.Enabled = true;
+            //    SliderV.Visible = false;
+            //}
+            if (OnOffOV.Checked)
             {
-                m.WriteMemory("base+77CB40", "bytes", "90 90 90 90 90 90 90");
+                overlayForm.Show();
             }
             else
             {
-                m.WriteMemory("base+77CB40", "bytes", "66 29 8E 64 13 00 00");
-            }
-            if (Ammo.Checked)
-            {
-                m.WriteMemory("base+84B8FB", "bytes", "90 90 90");
-                //m.WriteMemory("base+3EC402", "byte", "EB");
-                //m.WriteMemory("base+3EBC3E", "byte", "EB");
-            }
-            else
-            {
-                m.WriteMemory("base+84C1EF", "bytes", "89 41 08");
-               // m.WriteMemory("base+3EC402", "byte", "75");
-               // m.WriteMemory("base+3EBC3E", "byte", "75");
-            }
-            if (AmmoR.Checked)
-            {
-                m.WriteMemory("base+84D3DB", "bytes", "90 90 90");
-            }
-            else
-            {
-                m.WriteMemory("base+84D3DB", "bytes", "29 6E 08");
-            }
-            if (MoneyF.Checked)
-            {
-                m.WriteMemory("base+8EEACB", "bytes", "90 90 90 90 90 90");
-            }
-            else
-            {
-                m.WriteMemory("base+8EEACB", "bytes", "89 81 88 01 00 00");
-            }
-            if (EatEggs.Checked)
-            {
-                m.WriteMemory("base+3EB64B", "bytes", "90 90 90");
-            }
-            else
-            {
-                m.WriteMemory("base+3EB64B", "bytes", "89 71 08");
-            }
-            if (ComboTimer.Checked)
-            {
-                m.WriteMemory("base+321A31", "bytes", "90 90 90 90 90 90 90 90 90");
-            }
-            else
-            {
-                m.WriteMemory("base+321A31", "bytes", "F3 0F 11 84 31 A0 06 00 00");
-            }
-            if (CountdownTimer.Checked)
-            {
-                m.WriteMemory("base+31CCBF", "bytes", "90 90 90 90 90 90 90 90");
-            }
-            else
-            {
-                m.WriteMemory("base+31CCBF", "bytes", "F3 0F 11 87 DC 04 00 00");
-            }
-            if (OnOffSlider.Checked)
-            {
-                MoneySlider.Enabled = true;
-                SliderV.Visible = true;
-                SliderV.Text = "" + MoneySlider.Value;
-                m.WriteMemory("base+00DA23D8,1c0", "int", SliderV.Text);
-                saveMoneyButton.Enabled = false;
-            }
-            else
-            {
-                MoneySlider.Enabled = false;
-                saveMoneyButton.Enabled = true;
-                SliderV.Visible = false;
+                overlayForm.Hide();
             }
         }
 
@@ -192,7 +232,8 @@ namespace xCheats
                     procIdLabel.ForeColor = Color.Lime;
                 });
 
-                gameProcessNameLabel.Invoke((MethodInvoker)delegate {
+                gameProcessNameLabel.Invoke((MethodInvoker)delegate
+                {
                     gameProcessNameLabel.Text = "re5dx9.exe";
                     gameProcessNameLabel.ForeColor = Color.Lime;
                 });
@@ -205,7 +246,8 @@ namespace xCheats
                     procIdLabel.ForeColor = Color.Red;
                 });
 
-                gameProcessNameLabel.Invoke((MethodInvoker)delegate {
+                gameProcessNameLabel.Invoke((MethodInvoker)delegate
+                {
                     gameProcessNameLabel.Text = "N/A";
                     gameProcessNameLabel.ForeColor = Color.Red;
                 });
@@ -216,6 +258,7 @@ namespace xCheats
 
                 procOpenLabel.Invoke((MethodInvoker)delegate
                 {
+
                     procOpenLabel.Text = "GAME FOUND";
                     procOpenLabel.ForeColor = Color.Lime;
                 });
@@ -235,6 +278,9 @@ namespace xCheats
 
 
 
+
+
+
         private void Exit_Click(object sender, EventArgs e)
         {
             LoaderMain Main = new LoaderMain();
@@ -249,7 +295,7 @@ namespace xCheats
 
         private void Ammo_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void RE5_Load(object sender, EventArgs e)
@@ -277,7 +323,12 @@ namespace xCheats
 
         private void AttachBtn_Click(object sender, EventArgs e)
         {
-           RE5Worker.RunWorkerAsync();
+            RE5Worker.RunWorkerAsync();
+        }
+
+        private void TestBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

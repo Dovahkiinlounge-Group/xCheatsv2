@@ -1,4 +1,4 @@
-﻿using xCheatsFunctions.mem;
+﻿using Dovahkiin.Memory.mem;
 using System.ComponentModel;
 using System.Windows.Forms;
 using xCheats;

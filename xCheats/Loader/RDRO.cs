@@ -21,8 +21,8 @@ namespace xCheats.Loader
     public partial class RDRO : Form
     {
         static string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        static string appFolderPath = Path.Combine(appDataPath, "xCheats");
-        static string configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
+        static string appFolderPath = Path.Combine(appDataPath,"DovahkiinLounge Group", "xCheats");
+        static string configFilePath = Path.Combine(appFolderPath, "Config\\config.ini");
         IniConfig config = new IniConfig();
         private string JsonFilePath;
         public RDRO()

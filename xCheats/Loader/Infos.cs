@@ -24,20 +24,26 @@ using File = System.IO.File;
 using xCheatsFunctions;
 using xCheats.Calls;
 using System.ComponentModel;
+using System.Globalization;
+using System.Resources;
 
 namespace xCheats.Loader
 {
     public partial class Infos : Form
     {
-        private const string DOWNLOAD_URL = "https://github.com/CelinaxCute/xCheatsv2/releases/download/GFWLInstaller/Release.zip";
-        private const string DOWNLOAD_URL2 = "https://github.com/CelinaxCute/xCheatsv2/releases/download/4GBx64Patch/Release.zip";
+
+        CultureInfo lang = CultureInfo.CurrentCulture;
+        ResourceManager rm = new ResourceManager("xCheats.Lang.Lang", typeof(Infos).Assembly);
+
+        private const string DOWNLOAD_URL = "https://github.com/CelinaxCute/xCheatsv2/raw/master/Assets/Game%20Fix%20Tools/GFWL/Release.zip";
+        private const string DOWNLOAD_URL2 = "https://github.com/CelinaxCute/xCheatsv2/raw/master/Assets/Game%20Fix%20Tools/4GB%20Patch%20for%2032bit%20Games/Release.zip";
         public string Message = "Offline Mode enabled";
         private const string DCUSERINFO1 = "https://api.auvos.app/getdiscorduser/749592637455073300";
         private const string DCUSERINFO2 = "https://api.auvos.app/getdiscorduser/405427472436559884";
 
         private string DCUSERINFO1_DATA = "";
         private string DCUSERINFO2_DATA = "";
-       
+
         private HttpDownloader httpDwn;
         private DownloadManager downloadManager = new DownloadManager();
 
@@ -102,12 +108,9 @@ namespace xCheats.Loader
             return CallNextHookEx(_hook, nCode, wParam, lParam);
         }
 
-
-        
         public Infos()
         {
             InitializeComponent();
-            
             TestLabel.Text = "OS Version: " + HardwareInfo.GetOSInformation() + ".";
             GPU.Text = "GPU: " + DeviceInfo.GetGPUName + ".";
             CPU.Text = "CPU: " + DeviceInfo.GetProcessorName + ".";
@@ -116,6 +119,14 @@ namespace xCheats.Loader
             int buttonMode = Properties.Settings.Default.Autostart;
             downloadManager.ProgressChanged += DownloadManager_ProgressChanged;
             downloadManager.DownloadCompleted += DownloadManager_DownloadCompleted;
+            GamesWinLiveText.Text = rm.GetString("GFWLDwn", lang);
+            PatchText.Text = rm.GetString("4gbpatchtxt", lang);
+            RemoveGWLD.Text = rm.GetString("RemoveBtn", lang);
+            RemovePatch.Text = rm.GetString("RemoveBtn", lang);
+            inittxt.Text = rm.GetString("initconsole", lang);
+            GamesWinLiveDwn.Text = rm.GetString("DwnBtn" , lang);
+            PatchDwn.Text = rm.GetString("DwnBtn", lang);
+
         }
 
 
@@ -146,20 +157,20 @@ namespace xCheats.Loader
             responseText = Encoding.UTF8.GetString(bytes);
             DCUSERINFO2_DATA = responseText;
         }
-            public async void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        public async void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
             {
-                try
-                {
                 string tag = DCCopyTag.Text.Substring(DCCopyTag.Text.IndexOf(":") + 1).Trim();
                 Clipboard.SetText(tag);
 
 
-                }
-                catch (Exception ex)
-                {
-
-                }
             }
+            catch (Exception ex)
+            {
+
+            }
+        }
 
         private void Infos_Load(object sender, EventArgs e)
         {
@@ -170,7 +181,7 @@ namespace xCheats.Loader
             }
             else
             {
-                AutoStartBtn.Enabled= false;
+                AutoStartBtn.Enabled = false;
             }
 
             if (API.isOfflineMode == true)
@@ -199,6 +210,12 @@ namespace xCheats.Loader
                     ConInfo.Text = "Offline";
                 }
             }
+
+            if (!Automation.IsBusy)
+            {
+                Automation.RunWorkerAsync();
+            }
+            Thread.Sleep(100);
         }
 
         private void DownloadManager_ProgressChanged(object sender, xCheatsFunctions.ProgressChangedEventArgs e)
@@ -214,7 +231,7 @@ namespace xCheats.Loader
             {
                 // Successful download and extraction
                 string downloadFolderPath = Path.GetDirectoryName(e.FilePath);
-                MessageBox.Show("Download and extraction completed successfully.");
+                MessageBox.Show(rm.GetString("DwnExtractSuc", lang));
                 DwnBar.Visible = false;
             }
             else
@@ -226,31 +243,45 @@ namespace xCheats.Loader
 
         private void GamesWinLiveDwn_Click(object sender, EventArgs e)
         {
-            if (API.isOfflineMode == true)
+            if (GamesWinLiveDwn.Text == rm.GetString("DwnBtn", lang))
             {
-                MessageBox.Show(Message, "Warning");
+                if (API.isOfflineMode == true)
+                {
+                    MessageBox.Show(Message, "Warning");
+                }
+                else
+                {
+                    string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                    string xCheatsDownloadsPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads");
+                    string xCheatsDownloadsPath2 = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads", "Games For Windows LIve");
+                    string zipFilePath = Path.Combine(xCheatsDownloadsPath, "Release.zip");
+
+                    // Delete the ZIP file if it exists
+                    if (File.Exists(zipFilePath))
+                    {
+                        File.Delete(zipFilePath);
+                    }
+
+                    // Delete the entire target directory if it exists
+                    if (Directory.Exists(xCheatsDownloadsPath2))
+                    {
+                        Directory.Delete(xCheatsDownloadsPath2, true);
+                    }
+
+                    // Start the download and extraction
+                    downloadManager.DownloadAndExtractZip(DOWNLOAD_URL, xCheatsDownloadsPath);
+                }
             }
-            else
+            else if (GamesWinLiveDwn.Text == rm.GetString("openBtn", lang))
             {
+
+                // Replace "YourApplication.exe" with the actual executable or file name of your application
                 string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-                string xCheatsDownloadsPath = Path.Combine(appDataPath, "xCheats", "data", "Downloads");
-                string xCheatsDownloadsPath2 = Path.Combine(appDataPath, "xCheats", "data", "Downloads", "Games For Windows LIve");
-                string zipFilePath = Path.Combine(xCheatsDownloadsPath, "Release.zip");
+                string xCheatsDownloadsPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads");
+                string applicationFilePath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads", "Games For Windows LIve", "CLICK ME NOT THE OTHERS.exe");
 
-                // Delete the ZIP file if it exists
-                if (File.Exists(zipFilePath))
-                {
-                    File.Delete(zipFilePath);
-                }
-
-                // Delete the entire target directory if it exists
-                if (Directory.Exists(xCheatsDownloadsPath2))
-                {
-                    Directory.Delete(xCheatsDownloadsPath2, true);
-                }
-
-                // Start the download and extraction
-                downloadManager.DownloadAndExtractZip(DOWNLOAD_URL, xCheatsDownloadsPath);
+                // Check if the file exists
+                Process.Start(applicationFilePath);
             }
         }
 
@@ -305,7 +336,9 @@ namespace xCheats.Loader
         private void Automation_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             setDiscordUserdata();
-            Thread.Sleep(50);
+            bool isApplicationInstalled = CheckIfApplicationInstalled();
+            bool isApplicationInstalled2 = CheckIfApplicationInstalled2();
+            Thread.Sleep(100);
             try
             {
                 //Cèline
@@ -322,6 +355,27 @@ namespace xCheats.Loader
                 GLName2.Text = "DisplayName: " + jsonResponse.global_name;
                 DCAV2.ImageLocation = jsonResponse.avatar_url;
                 CRA2.Text = "Created At:" + jsonResponse.created_at;
+
+                if (isApplicationInstalled)
+                {
+                    PatchDwn.Text = rm.GetString("openBtn", lang);
+                    RemovePatch.Visible = true;
+                }
+                else
+                {
+                    PatchDwn.Text = rm.GetString("DwnBtn", lang);
+                    RemovePatch.Visible = false;
+                }
+                if (isApplicationInstalled2)
+                {
+                    GamesWinLiveDwn.Text = rm.GetString("openBtn", lang);
+                    RemoveGWLD.Visible = true;
+                }
+                else
+                {
+                    GamesWinLiveDwn.Text = rm.GetString("DwnBtn", lang);
+                    RemoveGWLD.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -357,7 +411,7 @@ namespace xCheats.Loader
 
             shortcut.TargetPath = targetPath;
             shortcut.Description = description;
-            shortcut.WindowStyle = (int)WshWindowStyle.WshMinimizedNoFocus; 
+            shortcut.WindowStyle = (int)WshWindowStyle.WshMinimizedNoFocus;
             shortcut.Save();
 
             MessageBox.Show("Programm start now after PC Restart");
@@ -395,43 +449,123 @@ namespace xCheats.Loader
 
         private void siticoneTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (siticoneTabControl1.SelectedTab == Credits)
-            {
-                if (!Automation.IsBusy)
-                {
-                    Automation.RunWorkerAsync();
-                }
-            }
+
         }
 
         private void PatchDwn_Click(object sender, EventArgs e)
         {
-            if (API.isOfflineMode == true)
+
+            if (PatchDwn.Text == rm.GetString("DwnBtn", lang))
             {
-                MessageBox.Show(Message, "Warning");
+                if (API.isOfflineMode == true)
+                {
+                    MessageBox.Show(Message, "Warning");
+                }
+                else
+                {
+                    string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                    string xCheatsDownloadsPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads");
+                    string xCheatsDownloadsPath2 = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads", "4GB Patch for 32bit Games");
+                    string zipFilePath = Path.Combine(xCheatsDownloadsPath, "Release.zip");
+
+                    // Delete the ZIP file if it exists
+                    if (File.Exists(zipFilePath))
+                    {
+                        File.Delete(zipFilePath);
+                    }
+
+                    // Delete the entire target directory if it exists
+                    if (Directory.Exists(xCheatsDownloadsPath2))
+                    {
+                        Directory.Delete(xCheatsDownloadsPath2, true);
+                    }
+
+                    // Start the download and extraction
+                    downloadManager.DownloadAndExtractZipv2(DOWNLOAD_URL2, xCheatsDownloadsPath);
+                }
+
+
             }
-            else
+            else if (PatchDwn.Text == rm.GetString("openBtn", lang))
             {
                 string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-                string xCheatsDownloadsPath = Path.Combine(appDataPath, "xCheats", "data", "Downloads");
-                string xCheatsDownloadsPath2 = Path.Combine(appDataPath, "xCheats", "data", "Downloads", "4GB Patch for 32bit Games");
-                string zipFilePath = Path.Combine(xCheatsDownloadsPath, "Release.zip");
+                string xCheatsDownloadsPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads");
+                string applicationFilePath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads", "4GB Patch for 32bit Games", "4gb_patch.exe");
 
-                // Delete the ZIP file if it exists
-                if (File.Exists(zipFilePath))
-                {
-                    File.Delete(zipFilePath);
-                }
-
-                // Delete the entire target directory if it exists
-                if (Directory.Exists(xCheatsDownloadsPath2))
-                {
-                    Directory.Delete(xCheatsDownloadsPath2, true);
-                }
-
-                // Start the download and extraction
-                downloadManager.DownloadAndExtractZipv2(DOWNLOAD_URL2, xCheatsDownloadsPath);
+                Process.Start(applicationFilePath);
             }
+
+        }
+
+        private void FixTool_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool CheckIfApplicationInstalled()
+        {
+            // Replace "YourApplication.exe" with the actual executable or file name of your application
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string xCheatsDownloadsPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads");
+            string applicationFilePath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads", "4GB Patch for 32bit Games", "4gb_patch.exe");
+
+            // Check if the file exists
+            return File.Exists(applicationFilePath);
+        }
+        private bool CheckIfApplicationInstalled2()
+        {
+            // Replace "YourApplication.exe" with the actual executable or file name of your application
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string xCheatsDownloadsPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads");
+            string applicationFilePath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads", "Games For Windows LIve", "CLICK ME NOT THE OTHERS.exe");
+
+            // Check if the file exists
+            return File.Exists(applicationFilePath);
+        }
+
+        private void RemovePatch_Click(object sender, EventArgs e)
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string xCheatsDownloadsPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads");
+            string xCheatsDownloadsPath2 = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads", "4GB Patch for 32bit Games");
+
+            if (Directory.Exists(xCheatsDownloadsPath2))
+            {
+                Directory.Delete(xCheatsDownloadsPath2, true);
+            }
+            if (!Automation.IsBusy)
+            {
+                Automation.RunWorkerAsync();
+            }
+        }
+
+        private void StateUpd_Click(object sender, EventArgs e)
+        {
+            if (!Automation.IsBusy)
+            {
+                Automation.RunWorkerAsync();
+            }
+        }
+
+        private void RemoveGWLD_Click(object sender, EventArgs e)
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string xCheatsDownloadsPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads");
+            string xCheatsDownloadsPath3 = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats", "Downloads", "Games For Windows LIve");
+
+            if (Directory.Exists(xCheatsDownloadsPath3))
+            {
+                Directory.Delete(xCheatsDownloadsPath3, true);
+            }
+            if (!Automation.IsBusy)
+            {
+                Automation.RunWorkerAsync();
+            }
+        }
+
+        private void RunTimeDwn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

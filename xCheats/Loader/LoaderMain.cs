@@ -20,10 +20,19 @@ using xCheats.Calls;
 using System.Reflection;
 using AutoUpdaterDotNET;
 using xCheatsFunctions;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.IO.Pipes;
+using System.Text;
+using System.Globalization;
+using xCheats_Launcher;
+using System.Resources;
 namespace xCheats
 {
     public partial class LoaderMain : Form
     {
+        public readonly AoBScanner scanner = new AoBScanner();
         private Timer timer;
         private string rdr2ProcessName = "RDR2"; // Name des Red Dead Redemption 2-Prozesses
         private string programPath = Environment.CurrentDirectory + "\\data\\Dlls\\Injector.exe";
@@ -34,20 +43,38 @@ namespace xCheats
         //static string programPath;
         //static string programArguments;
         static bool isProcessRunning = false;
+        CultureInfo lang = CultureInfo.CurrentCulture;
+        ResourceManager rm = new ResourceManager("xCheats.Lang.Lang", typeof(LoaderMain).Assembly);
 
         bool ProcOpen = false;
         public LoaderMain()
         {
             InitializeComponent();
             x.hide();
-            Console.WriteLine("Welcome to xCheats");
+            Console.WriteLine(rm.GetString("welcomeConsole", lang));
             System.Timers.Timer timer = new System.Timers.Timer
             {
-                Interval = 2 * 60 * 1000,
+                Interval = 2 * 1000,
                 SynchronizingObject = this
             };
             timer.Elapsed += delegate
             {
+                if (File.Exists(Environment.CurrentDirectory + "\\DovahkiinLounge.Memory.dll"))
+                {
+                    xCheatsBtn.Visible = true;
+                    xCheats.Visible = true;
+                    if (xCheats.Visible == true)
+                    {
+                        timer.Stop();
+                        Console.WriteLine(rm.GetString("DovahmemDLL", lang));
+                    }
+
+                }
+                else
+                {
+                    xCheats.Visible = false;
+                    xCheatsBtn.Visible = false;
+                }
                 AutoUpdater.Start("https://xcheats.dovahkiinlounge.de/update.php");
             };
             timer.Start();
@@ -55,10 +82,13 @@ namespace xCheats
             Version truncatedVersion = new Version(assemblyVersion.Major, assemblyVersion.Minor, assemblyVersion.Build);
             string AV = string.Format("{0}.{1}.{2}", truncatedVersion.Major, truncatedVersion.Minor, truncatedVersion.Build.ToString("D"));
             AppVer.Text = "Version: " + AV;
+            //Lang
+            Infos.Text = rm.GetString("infos/more", lang);
         }
 
         private void xCheatsBtn_Click(object sender, EventArgs e)
         {
+
 
             if (xCheats.Text == "4 HD Edition")
             {
@@ -67,14 +97,12 @@ namespace xCheats
                 Notify.Dispose();
                 this.Hide();
             }
-            else if (xCheats.Text == "5 Gold Edition")
+            else if (xCheats.Text == "5 Gold Edition(Updating...)")
             {
-
-                MessageBox.Show("ERROR", "UPDATING...");
-                //RE5 RE5 = new RE5();
-                //RE5.Show();
-                //Notify.Dispose();
-                //this.Hide();
+                RE5 RE5 = new RE5();
+                RE5.Show();
+                Notify.Dispose();
+                this.Hide();
             }
             else if (xCheats.Text == "Vice City")
             {
@@ -91,7 +119,6 @@ namespace xCheats
                 this.Hide();
             }
         }
-
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             if (API.backgroundWork)
@@ -108,7 +135,7 @@ namespace xCheats
         {
 
             xCheats.Items.Add("----Capcom----");
-            xCheats.Items.Add("5 Gold Edition");
+            xCheats.Items.Add("5 Gold Edition(Updating...)");
             xCheats.Items.Add("4 HD Edition");
             xCheats.Items.Add("----Rockstar Games----");
             xCheats.Items.Add("Vice City");
@@ -125,7 +152,7 @@ namespace xCheats
             }
             if (API.isAdmin)
             {
-                xCheats.Visible = true;
+                //xCheats.Visible = true;
             }
             else
             {
@@ -206,14 +233,6 @@ namespace xCheats
                     Thread.Sleep(50);
                     OnOff.Text = "Offline";
                 }
-            }
-            if (File.Exists(Environment.CurrentDirectory + "\\xCheats Helper.dll"))
-            {
-                xCheats.Visible = true;
-            }
-            else
-            {
-                xCheats.Visible = false;
             }
         }
 
@@ -297,5 +316,43 @@ namespace xCheats
         {
             Process.Start(programPath, GameList.RDR2);
         }
+
+        private void Notify_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            WindowState = FormWindowState.Normal;
+            BringToFront();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        //private async void btnScan_Click(object sender, EventArgs e)
+        //{
+        //    await SendCommandToServiceAsync("test");
+        //}
+
+        //private static async Task SendCommandToServiceAsync(string command)
+        //{
+        //    using (NamedPipeClientStream pipeClient = new NamedPipeClientStream(".", "xCheatsPipe", PipeDirection.InOut))
+        //    {
+        //        await pipeClient.ConnectAsync();
+
+        //        using (StreamWriter writer = new StreamWriter(pipeClient, Encoding.UTF8))
+        //        {
+        //            await writer.WriteLineAsync(command);
+        //            writer.Flush();
+        //        }
+        //    }
+        //}
+
+        //private async void test11_Click(object sender, EventArgs e)
+        //{
+        //    await SendCommandToServiceAsync("test2");
+        //}
     }
 }

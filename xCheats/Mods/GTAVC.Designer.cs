@@ -28,231 +28,244 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.siticoneBorderlessForm1 = new Siticone.Desktop.UI.WinForms.SiticoneBorderlessForm(this.components);
-            this.siticoneDragControl1 = new Siticone.Desktop.UI.WinForms.SiticoneDragControl(this.components);
-            this.Health = new System.Windows.Forms.Label();
-            this.MoneyLabel = new System.Windows.Forms.Label();
-            this.BDWorker = new System.ComponentModel.BackgroundWorker();
-            this.Injected = new System.Windows.Forms.Label();
-            this.Exit = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
-            this.HealthChanger = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
-            this.Example2 = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
-            this.Hbart = new System.Windows.Forms.Label();
-            this.HBar = new Siticone.Desktop.UI.WinForms.SiticoneTrackBar();
-            this.Healtht = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.MBar = new Siticone.Desktop.UI.WinForms.SiticoneTrackBar();
-            this.MBarL = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            siticoneBorderlessForm1 = new Siticone.Desktop.UI.WinForms.SiticoneBorderlessForm(components);
+            siticoneDragControl1 = new Siticone.Desktop.UI.WinForms.SiticoneDragControl(components);
+            Health = new Label();
+            MoneyLabel = new Label();
+            BDWorker = new System.ComponentModel.BackgroundWorker();
+            Injected = new Label();
+            Exit = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
+            HealthChanger = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
+            Example2 = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
+            Hbart = new Label();
+            HBar = new Siticone.Desktop.UI.WinForms.SiticoneTrackBar();
+            Healtht = new Label();
+            label1 = new Label();
+            MBar = new Siticone.Desktop.UI.WinForms.SiticoneTrackBar();
+            MBarL = new Label();
+            SuspendLayout();
             // 
             // siticoneBorderlessForm1
             // 
-            this.siticoneBorderlessForm1.AnimateWindow = true;
-            this.siticoneBorderlessForm1.AnimationType = Siticone.Desktop.UI.WinForms.SiticoneBorderlessForm.AnimateWindowType.AW_HOR_NEGATIVE;
-            this.siticoneBorderlessForm1.BorderRadius = 20;
-            this.siticoneBorderlessForm1.ContainerControl = this;
-            this.siticoneBorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.siticoneBorderlessForm1.TransparentWhileDrag = true;
+            siticoneBorderlessForm1.AnimateWindow = true;
+            siticoneBorderlessForm1.AnimationType = Siticone.Desktop.UI.WinForms.SiticoneBorderlessForm.AnimateWindowType.AW_HOR_NEGATIVE;
+            siticoneBorderlessForm1.BorderRadius = 20;
+            siticoneBorderlessForm1.ContainerControl = this;
+            siticoneBorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            siticoneBorderlessForm1.TransparentWhileDrag = true;
             // 
             // siticoneDragControl1
             // 
-            this.siticoneDragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.siticoneDragControl1.UseTransparentDrag = true;
+            siticoneDragControl1.DockIndicatorTransparencyValue = 0.6D;
+            siticoneDragControl1.UseTransparentDrag = true;
             // 
             // Health
             // 
-            this.Health.AutoSize = true;
-            this.Health.BackColor = System.Drawing.Color.Transparent;
-            this.Health.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Health.ForeColor = System.Drawing.Color.White;
-            this.Health.Location = new System.Drawing.Point(205, 9);
-            this.Health.Name = "Health";
-            this.Health.Size = new System.Drawing.Size(102, 20);
-            this.Health.TabIndex = 0;
-            this.Health.Text = "Health: ???";
+            Health.AutoSize = true;
+            Health.BackColor = Color.Transparent;
+            Health.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Health.ForeColor = Color.White;
+            Health.Location = new Point(273, 14);
+            Health.Margin = new Padding(4, 0, 4, 0);
+            Health.Name = "Health";
+            Health.Size = new Size(123, 25);
+            Health.TabIndex = 0;
+            Health.Text = "Health: ???";
             // 
             // MoneyLabel
             // 
-            this.MoneyLabel.AutoSize = true;
-            this.MoneyLabel.BackColor = System.Drawing.Color.Transparent;
-            this.MoneyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MoneyLabel.ForeColor = System.Drawing.Color.White;
-            this.MoneyLabel.Location = new System.Drawing.Point(205, 29);
-            this.MoneyLabel.Name = "MoneyLabel";
-            this.MoneyLabel.Size = new System.Drawing.Size(101, 20);
-            this.MoneyLabel.TabIndex = 1;
-            this.MoneyLabel.Text = "Money: ???";
+            MoneyLabel.AutoSize = true;
+            MoneyLabel.BackColor = Color.Transparent;
+            MoneyLabel.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MoneyLabel.ForeColor = Color.White;
+            MoneyLabel.Location = new Point(273, 45);
+            MoneyLabel.Margin = new Padding(4, 0, 4, 0);
+            MoneyLabel.Name = "MoneyLabel";
+            MoneyLabel.Size = new Size(126, 25);
+            MoneyLabel.TabIndex = 1;
+            MoneyLabel.Text = "Money: ???";
             // 
             // BDWorker
             // 
-            this.BDWorker.WorkerReportsProgress = true;
-            this.BDWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BOWorker_DoWork);
-            this.BDWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BOWorker_ProgressChanged);
-            this.BDWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BOWorker_RunWorkerCompleted);
+            BDWorker.WorkerReportsProgress = true;
+            BDWorker.DoWork += BOWorker_DoWork;
+            BDWorker.ProgressChanged += BOWorker_ProgressChanged;
+            BDWorker.RunWorkerCompleted += BOWorker_RunWorkerCompleted;
             // 
             // Injected
             // 
-            this.Injected.AutoSize = true;
-            this.Injected.BackColor = System.Drawing.Color.Transparent;
-            this.Injected.ForeColor = System.Drawing.Color.Magenta;
-            this.Injected.Location = new System.Drawing.Point(4, 9);
-            this.Injected.Name = "Injected";
-            this.Injected.Size = new System.Drawing.Size(0, 13);
-            this.Injected.TabIndex = 3;
+            Injected.AutoSize = true;
+            Injected.BackColor = Color.Transparent;
+            Injected.ForeColor = Color.Magenta;
+            Injected.Location = new Point(5, 14);
+            Injected.Margin = new Padding(4, 0, 4, 0);
+            Injected.Name = "Injected";
+            Injected.Size = new Size(0, 20);
+            Injected.TabIndex = 3;
             // 
             // Exit
             // 
-            this.Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Exit.Animated = true;
-            this.Exit.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.Exit.ControlBoxStyle = Siticone.Desktop.UI.WinForms.Enums.ControlBoxStyle.Custom;
-            this.Exit.FillColor = System.Drawing.Color.Red;
-            this.Exit.IconColor = System.Drawing.Color.Black;
-            this.Exit.Location = new System.Drawing.Point(403, 9);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(45, 20);
-            this.Exit.TabIndex = 4;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            Exit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Exit.Animated = true;
+            Exit.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            Exit.ControlBoxStyle = Siticone.Desktop.UI.WinForms.Enums.ControlBoxStyle.Custom;
+            Exit.FillColor = Color.Red;
+            Exit.IconColor = Color.Black;
+            Exit.Location = new Point(537, 14);
+            Exit.Margin = new Padding(4, 5, 4, 5);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(60, 31);
+            Exit.TabIndex = 4;
+            Exit.Click += Exit_Click;
             // 
             // HealthChanger
             // 
-            this.HealthChanger.AutoSize = true;
-            this.HealthChanger.BackColor = System.Drawing.Color.Transparent;
-            this.HealthChanger.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.HealthChanger.CheckedState.BorderRadius = 0;
-            this.HealthChanger.CheckedState.BorderThickness = 0;
-            this.HealthChanger.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.HealthChanger.ForeColor = System.Drawing.Color.White;
-            this.HealthChanger.Location = new System.Drawing.Point(17, 63);
-            this.HealthChanger.Name = "HealthChanger";
-            this.HealthChanger.Size = new System.Drawing.Size(117, 17);
-            this.HealthChanger.TabIndex = 8;
-            this.HealthChanger.Text = "Enable Health Mod";
-            this.HealthChanger.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.HealthChanger.UncheckedState.BorderRadius = 0;
-            this.HealthChanger.UncheckedState.BorderThickness = 0;
-            this.HealthChanger.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.HealthChanger.UseVisualStyleBackColor = false;
+            HealthChanger.AutoSize = true;
+            HealthChanger.BackColor = Color.Transparent;
+            HealthChanger.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            HealthChanger.CheckedState.BorderRadius = 0;
+            HealthChanger.CheckedState.BorderThickness = 0;
+            HealthChanger.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            HealthChanger.Enabled = false;
+            HealthChanger.ForeColor = Color.White;
+            HealthChanger.Location = new Point(23, 97);
+            HealthChanger.Margin = new Padding(4, 5, 4, 5);
+            HealthChanger.Name = "HealthChanger";
+            HealthChanger.Size = new Size(280, 24);
+            HealthChanger.TabIndex = 8;
+            HealthChanger.Text = "Enable Health Mod(Current Disabled)";
+            HealthChanger.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            HealthChanger.UncheckedState.BorderRadius = 0;
+            HealthChanger.UncheckedState.BorderThickness = 0;
+            HealthChanger.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            HealthChanger.UseVisualStyleBackColor = false;
             // 
             // Example2
             // 
-            this.Example2.AutoSize = true;
-            this.Example2.BackColor = System.Drawing.Color.Transparent;
-            this.Example2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Example2.CheckedState.BorderRadius = 0;
-            this.Example2.CheckedState.BorderThickness = 0;
-            this.Example2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Example2.ForeColor = System.Drawing.Color.White;
-            this.Example2.Location = new System.Drawing.Point(17, 86);
-            this.Example2.Name = "Example2";
-            this.Example2.Size = new System.Drawing.Size(118, 17);
-            this.Example2.TabIndex = 12;
-            this.Example2.Text = "Enable Money Mod";
-            this.Example2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.Example2.UncheckedState.BorderRadius = 0;
-            this.Example2.UncheckedState.BorderThickness = 0;
-            this.Example2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.Example2.UseVisualStyleBackColor = false;
+            Example2.AutoSize = true;
+            Example2.BackColor = Color.Transparent;
+            Example2.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            Example2.CheckedState.BorderRadius = 0;
+            Example2.CheckedState.BorderThickness = 0;
+            Example2.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            Example2.ForeColor = Color.White;
+            Example2.Location = new Point(23, 132);
+            Example2.Margin = new Padding(4, 5, 4, 5);
+            Example2.Name = "Example2";
+            Example2.Size = new Size(160, 24);
+            Example2.TabIndex = 12;
+            Example2.Text = "Enable Money Mod";
+            Example2.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            Example2.UncheckedState.BorderRadius = 0;
+            Example2.UncheckedState.BorderThickness = 0;
+            Example2.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            Example2.UseVisualStyleBackColor = false;
             // 
             // Hbart
             // 
-            this.Hbart.AutoSize = true;
-            this.Hbart.BackColor = System.Drawing.Color.Transparent;
-            this.Hbart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hbart.ForeColor = System.Drawing.Color.White;
-            this.Hbart.Location = new System.Drawing.Point(205, 109);
-            this.Hbart.Name = "Hbart";
-            this.Hbart.Size = new System.Drawing.Size(0, 20);
-            this.Hbart.TabIndex = 19;
+            Hbart.AutoSize = true;
+            Hbart.BackColor = Color.Transparent;
+            Hbart.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Hbart.ForeColor = Color.White;
+            Hbart.Location = new Point(273, 168);
+            Hbart.Margin = new Padding(4, 0, 4, 0);
+            Hbart.Name = "Hbart";
+            Hbart.Size = new Size(0, 25);
+            Hbart.TabIndex = 19;
             // 
             // HBar
             // 
-            this.HBar.BackColor = System.Drawing.Color.Transparent;
-            this.HBar.Enabled = false;
-            this.HBar.Location = new System.Drawing.Point(92, 132);
-            this.HBar.Maximum = 200;
-            this.HBar.Name = "HBar";
-            this.HBar.Size = new System.Drawing.Size(300, 23);
-            this.HBar.TabIndex = 17;
-            this.HBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
-            this.HBar.Value = 100;
+            HBar.BackColor = Color.Transparent;
+            HBar.Enabled = false;
+            HBar.Location = new Point(123, 203);
+            HBar.Margin = new Padding(4, 5, 4, 5);
+            HBar.Maximum = 200;
+            HBar.Name = "HBar";
+            HBar.Size = new Size(400, 35);
+            HBar.TabIndex = 17;
+            HBar.ThumbColor = Color.FromArgb(160, 113, 255);
+            HBar.Value = 100;
             // 
             // Healtht
             // 
-            this.Healtht.AutoSize = true;
-            this.Healtht.BackColor = System.Drawing.Color.Transparent;
-            this.Healtht.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Healtht.ForeColor = System.Drawing.Color.White;
-            this.Healtht.Location = new System.Drawing.Point(11, 132);
-            this.Healtht.Name = "Healtht";
-            this.Healtht.Size = new System.Drawing.Size(67, 20);
-            this.Healtht.TabIndex = 18;
-            this.Healtht.Text = "Health:";
+            Healtht.AutoSize = true;
+            Healtht.BackColor = Color.Transparent;
+            Healtht.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Healtht.ForeColor = Color.White;
+            Healtht.Location = new Point(15, 203);
+            Healtht.Margin = new Padding(4, 0, 4, 0);
+            Healtht.Name = "Healtht";
+            Healtht.Size = new Size(81, 25);
+            Healtht.TabIndex = 18;
+            Healtht.Text = "Health:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(11, 185);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 20);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Money:";
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(15, 285);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(84, 25);
+            label1.TabIndex = 21;
+            label1.Text = "Money:";
             // 
             // MBar
             // 
-            this.MBar.BackColor = System.Drawing.Color.Transparent;
-            this.MBar.Enabled = false;
-            this.MBar.Location = new System.Drawing.Point(92, 185);
-            this.MBar.Maximum = 1000000;
-            this.MBar.Name = "MBar";
-            this.MBar.Size = new System.Drawing.Size(300, 23);
-            this.MBar.TabIndex = 20;
-            this.MBar.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(113)))), ((int)(((byte)(255)))));
-            this.MBar.Value = 500000;
+            MBar.BackColor = Color.Transparent;
+            MBar.Enabled = false;
+            MBar.Location = new Point(123, 285);
+            MBar.Margin = new Padding(4, 5, 4, 5);
+            MBar.Maximum = 1000000;
+            MBar.Name = "MBar";
+            MBar.Size = new Size(400, 35);
+            MBar.TabIndex = 20;
+            MBar.ThumbColor = Color.FromArgb(160, 113, 255);
+            MBar.Value = 500000;
             // 
             // MBarL
             // 
-            this.MBarL.AutoSize = true;
-            this.MBarL.BackColor = System.Drawing.Color.Transparent;
-            this.MBarL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MBarL.ForeColor = System.Drawing.Color.White;
-            this.MBarL.Location = new System.Drawing.Point(205, 162);
-            this.MBarL.Name = "MBarL";
-            this.MBarL.Size = new System.Drawing.Size(0, 20);
-            this.MBarL.TabIndex = 22;
+            MBarL.AutoSize = true;
+            MBarL.BackColor = Color.Transparent;
+            MBarL.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MBarL.ForeColor = Color.White;
+            MBarL.Location = new Point(273, 249);
+            MBarL.Margin = new Padding(4, 0, 4, 0);
+            MBarL.Name = "MBarL";
+            MBarL.Size = new Size(0, 25);
+            MBarL.TabIndex = 22;
             // 
             // GTAVC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::xCheats.Properties.Resources.Vice_City;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(460, 260);
-            this.Controls.Add(this.MBarL);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.MBar);
-            this.Controls.Add(this.Hbart);
-            this.Controls.Add(this.Healtht);
-            this.Controls.Add(this.HBar);
-            this.Controls.Add(this.Example2);
-            this.Controls.Add(this.HealthChanger);
-            this.Controls.Add(this.Exit);
-            this.Controls.Add(this.Injected);
-            this.Controls.Add(this.MoneyLabel);
-            this.Controls.Add(this.Health);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "GTAVC";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "xCheats RE4";
-            this.Shown += new System.EventHandler(this.RE4_Show);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
+            BackgroundImage = Properties.Resources.Vice_City;
+            BackgroundImageLayout = ImageLayout.Center;
+            ClientSize = new Size(613, 400);
+            Controls.Add(MBarL);
+            Controls.Add(label1);
+            Controls.Add(MBar);
+            Controls.Add(Hbart);
+            Controls.Add(Healtht);
+            Controls.Add(HBar);
+            Controls.Add(Example2);
+            Controls.Add(HealthChanger);
+            Controls.Add(Exit);
+            Controls.Add(Injected);
+            Controls.Add(MoneyLabel);
+            Controls.Add(Health);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "GTAVC";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "xCheats RE4";
+            Shown += RE4_Show;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

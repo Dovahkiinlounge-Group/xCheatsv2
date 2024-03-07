@@ -8,12 +8,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
-using System.Runtime.Remoting.Channels;
 using System.Security.Cryptography.X509Certificates;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using Microsoft.Win32;
 using System.Reflection;
-using System.Configuration.Install;
 using AutoUpdaterDotNET;
 using xCheatsFunctions;
 using System.Configuration;
@@ -36,7 +34,7 @@ namespace xCheats.Calls
         static  string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         static string appFolderPath = Path.Combine(appDataPath, "xCheats");
         static string configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
-        public static bool isOfflineMode = GlobalSettings.isOfflineMode;
+        public static bool isOfflineMode = GlobalSettings.IsOfflineMode;
         public static bool backgroundWork = GlobalSettings.BackgroundWork;
         public static bool isAdmin = GlobalSettings.AdminMode;
  
@@ -70,32 +68,6 @@ namespace xCheats.Calls
                 if (reply.Status == IPStatus.Success)
                 {
                     Console.WriteLine($"Connection: Online");
-                    //Thread.Sleep(5000);
-                    Console.WriteLine("Check Registry...");
-                    try
-                    {
-                        string Install = Directory.GetCurrentDirectory();
-                        string Data = Directory.GetCurrentDirectory() + $"\\data\\Dlls";
-                        string Services = Directory.GetCurrentDirectory() + $"\\data\\Services";
-                        string Config = Directory.GetCurrentDirectory() + $"\\data\\Config";
-                        using (RegistryKey key = Registry.CurrentUser.CreateSubKey("Software\\xCheats"))
-                        {
-                            // Setze den Pfad im Registrierungsschlüssel
-                            key.SetValue("Path", Install);
-                            key.SetValue("Dll", Data);
-                            key.SetValue("Service", Services);
-                            key.SetValue("Config", Config);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        // Log the error
-                        
-                        Console.WriteLine("An error occurred: " + ex.Message);
-                        ErrorLog.LogError(ex);
-                    }
-
-                    //Thread.Sleep(6000);
                     Application.Run(new LoaderMain());
                 }
             }

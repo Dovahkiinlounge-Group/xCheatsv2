@@ -28,983 +28,1099 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Infos));
-            this.ExitBtn = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
-            this.DeviceInfo = new Siticone.Desktop.UI.WinForms.SiticoneDeviceInfo(this.components);
-            this.BorderInfo = new Siticone.Desktop.UI.WinForms.SiticoneBorderlessForm(this.components);
-            this.TaskPRogress = new Siticone.Desktop.UI.WinForms.SiticoneTaskBarProgress(this.components);
-            this.FolderDial = new System.Windows.Forms.FolderBrowserDialog();
-            this.Automation = new System.ComponentModel.BackgroundWorker();
-            this.Credits = new System.Windows.Forms.TabPage();
-            this.GLName2 = new System.Windows.Forms.Label();
-            this.GLName = new System.Windows.Forms.Label();
-            this.CRA2 = new System.Windows.Forms.Label();
-            this.CRA = new System.Windows.Forms.Label();
-            this.PhilInfo = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
-            this.CeliInfo = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.DCName2 = new System.Windows.Forms.Label();
-            this.DCAV2 = new System.Windows.Forms.PictureBox();
-            this.DCName = new System.Windows.Forms.Label();
-            this.DCAV1 = new System.Windows.Forms.PictureBox();
-            this.Settings = new System.Windows.Forms.TabPage();
-            this.DllNameBox = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
-            this.ExodusBtn = new Siticone.Desktop.UI.WinForms.SiticoneImageButton();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Sterni = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.AutoInjectCB = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
-            this.AutoInjTB = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
-            this.AutoStartBtn = new Siticone.Desktop.UI.WinForms.SiticoneGradientButton();
-            this.WS = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
-            this.siticoneButton1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.SaveSet = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.ConsoleHideBox = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
-            this.siticoneTextBox11 = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
-            this.siticoneCheckBox1 = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
-            this.siticoneTextBox10 = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
-            this.FixTool = new System.Windows.Forms.TabPage();
-            this.RuntimesText = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
-            this.RunTimeDwn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.PatchText = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
-            this.PatchDwn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.DwnBar = new Siticone.Desktop.UI.WinForms.SiticoneCircleProgressBar();
-            this.GamesWinLiveText = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
-            this.GamesWinLiveDwn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.About = new System.Windows.Forms.TabPage();
-            this.Repo2 = new System.Windows.Forms.LinkLabel();
-            this.CPUStat = new System.Windows.Forms.Label();
-            this.MBoard = new System.Windows.Forms.Label();
-            this.CPU = new System.Windows.Forms.Label();
-            this.GPU = new System.Windows.Forms.Label();
-            this.TestLabel = new System.Windows.Forms.Label();
-            this.ConInfo = new System.Windows.Forms.Label();
-            this.StatusInfo = new System.Windows.Forms.Label();
-            this.AppVer = new System.Windows.Forms.Label();
-            this.DCCopyTag = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.siticonePictureBox1 = new Siticone.Desktop.UI.WinForms.SiticonePictureBox();
-            this.siticoneTabControl1 = new Siticone.Desktop.UI.WinForms.SiticoneTabControl();
-            this.Credits.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DCAV2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DCAV1)).BeginInit();
-            this.Settings.SuspendLayout();
-            this.FixTool.SuspendLayout();
-            this.About.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.siticonePictureBox1)).BeginInit();
-            this.siticoneTabControl1.SuspendLayout();
-            this.SuspendLayout();
+            ExitBtn = new Siticone.Desktop.UI.WinForms.SiticoneControlBox();
+            DeviceInfo = new Siticone.Desktop.UI.WinForms.SiticoneDeviceInfo(components);
+            BorderInfo = new Siticone.Desktop.UI.WinForms.SiticoneBorderlessForm(components);
+            TaskPRogress = new Siticone.Desktop.UI.WinForms.SiticoneTaskBarProgress(components);
+            FolderDial = new FolderBrowserDialog();
+            Automation = new System.ComponentModel.BackgroundWorker();
+            Credits = new TabPage();
+            GLName2 = new Label();
+            GLName = new Label();
+            CRA2 = new Label();
+            CRA = new Label();
+            PhilInfo = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            CeliInfo = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            label4 = new Label();
+            DCName2 = new Label();
+            DCAV2 = new PictureBox();
+            DCName = new Label();
+            DCAV1 = new PictureBox();
+            Settings = new TabPage();
+            DllNameBox = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            ExodusBtn = new Siticone.Desktop.UI.WinForms.SiticoneImageButton();
+            label5 = new Label();
+            Sterni = new Label();
+            label3 = new Label();
+            AutoInjectCB = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
+            AutoInjTB = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            AutoStartBtn = new Siticone.Desktop.UI.WinForms.SiticoneGradientButton();
+            WS = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            siticoneButton1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            SaveSet = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            ConsoleHideBox = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
+            inittxt = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            siticoneCheckBox1 = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
+            HotkeyTxT = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            FixTool = new TabPage();
+            RemoveGWLD = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            StateUpd = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            RemovePatch = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            RuntimesText = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            RunTimeDwn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            PatchText = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            PatchDwn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            DwnBar = new Siticone.Desktop.UI.WinForms.SiticoneCircleProgressBar();
+            GamesWinLiveText = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
+            GamesWinLiveDwn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            About = new TabPage();
+            Repo2 = new LinkLabel();
+            CPUStat = new Label();
+            MBoard = new Label();
+            CPU = new Label();
+            GPU = new Label();
+            TestLabel = new Label();
+            ConInfo = new Label();
+            StatusInfo = new Label();
+            AppVer = new Label();
+            DCCopyTag = new LinkLabel();
+            linkLabel1 = new LinkLabel();
+            label2 = new Label();
+            label1 = new Label();
+            siticonePictureBox1 = new Siticone.Desktop.UI.WinForms.SiticonePictureBox();
+            siticoneTabControl1 = new Siticone.Desktop.UI.WinForms.SiticoneTabControl();
+            Credits.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DCAV2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DCAV1).BeginInit();
+            Settings.SuspendLayout();
+            FixTool.SuspendLayout();
+            About.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)siticonePictureBox1).BeginInit();
+            siticoneTabControl1.SuspendLayout();
+            SuspendLayout();
             // 
             // ExitBtn
             // 
-            this.ExitBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExitBtn.Animated = true;
-            this.ExitBtn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.ExitBtn.ControlBoxStyle = Siticone.Desktop.UI.WinForms.Enums.ControlBoxStyle.Custom;
-            this.ExitBtn.FillColor = System.Drawing.Color.Red;
-            this.ExitBtn.IconColor = System.Drawing.Color.Black;
-            this.ExitBtn.Location = new System.Drawing.Point(734, 12);
-            this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(45, 20);
-            this.ExitBtn.TabIndex = 2;
-            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
+            ExitBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            ExitBtn.Animated = true;
+            ExitBtn.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            ExitBtn.ControlBoxStyle = Siticone.Desktop.UI.WinForms.Enums.ControlBoxStyle.Custom;
+            ExitBtn.FillColor = Color.Red;
+            ExitBtn.IconColor = Color.Black;
+            ExitBtn.Location = new Point(978, 19);
+            ExitBtn.Margin = new Padding(5, 4, 5, 4);
+            ExitBtn.Name = "ExitBtn";
+            ExitBtn.Size = new Size(59, 31);
+            ExitBtn.TabIndex = 2;
+            ExitBtn.Click += ExitBtn_Click;
             // 
             // BorderInfo
             // 
-            this.BorderInfo.AnimateWindow = true;
-            this.BorderInfo.AnimationType = Siticone.Desktop.UI.WinForms.SiticoneBorderlessForm.AnimateWindowType.AW_HOR_POSITIVE;
-            this.BorderInfo.ContainerControl = this;
-            this.BorderInfo.DockIndicatorTransparencyValue = 0.6D;
-            this.BorderInfo.DragStartTransparencyValue = 0.5D;
-            this.BorderInfo.TransparentWhileDrag = true;
+            BorderInfo.AnimateWindow = true;
+            BorderInfo.AnimationType = Siticone.Desktop.UI.WinForms.SiticoneBorderlessForm.AnimateWindowType.AW_HOR_POSITIVE;
+            BorderInfo.ContainerControl = this;
+            BorderInfo.DockIndicatorTransparencyValue = 0.6D;
+            BorderInfo.DragStartTransparencyValue = 0.5D;
+            BorderInfo.TransparentWhileDrag = true;
             // 
             // TaskPRogress
             // 
-            this.TaskPRogress.TargetForm = null;
+            TaskPRogress.TargetForm = null;
             // 
             // FolderDial
             // 
-            this.FolderDial.Description = "Select a exclusion for Windows Defender";
-            this.FolderDial.RootFolder = System.Environment.SpecialFolder.MyComputer;
-            this.FolderDial.ShowNewFolderButton = false;
+            FolderDial.Description = "Select a exclusion for Windows Defender";
+            FolderDial.RootFolder = Environment.SpecialFolder.MyComputer;
+            FolderDial.ShowNewFolderButton = false;
             // 
             // Automation
             // 
-            this.Automation.DoWork += new System.ComponentModel.DoWorkEventHandler(this.Automation_DoWork);
+            Automation.DoWork += Automation_DoWork;
             // 
             // Credits
             // 
-            this.Credits.BackColor = System.Drawing.Color.Black;
-            this.Credits.Controls.Add(this.GLName2);
-            this.Credits.Controls.Add(this.GLName);
-            this.Credits.Controls.Add(this.CRA2);
-            this.Credits.Controls.Add(this.CRA);
-            this.Credits.Controls.Add(this.PhilInfo);
-            this.Credits.Controls.Add(this.CeliInfo);
-            this.Credits.Controls.Add(this.label4);
-            this.Credits.Controls.Add(this.DCName2);
-            this.Credits.Controls.Add(this.DCAV2);
-            this.Credits.Controls.Add(this.DCName);
-            this.Credits.Controls.Add(this.DCAV1);
-            this.Credits.Location = new System.Drawing.Point(4, 44);
-            this.Credits.Name = "Credits";
-            this.Credits.Size = new System.Drawing.Size(780, 413);
-            this.Credits.TabIndex = 7;
-            this.Credits.Text = "Credits";
+            Credits.BackColor = Color.Black;
+            Credits.Controls.Add(GLName2);
+            Credits.Controls.Add(GLName);
+            Credits.Controls.Add(CRA2);
+            Credits.Controls.Add(CRA);
+            Credits.Controls.Add(PhilInfo);
+            Credits.Controls.Add(CeliInfo);
+            Credits.Controls.Add(label4);
+            Credits.Controls.Add(DCName2);
+            Credits.Controls.Add(DCAV2);
+            Credits.Controls.Add(DCName);
+            Credits.Controls.Add(DCAV1);
+            Credits.Location = new Point(4, 44);
+            Credits.Margin = new Padding(5, 4, 5, 4);
+            Credits.Name = "Credits";
+            Credits.Size = new Size(1042, 661);
+            Credits.TabIndex = 7;
+            Credits.Text = "Credits";
             // 
             // GLName2
             // 
-            this.GLName2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GLName2.ForeColor = System.Drawing.Color.White;
-            this.GLName2.Location = new System.Drawing.Point(167, 201);
-            this.GLName2.Name = "GLName2";
-            this.GLName2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.GLName2.Size = new System.Drawing.Size(126, 29);
-            this.GLName2.TabIndex = 46;
-            this.GLName2.Text = "DisplayName: ";
+            GLName2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            GLName2.ForeColor = Color.White;
+            GLName2.Location = new Point(225, 269);
+            GLName2.Margin = new Padding(5, 0, 5, 0);
+            GLName2.Name = "GLName2";
+            GLName2.RightToLeft = RightToLeft.No;
+            GLName2.Size = new Size(168, 44);
+            GLName2.TabIndex = 46;
+            GLName2.Text = "DisplayName: ";
             // 
             // GLName
             // 
-            this.GLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GLName.ForeColor = System.Drawing.Color.White;
-            this.GLName.Location = new System.Drawing.Point(11, 201);
-            this.GLName.Name = "GLName";
-            this.GLName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.GLName.Size = new System.Drawing.Size(126, 29);
-            this.GLName.TabIndex = 45;
-            this.GLName.Text = "DisplayName: ";
+            GLName.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            GLName.ForeColor = Color.White;
+            GLName.Location = new Point(17, 269);
+            GLName.Margin = new Padding(5, 0, 5, 0);
+            GLName.Name = "GLName";
+            GLName.RightToLeft = RightToLeft.No;
+            GLName.Size = new Size(168, 44);
+            GLName.TabIndex = 45;
+            GLName.Text = "DisplayName: ";
             // 
             // CRA2
             // 
-            this.CRA2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CRA2.ForeColor = System.Drawing.Color.White;
-            this.CRA2.Location = new System.Drawing.Point(167, 230);
-            this.CRA2.Name = "CRA2";
-            this.CRA2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CRA2.Size = new System.Drawing.Size(126, 41);
-            this.CRA2.TabIndex = 44;
-            this.CRA2.Text = "Created At: ???";
+            CRA2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CRA2.ForeColor = Color.White;
+            CRA2.Location = new Point(225, 313);
+            CRA2.Margin = new Padding(5, 0, 5, 0);
+            CRA2.Name = "CRA2";
+            CRA2.RightToLeft = RightToLeft.No;
+            CRA2.Size = new Size(168, 63);
+            CRA2.TabIndex = 44;
+            CRA2.Text = "Created At: ???";
             // 
             // CRA
             // 
-            this.CRA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CRA.ForeColor = System.Drawing.Color.White;
-            this.CRA.Location = new System.Drawing.Point(11, 230);
-            this.CRA.Name = "CRA";
-            this.CRA.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CRA.Size = new System.Drawing.Size(126, 41);
-            this.CRA.TabIndex = 43;
-            this.CRA.Text = "Created At: ???";
+            CRA.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CRA.ForeColor = Color.White;
+            CRA.Location = new Point(17, 313);
+            CRA.Margin = new Padding(5, 0, 5, 0);
+            CRA.Name = "CRA";
+            CRA.RightToLeft = RightToLeft.No;
+            CRA.Size = new Size(168, 63);
+            CRA.TabIndex = 43;
+            CRA.Text = "Created At: ???";
             // 
             // PhilInfo
             // 
-            this.PhilInfo.BorderColor = System.Drawing.Color.Transparent;
-            this.PhilInfo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PhilInfo.DefaultText = "API Dev";
-            this.PhilInfo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.PhilInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.PhilInfo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PhilInfo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PhilInfo.FillColor = System.Drawing.Color.Transparent;
-            this.PhilInfo.FocusedState.BorderColor = System.Drawing.Color.Transparent;
-            this.PhilInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.PhilInfo.ForeColor = System.Drawing.Color.Magenta;
-            this.PhilInfo.HideSelection = false;
-            this.PhilInfo.HoverState.BorderColor = System.Drawing.Color.Transparent;
-            this.PhilInfo.Location = new System.Drawing.Point(169, 273);
-            this.PhilInfo.Margin = new System.Windows.Forms.Padding(2);
-            this.PhilInfo.Multiline = true;
-            this.PhilInfo.Name = "PhilInfo";
-            this.PhilInfo.PasswordChar = '\0';
-            this.PhilInfo.PlaceholderForeColor = System.Drawing.Color.Transparent;
-            this.PhilInfo.PlaceholderText = "";
-            this.PhilInfo.ReadOnly = true;
-            this.PhilInfo.SelectedText = "";
-            this.PhilInfo.Size = new System.Drawing.Size(124, 34);
-            this.PhilInfo.TabIndex = 42;
+            PhilInfo.BorderColor = Color.Transparent;
+            PhilInfo.Cursor = Cursors.IBeam;
+            PhilInfo.DefaultText = "API Dev";
+            PhilInfo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            PhilInfo.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            PhilInfo.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            PhilInfo.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            PhilInfo.FillColor = Color.Transparent;
+            PhilInfo.FocusedState.BorderColor = Color.Transparent;
+            PhilInfo.Font = new Font("Segoe UI", 9F);
+            PhilInfo.ForeColor = Color.Magenta;
+            PhilInfo.HideSelection = false;
+            PhilInfo.HoverState.BorderColor = Color.Transparent;
+            PhilInfo.Location = new Point(223, 364);
+            PhilInfo.Margin = new Padding(2, 3, 2, 3);
+            PhilInfo.Multiline = true;
+            PhilInfo.Name = "PhilInfo";
+            PhilInfo.PasswordChar = '\0';
+            PhilInfo.PlaceholderForeColor = Color.Transparent;
+            PhilInfo.PlaceholderText = "";
+            PhilInfo.ReadOnly = true;
+            PhilInfo.SelectedText = "";
+            PhilInfo.Size = new Size(80, 36);
+            PhilInfo.TabIndex = 42;
             // 
             // CeliInfo
             // 
-            this.CeliInfo.BorderColor = System.Drawing.Color.Transparent;
-            this.CeliInfo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.CeliInfo.DefaultText = "Core Dev";
-            this.CeliInfo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.CeliInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.CeliInfo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.CeliInfo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.CeliInfo.FillColor = System.Drawing.Color.Transparent;
-            this.CeliInfo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CeliInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.CeliInfo.ForeColor = System.Drawing.Color.Magenta;
-            this.CeliInfo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CeliInfo.Location = new System.Drawing.Point(13, 273);
-            this.CeliInfo.Margin = new System.Windows.Forms.Padding(2);
-            this.CeliInfo.Multiline = true;
-            this.CeliInfo.Name = "CeliInfo";
-            this.CeliInfo.PasswordChar = '\0';
-            this.CeliInfo.PlaceholderForeColor = System.Drawing.Color.Transparent;
-            this.CeliInfo.PlaceholderText = "";
-            this.CeliInfo.ReadOnly = true;
-            this.CeliInfo.SelectedText = "";
-            this.CeliInfo.Size = new System.Drawing.Size(124, 34);
-            this.CeliInfo.TabIndex = 41;
+            CeliInfo.BorderColor = Color.Transparent;
+            CeliInfo.Cursor = Cursors.IBeam;
+            CeliInfo.DefaultText = "Core Dev";
+            CeliInfo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            CeliInfo.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            CeliInfo.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            CeliInfo.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            CeliInfo.FillColor = Color.Transparent;
+            CeliInfo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            CeliInfo.Font = new Font("Segoe UI", 9F);
+            CeliInfo.ForeColor = Color.Magenta;
+            CeliInfo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            CeliInfo.Location = new Point(17, 364);
+            CeliInfo.Margin = new Padding(2, 3, 2, 3);
+            CeliInfo.Multiline = true;
+            CeliInfo.Name = "CeliInfo";
+            CeliInfo.PasswordChar = '\0';
+            CeliInfo.PlaceholderForeColor = Color.Transparent;
+            CeliInfo.PlaceholderText = "";
+            CeliInfo.ReadOnly = true;
+            CeliInfo.SelectedText = "";
+            CeliInfo.Size = new Size(90, 36);
+            CeliInfo.TabIndex = 41;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(8, 14);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 20);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Developed By:";
+            label4.AutoSize = true;
+            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(10, 21);
+            label4.Margin = new Padding(5, 0, 5, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(153, 25);
+            label4.TabIndex = 39;
+            label4.Text = "Developed By:";
             // 
             // DCName2
             // 
-            this.DCName2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DCName2.ForeColor = System.Drawing.Color.White;
-            this.DCName2.Location = new System.Drawing.Point(167, 172);
-            this.DCName2.Name = "DCName2";
-            this.DCName2.Size = new System.Drawing.Size(126, 29);
-            this.DCName2.TabIndex = 38;
-            this.DCName2.Text = "Username: ???";
+            DCName2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DCName2.ForeColor = Color.White;
+            DCName2.Location = new Point(225, 224);
+            DCName2.Margin = new Padding(5, 0, 5, 0);
+            DCName2.Name = "DCName2";
+            DCName2.Size = new Size(168, 44);
+            DCName2.TabIndex = 38;
+            DCName2.Text = "Username: ???";
             // 
             // DCAV2
             // 
-            this.DCAV2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.DCAV2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DCAV2.ErrorImage = null;
-            this.DCAV2.InitialImage = null;
-            this.DCAV2.Location = new System.Drawing.Point(169, 38);
-            this.DCAV2.Name = "DCAV2";
-            this.DCAV2.Size = new System.Drawing.Size(124, 131);
-            this.DCAV2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.DCAV2.TabIndex = 37;
-            this.DCAV2.TabStop = false;
+            DCAV2.BackgroundImageLayout = ImageLayout.Stretch;
+            DCAV2.BorderStyle = BorderStyle.FixedSingle;
+            DCAV2.ErrorImage = null;
+            DCAV2.InitialImage = null;
+            DCAV2.Location = new Point(225, 59);
+            DCAV2.Margin = new Padding(5, 4, 5, 4);
+            DCAV2.Name = "DCAV2";
+            DCAV2.Size = new Size(164, 161);
+            DCAV2.SizeMode = PictureBoxSizeMode.StretchImage;
+            DCAV2.TabIndex = 37;
+            DCAV2.TabStop = false;
             // 
             // DCName
             // 
-            this.DCName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DCName.ForeColor = System.Drawing.Color.White;
-            this.DCName.Location = new System.Drawing.Point(10, 172);
-            this.DCName.Name = "DCName";
-            this.DCName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DCName.Size = new System.Drawing.Size(126, 29);
-            this.DCName.TabIndex = 36;
-            this.DCName.Text = "Username: ???";
+            DCName.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DCName.ForeColor = Color.White;
+            DCName.Location = new Point(16, 224);
+            DCName.Margin = new Padding(5, 0, 5, 0);
+            DCName.Name = "DCName";
+            DCName.RightToLeft = RightToLeft.No;
+            DCName.Size = new Size(168, 44);
+            DCName.TabIndex = 36;
+            DCName.Text = "Username: ???";
             // 
             // DCAV1
             // 
-            this.DCAV1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.DCAV1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DCAV1.ErrorImage = null;
-            this.DCAV1.InitialImage = null;
-            this.DCAV1.Location = new System.Drawing.Point(12, 38);
-            this.DCAV1.Name = "DCAV1";
-            this.DCAV1.Size = new System.Drawing.Size(124, 131);
-            this.DCAV1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.DCAV1.TabIndex = 35;
-            this.DCAV1.TabStop = false;
+            DCAV1.BackgroundImageLayout = ImageLayout.Stretch;
+            DCAV1.BorderStyle = BorderStyle.FixedSingle;
+            DCAV1.ErrorImage = null;
+            DCAV1.InitialImage = null;
+            DCAV1.Location = new Point(16, 59);
+            DCAV1.Margin = new Padding(5, 4, 5, 4);
+            DCAV1.Name = "DCAV1";
+            DCAV1.Size = new Size(164, 161);
+            DCAV1.SizeMode = PictureBoxSizeMode.StretchImage;
+            DCAV1.TabIndex = 35;
+            DCAV1.TabStop = false;
             // 
             // Settings
             // 
-            this.Settings.BackColor = System.Drawing.Color.Black;
-            this.Settings.Controls.Add(this.DllNameBox);
-            this.Settings.Controls.Add(this.ExodusBtn);
-            this.Settings.Controls.Add(this.label5);
-            this.Settings.Controls.Add(this.Sterni);
-            this.Settings.Controls.Add(this.label3);
-            this.Settings.Controls.Add(this.AutoInjectCB);
-            this.Settings.Controls.Add(this.AutoInjTB);
-            this.Settings.Controls.Add(this.AutoStartBtn);
-            this.Settings.Controls.Add(this.WS);
-            this.Settings.Controls.Add(this.siticoneButton1);
-            this.Settings.Controls.Add(this.SaveSet);
-            this.Settings.Controls.Add(this.ConsoleHideBox);
-            this.Settings.Controls.Add(this.siticoneTextBox11);
-            this.Settings.Controls.Add(this.siticoneCheckBox1);
-            this.Settings.Controls.Add(this.siticoneTextBox10);
-            this.Settings.Location = new System.Drawing.Point(4, 44);
-            this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(780, 413);
-            this.Settings.TabIndex = 6;
-            this.Settings.Text = "Settings";
+            Settings.BackColor = Color.Black;
+            Settings.Controls.Add(DllNameBox);
+            Settings.Controls.Add(ExodusBtn);
+            Settings.Controls.Add(label5);
+            Settings.Controls.Add(Sterni);
+            Settings.Controls.Add(label3);
+            Settings.Controls.Add(AutoInjectCB);
+            Settings.Controls.Add(AutoInjTB);
+            Settings.Controls.Add(AutoStartBtn);
+            Settings.Controls.Add(WS);
+            Settings.Controls.Add(siticoneButton1);
+            Settings.Controls.Add(SaveSet);
+            Settings.Controls.Add(ConsoleHideBox);
+            Settings.Controls.Add(inittxt);
+            Settings.Controls.Add(siticoneCheckBox1);
+            Settings.Controls.Add(HotkeyTxT);
+            Settings.Location = new Point(4, 44);
+            Settings.Margin = new Padding(5, 4, 5, 4);
+            Settings.Name = "Settings";
+            Settings.Size = new Size(1042, 661);
+            Settings.TabIndex = 6;
+            Settings.Text = "Settings";
             // 
             // DllNameBox
             // 
-            this.DllNameBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.DllNameBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.DllNameBox.DefaultText = "";
-            this.DllNameBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.DllNameBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.DllNameBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.DllNameBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.DllNameBox.FillColor = System.Drawing.Color.Black;
-            this.DllNameBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DllNameBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.DllNameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.DllNameBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DllNameBox.Location = new System.Drawing.Point(219, 141);
-            this.DllNameBox.Name = "DllNameBox";
-            this.DllNameBox.PasswordChar = '\0';
-            this.DllNameBox.PlaceholderText = "Dll Name? dont include .dll";
-            this.DllNameBox.SelectedText = "";
-            this.DllNameBox.Size = new System.Drawing.Size(164, 26);
-            this.DllNameBox.TabIndex = 39;
+            DllNameBox.BorderColor = Color.FromArgb(192, 0, 192);
+            DllNameBox.Cursor = Cursors.IBeam;
+            DllNameBox.DefaultText = "";
+            DllNameBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            DllNameBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            DllNameBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            DllNameBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            DllNameBox.Enabled = false;
+            DllNameBox.FillColor = Color.Black;
+            DllNameBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            DllNameBox.Font = new Font("Segoe UI", 9F);
+            DllNameBox.ForeColor = Color.FromArgb(192, 0, 192);
+            DllNameBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            DllNameBox.Location = new Point(774, 129);
+            DllNameBox.Margin = new Padding(5, 4, 5, 4);
+            DllNameBox.Name = "DllNameBox";
+            DllNameBox.PasswordChar = '\0';
+            DllNameBox.PlaceholderText = "Dll Name? dont include .dll";
+            DllNameBox.SelectedText = "";
+            DllNameBox.Size = new Size(218, 40);
+            DllNameBox.TabIndex = 39;
+            DllNameBox.Visible = false;
             // 
             // ExodusBtn
             // 
-            this.ExodusBtn.BackColor = System.Drawing.Color.Transparent;
-            this.ExodusBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.ExodusBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ExodusBtn.HoverState.ImageSize = new System.Drawing.Size(50, 43);
-            this.ExodusBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExodusBtn.Image")));
-            this.ExodusBtn.ImageOffset = new System.Drawing.Point(0, 0);
-            this.ExodusBtn.ImageRotate = 0F;
-            this.ExodusBtn.ImageSize = new System.Drawing.Size(45, 43);
-            this.ExodusBtn.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ExodusBtn.Location = new System.Drawing.Point(19, 335);
-            this.ExodusBtn.Name = "ExodusBtn";
-            this.ExodusBtn.PressedState.ImageSize = new System.Drawing.Size(45, 43);
-            this.ExodusBtn.Size = new System.Drawing.Size(45, 43);
-            this.ExodusBtn.TabIndex = 38;
-            this.ExodusBtn.TabStop = false;
-            this.ExodusBtn.UseTransparentBackground = true;
-            this.ExodusBtn.Click += new System.EventHandler(this.ExodusBtn_Click);
+            ExodusBtn.BackColor = Color.Transparent;
+            ExodusBtn.CheckedState.ImageSize = new Size(64, 64);
+            ExodusBtn.HoverState.ImageSize = new Size(50, 43);
+            ExodusBtn.Image = (Image)resources.GetObject("ExodusBtn.Image");
+            ExodusBtn.ImageOffset = new Point(0, 0);
+            ExodusBtn.ImageRotate = 0F;
+            ExodusBtn.ImageSize = new Size(45, 43);
+            ExodusBtn.ImeMode = ImeMode.Disable;
+            ExodusBtn.Location = new Point(25, 516);
+            ExodusBtn.Margin = new Padding(5, 4, 5, 4);
+            ExodusBtn.Name = "ExodusBtn";
+            ExodusBtn.PressedState.ImageSize = new Size(45, 43);
+            ExodusBtn.Size = new Size(59, 67);
+            ExodusBtn.TabIndex = 38;
+            ExodusBtn.TabStop = false;
+            ExodusBtn.UseTransparentBackground = true;
+            ExodusBtn.Click += ExodusBtn_Click;
             // 
             // label5
             // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Magenta;
-            this.label5.Location = new System.Drawing.Point(-1, 377);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 24);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "*";
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Magenta;
+            label5.Location = new Point(-1, 580);
+            label5.Margin = new Padding(5, 0, 5, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(34, 37);
+            label5.TabIndex = 37;
+            label5.Text = "*";
             // 
             // Sterni
             // 
-            this.Sterni.BackColor = System.Drawing.Color.Transparent;
-            this.Sterni.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sterni.ForeColor = System.Drawing.Color.Magenta;
-            this.Sterni.Location = new System.Drawing.Point(379, 77);
-            this.Sterni.Name = "Sterni";
-            this.Sterni.Size = new System.Drawing.Size(26, 24);
-            this.Sterni.TabIndex = 36;
-            this.Sterni.Text = "*";
+            Sterni.BackColor = Color.Transparent;
+            Sterni.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Sterni.ForeColor = Color.Magenta;
+            Sterni.Location = new Point(986, 31);
+            Sterni.Margin = new Padding(5, 0, 5, 0);
+            Sterni.Name = "Sterni";
+            Sterni.Size = new Size(34, 37);
+            Sterni.TabIndex = 36;
+            Sterni.Text = "*";
+            Sterni.Visible = false;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Magenta;
-            this.label3.Location = new System.Drawing.Point(16, 381);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(409, 16);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "*You will need an Exodus account and a paid subscription.";
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Magenta;
+            label3.Location = new Point(22, 587);
+            label3.Margin = new Padding(5, 0, 5, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(499, 20);
+            label3.TabIndex = 35;
+            label3.Text = "*You will need an Exodus account and a paid subscription.";
             // 
             // AutoInjectCB
             // 
-            this.AutoInjectCB.AutoSize = true;
-            this.AutoInjectCB.Checked = global::xCheats.Properties.Settings.Default.BGInj;
-            this.AutoInjectCB.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.AutoInjectCB.CheckedState.BorderRadius = 0;
-            this.AutoInjectCB.CheckedState.BorderThickness = 0;
-            this.AutoInjectCB.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.AutoInjectCB.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::xCheats.Properties.Settings.Default, "BGInj", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.AutoInjectCB.ForeColor = System.Drawing.Color.Magenta;
-            this.AutoInjectCB.Location = new System.Drawing.Point(219, 118);
-            this.AutoInjectCB.Name = "AutoInjectCB";
-            this.AutoInjectCB.Size = new System.Drawing.Size(113, 17);
-            this.AutoInjectCB.TabIndex = 33;
-            this.AutoInjectCB.Text = "Enable Auto Inject";
-            this.AutoInjectCB.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.AutoInjectCB.UncheckedState.BorderRadius = 0;
-            this.AutoInjectCB.UncheckedState.BorderThickness = 0;
-            this.AutoInjectCB.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            AutoInjectCB.AutoSize = true;
+            AutoInjectCB.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            AutoInjectCB.CheckedState.BorderRadius = 0;
+            AutoInjectCB.CheckedState.BorderThickness = 0;
+            AutoInjectCB.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            AutoInjectCB.ForeColor = Color.Magenta;
+            AutoInjectCB.Location = new Point(774, 93);
+            AutoInjectCB.Margin = new Padding(5, 4, 5, 4);
+            AutoInjectCB.Name = "AutoInjectCB";
+            AutoInjectCB.Size = new Size(152, 24);
+            AutoInjectCB.TabIndex = 33;
+            AutoInjectCB.Text = "Enable Auto Inject";
+            AutoInjectCB.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            AutoInjectCB.UncheckedState.BorderRadius = 0;
+            AutoInjectCB.UncheckedState.BorderThickness = 0;
+            AutoInjectCB.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            AutoInjectCB.Visible = false;
             // 
             // AutoInjTB
             // 
-            this.AutoInjTB.Animated = true;
-            this.AutoInjTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.AutoInjTB.DefaultText = "Here you can allow the AutoInject Dll (RDR2)";
-            this.AutoInjTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.AutoInjTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.AutoInjTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.AutoInjTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.AutoInjTB.FillColor = System.Drawing.Color.Black;
-            this.AutoInjTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.AutoInjTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AutoInjTB.ForeColor = System.Drawing.Color.Fuchsia;
-            this.AutoInjTB.HideSelection = false;
-            this.AutoInjTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.AutoInjTB.Location = new System.Drawing.Point(206, 74);
-            this.AutoInjTB.Multiline = true;
-            this.AutoInjTB.Name = "AutoInjTB";
-            this.AutoInjTB.PasswordChar = '\0';
-            this.AutoInjTB.PlaceholderText = "";
-            this.AutoInjTB.ReadOnly = true;
-            this.AutoInjTB.SelectedText = "";
-            this.AutoInjTB.Size = new System.Drawing.Size(200, 99);
-            this.AutoInjTB.TabIndex = 34;
+            AutoInjTB.Animated = true;
+            AutoInjTB.Cursor = Cursors.IBeam;
+            AutoInjTB.DefaultText = "Here you can allow the AutoInject Dll (RDR2)";
+            AutoInjTB.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            AutoInjTB.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            AutoInjTB.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            AutoInjTB.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            AutoInjTB.FillColor = Color.Black;
+            AutoInjTB.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            AutoInjTB.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AutoInjTB.ForeColor = Color.Fuchsia;
+            AutoInjTB.HideSelection = false;
+            AutoInjTB.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            AutoInjTB.Location = new Point(757, 27);
+            AutoInjTB.Margin = new Padding(5, 4, 5, 4);
+            AutoInjTB.Multiline = true;
+            AutoInjTB.Name = "AutoInjTB";
+            AutoInjTB.PasswordChar = '\0';
+            AutoInjTB.PlaceholderText = "";
+            AutoInjTB.ReadOnly = true;
+            AutoInjTB.SelectedText = "";
+            AutoInjTB.Size = new Size(266, 152);
+            AutoInjTB.TabIndex = 34;
+            AutoInjTB.Visible = false;
             // 
             // AutoStartBtn
             // 
-            this.AutoStartBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.AutoStartBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.AutoStartBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AutoStartBtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AutoStartBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.AutoStartBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.AutoStartBtn.ForeColor = System.Drawing.Color.White;
-            this.AutoStartBtn.Location = new System.Drawing.Point(0, 101);
-            this.AutoStartBtn.Name = "AutoStartBtn";
-            this.AutoStartBtn.Size = new System.Drawing.Size(200, 34);
-            this.AutoStartBtn.TabIndex = 30;
-            this.AutoStartBtn.Text = "Install Autostart";
-            this.AutoStartBtn.Click += new System.EventHandler(this.ToggleButton_Click);
+            AutoStartBtn.DisabledState.BorderColor = Color.DarkGray;
+            AutoStartBtn.DisabledState.CustomBorderColor = Color.DarkGray;
+            AutoStartBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            AutoStartBtn.DisabledState.FillColor2 = Color.FromArgb(169, 169, 169);
+            AutoStartBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            AutoStartBtn.Font = new Font("Segoe UI", 9F);
+            AutoStartBtn.ForeColor = Color.White;
+            AutoStartBtn.Location = new Point(0, 193);
+            AutoStartBtn.Margin = new Padding(5, 4, 5, 4);
+            AutoStartBtn.Name = "AutoStartBtn";
+            AutoStartBtn.Size = new Size(266, 52);
+            AutoStartBtn.TabIndex = 30;
+            AutoStartBtn.Text = "Install Autostart";
+            AutoStartBtn.Click += ToggleButton_Click;
             // 
             // WS
             // 
-            this.WS.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.WS.DefaultText = "Set Autostart\r\n";
-            this.WS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.WS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.WS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.WS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.WS.FillColor = System.Drawing.Color.Black;
-            this.WS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.WS.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.WS.ForeColor = System.Drawing.Color.Fuchsia;
-            this.WS.HideSelection = false;
-            this.WS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.WS.Location = new System.Drawing.Point(0, 73);
-            this.WS.Multiline = true;
-            this.WS.Name = "WS";
-            this.WS.PasswordChar = '\0';
-            this.WS.PlaceholderText = "";
-            this.WS.ReadOnly = true;
-            this.WS.SelectedText = "";
-            this.WS.Size = new System.Drawing.Size(200, 62);
-            this.WS.TabIndex = 29;
+            WS.Cursor = Cursors.IBeam;
+            WS.DefaultText = "Set Autostart\r\n";
+            WS.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            WS.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            WS.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            WS.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            WS.FillColor = Color.Black;
+            WS.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            WS.Font = new Font("Segoe UI", 9F);
+            WS.ForeColor = Color.Fuchsia;
+            WS.HideSelection = false;
+            WS.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            WS.Location = new Point(0, 151);
+            WS.Margin = new Padding(5, 4, 5, 4);
+            WS.Multiline = true;
+            WS.Name = "WS";
+            WS.PasswordChar = '\0';
+            WS.PlaceholderText = "";
+            WS.ReadOnly = true;
+            WS.SelectedText = "";
+            WS.Size = new Size(266, 96);
+            WS.TabIndex = 29;
             // 
             // siticoneButton1
             // 
-            this.siticoneButton1.BackColor = System.Drawing.Color.Black;
-            this.siticoneButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.siticoneButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.siticoneButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.siticoneButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.siticoneButton1.FillColor = System.Drawing.Color.Black;
-            this.siticoneButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.siticoneButton1.ForeColor = System.Drawing.Color.Magenta;
-            this.siticoneButton1.HoverState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.siticoneButton1.HoverState.ForeColor = System.Drawing.Color.Green;
-            this.siticoneButton1.Location = new System.Drawing.Point(487, 374);
-            this.siticoneButton1.Name = "siticoneButton1";
-            this.siticoneButton1.Size = new System.Drawing.Size(233, 27);
-            this.siticoneButton1.TabIndex = 28;
-            this.siticoneButton1.Text = "Add Exclusion to Windows Defender";
-            this.siticoneButton1.Click += new System.EventHandler(this.Defender_Click);
+            siticoneButton1.BackColor = Color.Black;
+            siticoneButton1.DisabledState.BorderColor = Color.DarkGray;
+            siticoneButton1.DisabledState.CustomBorderColor = Color.DarkGray;
+            siticoneButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            siticoneButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            siticoneButton1.FillColor = Color.Black;
+            siticoneButton1.Font = new Font("Segoe UI", 9F);
+            siticoneButton1.ForeColor = Color.Magenta;
+            siticoneButton1.HoverState.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            siticoneButton1.HoverState.ForeColor = Color.Green;
+            siticoneButton1.Location = new Point(649, 573);
+            siticoneButton1.Margin = new Padding(5, 4, 5, 4);
+            siticoneButton1.Name = "siticoneButton1";
+            siticoneButton1.Size = new Size(311, 41);
+            siticoneButton1.TabIndex = 28;
+            siticoneButton1.Text = "Add Exclusion to Windows Defender";
+            siticoneButton1.Click += Defender_Click;
             // 
             // SaveSet
             // 
-            this.SaveSet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.SaveSet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.SaveSet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.SaveSet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.SaveSet.FillColor = System.Drawing.Color.Black;
-            this.SaveSet.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SaveSet.ForeColor = System.Drawing.Color.White;
-            this.SaveSet.HoverState.BorderColor = System.Drawing.Color.Magenta;
-            this.SaveSet.HoverState.ForeColor = System.Drawing.Color.Magenta;
-            this.SaveSet.Location = new System.Drawing.Point(717, 374);
-            this.SaveSet.Name = "SaveSet";
-            this.SaveSet.Size = new System.Drawing.Size(73, 26);
-            this.SaveSet.TabIndex = 5;
-            this.SaveSet.Text = "Save";
-            this.SaveSet.Click += new System.EventHandler(this.SaveSet_Click);
+            SaveSet.DisabledState.BorderColor = Color.DarkGray;
+            SaveSet.DisabledState.CustomBorderColor = Color.DarkGray;
+            SaveSet.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            SaveSet.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            SaveSet.FillColor = Color.Black;
+            SaveSet.Font = new Font("Segoe UI", 9F);
+            SaveSet.ForeColor = Color.White;
+            SaveSet.HoverState.BorderColor = Color.Magenta;
+            SaveSet.HoverState.ForeColor = Color.Magenta;
+            SaveSet.Location = new Point(955, 576);
+            SaveSet.Margin = new Padding(5, 4, 5, 4);
+            SaveSet.Name = "SaveSet";
+            SaveSet.Size = new Size(97, 40);
+            SaveSet.TabIndex = 5;
+            SaveSet.Text = "Save";
+            SaveSet.Click += SaveSet_Click;
             // 
             // ConsoleHideBox
             // 
-            this.ConsoleHideBox.AutoSize = true;
-            this.ConsoleHideBox.Checked = global::xCheats.Properties.Settings.Default.ConsoleHideFunction;
-            this.ConsoleHideBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ConsoleHideBox.CheckedState.BorderRadius = 0;
-            this.ConsoleHideBox.CheckedState.BorderThickness = 0;
-            this.ConsoleHideBox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ConsoleHideBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::xCheats.Properties.Settings.Default, "ConsoleHideFunction", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.ConsoleHideBox.ForeColor = System.Drawing.Color.Magenta;
-            this.ConsoleHideBox.Location = new System.Drawing.Point(219, 41);
-            this.ConsoleHideBox.Name = "ConsoleHideBox";
-            this.ConsoleHideBox.Size = new System.Drawing.Size(130, 17);
-            this.ConsoleHideBox.TabIndex = 3;
-            this.ConsoleHideBox.Text = "Disable Hide Function";
-            this.ConsoleHideBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.ConsoleHideBox.UncheckedState.BorderRadius = 0;
-            this.ConsoleHideBox.UncheckedState.BorderThickness = 0;
-            this.ConsoleHideBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            ConsoleHideBox.AutoSize = true;
+            ConsoleHideBox.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            ConsoleHideBox.CheckedState.BorderRadius = 0;
+            ConsoleHideBox.CheckedState.BorderThickness = 0;
+            ConsoleHideBox.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            ConsoleHideBox.ForeColor = Color.Magenta;
+            ConsoleHideBox.Location = new Point(280, 111);
+            ConsoleHideBox.Margin = new Padding(5, 4, 5, 4);
+            ConsoleHideBox.Name = "ConsoleHideBox";
+            ConsoleHideBox.Size = new Size(177, 24);
+            ConsoleHideBox.TabIndex = 3;
+            ConsoleHideBox.Text = "Disable Hide Function";
+            ConsoleHideBox.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            ConsoleHideBox.UncheckedState.BorderRadius = 0;
+            ConsoleHideBox.UncheckedState.BorderThickness = 0;
+            ConsoleHideBox.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
             // 
-            // siticoneTextBox11
+            // inittxt
             // 
-            this.siticoneTextBox11.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.siticoneTextBox11.DefaultText = "Disable the Console Hide Function after Initialize";
-            this.siticoneTextBox11.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.siticoneTextBox11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.siticoneTextBox11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.siticoneTextBox11.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.siticoneTextBox11.FillColor = System.Drawing.Color.Black;
-            this.siticoneTextBox11.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.siticoneTextBox11.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.siticoneTextBox11.ForeColor = System.Drawing.Color.Fuchsia;
-            this.siticoneTextBox11.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.siticoneTextBox11.Location = new System.Drawing.Point(206, 0);
-            this.siticoneTextBox11.Multiline = true;
-            this.siticoneTextBox11.Name = "siticoneTextBox11";
-            this.siticoneTextBox11.PasswordChar = '\0';
-            this.siticoneTextBox11.PlaceholderText = "";
-            this.siticoneTextBox11.SelectedText = "";
-            this.siticoneTextBox11.Size = new System.Drawing.Size(200, 67);
-            this.siticoneTextBox11.TabIndex = 4;
+            inittxt.Cursor = Cursors.IBeam;
+            inittxt.DefaultText = "Disable the Console Hide Function after Initialize";
+            inittxt.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            inittxt.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            inittxt.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            inittxt.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            inittxt.FillColor = Color.Black;
+            inittxt.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            inittxt.Font = new Font("Segoe UI", 9F);
+            inittxt.ForeColor = Color.Fuchsia;
+            inittxt.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            inittxt.Location = new Point(274, 0);
+            inittxt.Margin = new Padding(5, 4, 5, 4);
+            inittxt.Multiline = true;
+            inittxt.Name = "inittxt";
+            inittxt.PasswordChar = '\0';
+            inittxt.PlaceholderText = "";
+            inittxt.SelectedText = "";
+            inittxt.Size = new Size(266, 143);
+            inittxt.TabIndex = 4;
             // 
             // siticoneCheckBox1
             // 
-            this.siticoneCheckBox1.AutoSize = true;
-            this.siticoneCheckBox1.Checked = global::xCheats.Properties.Settings.Default.KeyboardListenerState;
-            this.siticoneCheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.siticoneCheckBox1.CheckedState.BorderRadius = 0;
-            this.siticoneCheckBox1.CheckedState.BorderThickness = 0;
-            this.siticoneCheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.siticoneCheckBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::xCheats.Properties.Settings.Default, "KeyboardListenerState", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.siticoneCheckBox1.ForeColor = System.Drawing.Color.Magenta;
-            this.siticoneCheckBox1.Location = new System.Drawing.Point(11, 41);
-            this.siticoneCheckBox1.Name = "siticoneCheckBox1";
-            this.siticoneCheckBox1.Size = new System.Drawing.Size(111, 17);
-            this.siticoneCheckBox1.TabIndex = 1;
-            this.siticoneCheckBox1.Text = "Keyboard Listener";
-            this.siticoneCheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.siticoneCheckBox1.UncheckedState.BorderRadius = 0;
-            this.siticoneCheckBox1.UncheckedState.BorderThickness = 0;
-            this.siticoneCheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            siticoneCheckBox1.AutoSize = true;
+            siticoneCheckBox1.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            siticoneCheckBox1.CheckedState.BorderRadius = 0;
+            siticoneCheckBox1.CheckedState.BorderThickness = 0;
+            siticoneCheckBox1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            siticoneCheckBox1.ForeColor = Color.Magenta;
+            siticoneCheckBox1.Location = new Point(7, 109);
+            siticoneCheckBox1.Margin = new Padding(5, 4, 5, 4);
+            siticoneCheckBox1.Name = "siticoneCheckBox1";
+            siticoneCheckBox1.Size = new Size(150, 24);
+            siticoneCheckBox1.TabIndex = 1;
+            siticoneCheckBox1.Text = "Keyboard Listener";
+            siticoneCheckBox1.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            siticoneCheckBox1.UncheckedState.BorderRadius = 0;
+            siticoneCheckBox1.UncheckedState.BorderThickness = 0;
+            siticoneCheckBox1.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
             // 
-            // siticoneTextBox10
+            // HotkeyTxT
             // 
-            this.siticoneTextBox10.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.siticoneTextBox10.DefaultText = "Activate the Hotkey Function";
-            this.siticoneTextBox10.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.siticoneTextBox10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.siticoneTextBox10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.siticoneTextBox10.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.siticoneTextBox10.FillColor = System.Drawing.Color.Black;
-            this.siticoneTextBox10.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.siticoneTextBox10.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.siticoneTextBox10.ForeColor = System.Drawing.Color.Fuchsia;
-            this.siticoneTextBox10.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.siticoneTextBox10.Location = new System.Drawing.Point(0, 0);
-            this.siticoneTextBox10.Multiline = true;
-            this.siticoneTextBox10.Name = "siticoneTextBox10";
-            this.siticoneTextBox10.PasswordChar = '\0';
-            this.siticoneTextBox10.PlaceholderText = "";
-            this.siticoneTextBox10.SelectedText = "";
-            this.siticoneTextBox10.Size = new System.Drawing.Size(200, 67);
-            this.siticoneTextBox10.TabIndex = 2;
+            HotkeyTxT.Cursor = Cursors.IBeam;
+            HotkeyTxT.DefaultText = "Activate the Hotkey Function";
+            HotkeyTxT.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            HotkeyTxT.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            HotkeyTxT.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            HotkeyTxT.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            HotkeyTxT.FillColor = Color.Black;
+            HotkeyTxT.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            HotkeyTxT.Font = new Font("Segoe UI", 9F);
+            HotkeyTxT.ForeColor = Color.Fuchsia;
+            HotkeyTxT.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            HotkeyTxT.Location = new Point(0, 0);
+            HotkeyTxT.Margin = new Padding(5, 4, 5, 4);
+            HotkeyTxT.Multiline = true;
+            HotkeyTxT.Name = "HotkeyTxT";
+            HotkeyTxT.PasswordChar = '\0';
+            HotkeyTxT.PlaceholderText = "";
+            HotkeyTxT.SelectedText = "";
+            HotkeyTxT.Size = new Size(266, 141);
+            HotkeyTxT.TabIndex = 2;
             // 
             // FixTool
             // 
-            this.FixTool.BackColor = System.Drawing.Color.Black;
-            this.FixTool.Controls.Add(this.RuntimesText);
-            this.FixTool.Controls.Add(this.RunTimeDwn);
-            this.FixTool.Controls.Add(this.PatchText);
-            this.FixTool.Controls.Add(this.PatchDwn);
-            this.FixTool.Controls.Add(this.DwnBar);
-            this.FixTool.Controls.Add(this.GamesWinLiveText);
-            this.FixTool.Controls.Add(this.GamesWinLiveDwn);
-            this.FixTool.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FixTool.Location = new System.Drawing.Point(4, 44);
-            this.FixTool.Name = "FixTool";
-            this.FixTool.Size = new System.Drawing.Size(780, 413);
-            this.FixTool.TabIndex = 5;
-            this.FixTool.Text = "Fix Tools";
+            FixTool.BackColor = Color.Black;
+            FixTool.Controls.Add(RemoveGWLD);
+            FixTool.Controls.Add(StateUpd);
+            FixTool.Controls.Add(RemovePatch);
+            FixTool.Controls.Add(RuntimesText);
+            FixTool.Controls.Add(RunTimeDwn);
+            FixTool.Controls.Add(PatchText);
+            FixTool.Controls.Add(PatchDwn);
+            FixTool.Controls.Add(DwnBar);
+            FixTool.Controls.Add(GamesWinLiveText);
+            FixTool.Controls.Add(GamesWinLiveDwn);
+            FixTool.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FixTool.Location = new Point(4, 44);
+            FixTool.Margin = new Padding(5, 4, 5, 4);
+            FixTool.Name = "FixTool";
+            FixTool.Size = new Size(1042, 661);
+            FixTool.TabIndex = 5;
+            FixTool.Text = "Fix Tools";
+            FixTool.Click += FixTool_Click;
+            // 
+            // RemoveGWLD
+            // 
+            RemoveGWLD.DisabledState.BorderColor = Color.DarkGray;
+            RemoveGWLD.DisabledState.CustomBorderColor = Color.DarkGray;
+            RemoveGWLD.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            RemoveGWLD.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            RemoveGWLD.FillColor = Color.Black;
+            RemoveGWLD.Font = new Font("Segoe UI", 9F);
+            RemoveGWLD.ForeColor = Color.White;
+            RemoveGWLD.HoverState.ForeColor = Color.Magenta;
+            RemoveGWLD.Location = new Point(10, 280);
+            RemoveGWLD.Margin = new Padding(5, 4, 5, 4);
+            RemoveGWLD.Name = "RemoveGWLD";
+            RemoveGWLD.Size = new Size(266, 36);
+            RemoveGWLD.TabIndex = 11;
+            RemoveGWLD.Text = "Remove";
+            RemoveGWLD.Visible = false;
+            RemoveGWLD.Click += RemoveGWLD_Click;
+            // 
+            // StateUpd
+            // 
+            StateUpd.DisabledState.BorderColor = Color.DarkGray;
+            StateUpd.DisabledState.CustomBorderColor = Color.DarkGray;
+            StateUpd.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            StateUpd.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            StateUpd.FillColor = Color.Black;
+            StateUpd.Font = new Font("Segoe UI", 9F);
+            StateUpd.ForeColor = Color.White;
+            StateUpd.HoverState.ForeColor = Color.Magenta;
+            StateUpd.Location = new Point(874, 537);
+            StateUpd.Margin = new Padding(5, 4, 5, 4);
+            StateUpd.Name = "StateUpd";
+            StateUpd.Size = new Size(149, 59);
+            StateUpd.TabIndex = 10;
+            StateUpd.Text = "Update State";
+            StateUpd.Click += StateUpd_Click;
+            // 
+            // RemovePatch
+            // 
+            RemovePatch.DisabledState.BorderColor = Color.DarkGray;
+            RemovePatch.DisabledState.CustomBorderColor = Color.DarkGray;
+            RemovePatch.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            RemovePatch.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            RemovePatch.FillColor = Color.Black;
+            RemovePatch.Font = new Font("Segoe UI", 9F);
+            RemovePatch.ForeColor = Color.White;
+            RemovePatch.HoverState.ForeColor = Color.Magenta;
+            RemovePatch.Location = new Point(286, 280);
+            RemovePatch.Margin = new Padding(5, 4, 5, 4);
+            RemovePatch.Name = "RemovePatch";
+            RemovePatch.Size = new Size(266, 36);
+            RemovePatch.TabIndex = 9;
+            RemovePatch.Text = "Remove";
+            RemovePatch.Visible = false;
+            RemovePatch.Click += RemovePatch_Click;
             // 
             // RuntimesText
             // 
-            this.RuntimesText.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.RuntimesText.DefaultText = "This install all Runtimes from Windows ";
-            this.RuntimesText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.RuntimesText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.RuntimesText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RuntimesText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.RuntimesText.FillColor = System.Drawing.Color.Black;
-            this.RuntimesText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RuntimesText.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RuntimesText.ForeColor = System.Drawing.Color.Fuchsia;
-            this.RuntimesText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.RuntimesText.Location = new System.Drawing.Point(420, 12);
-            this.RuntimesText.Multiline = true;
-            this.RuntimesText.Name = "RuntimesText";
-            this.RuntimesText.PasswordChar = '\0';
-            this.RuntimesText.PlaceholderText = "";
-            this.RuntimesText.SelectedText = "";
-            this.RuntimesText.Size = new System.Drawing.Size(200, 77);
-            this.RuntimesText.TabIndex = 7;
+            RuntimesText.Cursor = Cursors.IBeam;
+            RuntimesText.DefaultText = "This install all Runtimes from Windows ";
+            RuntimesText.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            RuntimesText.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            RuntimesText.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            RuntimesText.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            RuntimesText.Enabled = false;
+            RuntimesText.FillColor = Color.Black;
+            RuntimesText.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            RuntimesText.Font = new Font("Segoe UI", 9F);
+            RuntimesText.ForeColor = Color.Fuchsia;
+            RuntimesText.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            RuntimesText.Location = new Point(560, 19);
+            RuntimesText.Margin = new Padding(5, 4, 5, 4);
+            RuntimesText.Multiline = true;
+            RuntimesText.Name = "RuntimesText";
+            RuntimesText.PasswordChar = '\0';
+            RuntimesText.PlaceholderText = "";
+            RuntimesText.SelectedText = "";
+            RuntimesText.Size = new Size(266, 208);
+            RuntimesText.TabIndex = 7;
+            RuntimesText.Visible = false;
             // 
             // RunTimeDwn
             // 
-            this.RunTimeDwn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.RunTimeDwn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.RunTimeDwn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.RunTimeDwn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.RunTimeDwn.FillColor = System.Drawing.Color.Black;
-            this.RunTimeDwn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.RunTimeDwn.ForeColor = System.Drawing.Color.White;
-            this.RunTimeDwn.HoverState.ForeColor = System.Drawing.Color.Magenta;
-            this.RunTimeDwn.Location = new System.Drawing.Point(420, 95);
-            this.RunTimeDwn.Name = "RunTimeDwn";
-            this.RunTimeDwn.Size = new System.Drawing.Size(200, 23);
-            this.RunTimeDwn.TabIndex = 6;
-            this.RunTimeDwn.Text = "Download";
+            RunTimeDwn.DisabledState.BorderColor = Color.DarkGray;
+            RunTimeDwn.DisabledState.CustomBorderColor = Color.DarkGray;
+            RunTimeDwn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            RunTimeDwn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            RunTimeDwn.Enabled = false;
+            RunTimeDwn.FillColor = Color.Black;
+            RunTimeDwn.Font = new Font("Segoe UI", 9F);
+            RunTimeDwn.ForeColor = Color.White;
+            RunTimeDwn.HoverState.ForeColor = Color.Magenta;
+            RunTimeDwn.Location = new Point(560, 236);
+            RunTimeDwn.Margin = new Padding(5, 4, 5, 4);
+            RunTimeDwn.Name = "RunTimeDwn";
+            RunTimeDwn.Size = new Size(266, 36);
+            RunTimeDwn.TabIndex = 6;
+            RunTimeDwn.Text = "Download";
+            RunTimeDwn.Visible = false;
+            RunTimeDwn.Click += RunTimeDwn_Click;
             // 
             // PatchText
             // 
-            this.PatchText.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PatchText.DefaultText = "This is a Patcher for 32Bit old games to Patch that 4GB for 64Bit";
-            this.PatchText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.PatchText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.PatchText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PatchText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PatchText.FillColor = System.Drawing.Color.Black;
-            this.PatchText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PatchText.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.PatchText.ForeColor = System.Drawing.Color.Fuchsia;
-            this.PatchText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PatchText.Location = new System.Drawing.Point(214, 12);
-            this.PatchText.Multiline = true;
-            this.PatchText.Name = "PatchText";
-            this.PatchText.PasswordChar = '\0';
-            this.PatchText.PlaceholderText = "";
-            this.PatchText.SelectedText = "";
-            this.PatchText.Size = new System.Drawing.Size(200, 77);
-            this.PatchText.TabIndex = 5;
+            PatchText.Cursor = Cursors.IBeam;
+            PatchText.DefaultText = "This is a Patcher for 32Bit old games to Patch that 4GB for 64Bit";
+            PatchText.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            PatchText.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            PatchText.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            PatchText.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            PatchText.FillColor = Color.Black;
+            PatchText.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            PatchText.Font = new Font("Segoe UI", 9F);
+            PatchText.ForeColor = Color.Fuchsia;
+            PatchText.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            PatchText.Location = new Point(286, 19);
+            PatchText.Margin = new Padding(5, 4, 5, 4);
+            PatchText.Multiline = true;
+            PatchText.Name = "PatchText";
+            PatchText.PasswordChar = '\0';
+            PatchText.PlaceholderText = "";
+            PatchText.SelectedText = "";
+            PatchText.Size = new Size(266, 208);
+            PatchText.TabIndex = 5;
             // 
             // PatchDwn
             // 
-            this.PatchDwn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.PatchDwn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.PatchDwn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.PatchDwn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.PatchDwn.FillColor = System.Drawing.Color.Black;
-            this.PatchDwn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.PatchDwn.ForeColor = System.Drawing.Color.White;
-            this.PatchDwn.HoverState.ForeColor = System.Drawing.Color.Magenta;
-            this.PatchDwn.Location = new System.Drawing.Point(214, 95);
-            this.PatchDwn.Name = "PatchDwn";
-            this.PatchDwn.Size = new System.Drawing.Size(200, 23);
-            this.PatchDwn.TabIndex = 4;
-            this.PatchDwn.Text = "Download";
-            this.PatchDwn.Click += new System.EventHandler(this.PatchDwn_Click);
+            PatchDwn.DisabledState.BorderColor = Color.DarkGray;
+            PatchDwn.DisabledState.CustomBorderColor = Color.DarkGray;
+            PatchDwn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            PatchDwn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            PatchDwn.FillColor = Color.Black;
+            PatchDwn.Font = new Font("Segoe UI", 9F);
+            PatchDwn.ForeColor = Color.White;
+            PatchDwn.HoverState.ForeColor = Color.Magenta;
+            PatchDwn.Location = new Point(286, 236);
+            PatchDwn.Margin = new Padding(5, 4, 5, 4);
+            PatchDwn.Name = "PatchDwn";
+            PatchDwn.Size = new Size(266, 36);
+            PatchDwn.TabIndex = 4;
+            PatchDwn.Text = "Download";
+            PatchDwn.Click += PatchDwn_Click;
             // 
             // DwnBar
             // 
-            this.DwnBar.Animated = true;
-            this.DwnBar.BackColor = System.Drawing.Color.Transparent;
-            this.DwnBar.Backwards = true;
-            this.DwnBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.DwnBar.FillThickness = 12;
-            this.DwnBar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.DwnBar.ForeColor = System.Drawing.Color.Magenta;
-            this.DwnBar.Location = new System.Drawing.Point(656, 3);
-            this.DwnBar.Minimum = 0;
-            this.DwnBar.Name = "DwnBar";
-            this.DwnBar.ProgressThickness = 12;
-            this.DwnBar.ShadowDecoration.Mode = Siticone.Desktop.UI.WinForms.Enums.ShadowMode.Circle;
-            this.DwnBar.ShowText = true;
-            this.DwnBar.Size = new System.Drawing.Size(94, 94);
-            this.DwnBar.TabIndex = 3;
-            this.DwnBar.Text = "TestProgress";
-            this.DwnBar.Visible = false;
+            DwnBar.Animated = true;
+            DwnBar.BackColor = Color.Transparent;
+            DwnBar.Backwards = true;
+            DwnBar.FillColor = Color.FromArgb(200, 213, 218, 223);
+            DwnBar.FillThickness = 12;
+            DwnBar.Font = new Font("Segoe UI", 12F);
+            DwnBar.ForeColor = Color.Magenta;
+            DwnBar.Location = new Point(874, 4);
+            DwnBar.Margin = new Padding(5, 4, 5, 4);
+            DwnBar.Minimum = 0;
+            DwnBar.Name = "DwnBar";
+            DwnBar.ProgressThickness = 12;
+            DwnBar.ShadowDecoration.Mode = Siticone.Desktop.UI.WinForms.Enums.ShadowMode.Circle;
+            DwnBar.ShowText = true;
+            DwnBar.Size = new Size(144, 144);
+            DwnBar.TabIndex = 3;
+            DwnBar.Text = "TestProgress";
+            DwnBar.Visible = false;
             // 
             // GamesWinLiveText
             // 
-            this.GamesWinLiveText.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GamesWinLiveText.DefaultText = "Games For Windows Live Service is disabled by Microsoft here u can download the o" +
-    "ffline setup to start Games that needed This\r\n";
-            this.GamesWinLiveText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.GamesWinLiveText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.GamesWinLiveText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GamesWinLiveText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.GamesWinLiveText.FillColor = System.Drawing.Color.Black;
-            this.GamesWinLiveText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GamesWinLiveText.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GamesWinLiveText.ForeColor = System.Drawing.Color.Fuchsia;
-            this.GamesWinLiveText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.GamesWinLiveText.Location = new System.Drawing.Point(8, 12);
-            this.GamesWinLiveText.Multiline = true;
-            this.GamesWinLiveText.Name = "GamesWinLiveText";
-            this.GamesWinLiveText.PasswordChar = '\0';
-            this.GamesWinLiveText.PlaceholderText = "";
-            this.GamesWinLiveText.SelectedText = "";
-            this.GamesWinLiveText.Size = new System.Drawing.Size(200, 77);
-            this.GamesWinLiveText.TabIndex = 1;
+            GamesWinLiveText.Cursor = Cursors.IBeam;
+            GamesWinLiveText.DefaultText = "Games For Windows Live Service is disabled by Microsoft here u can download the offline setup to start Games that needed This\r\n";
+            GamesWinLiveText.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            GamesWinLiveText.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            GamesWinLiveText.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            GamesWinLiveText.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            GamesWinLiveText.FillColor = Color.Black;
+            GamesWinLiveText.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            GamesWinLiveText.Font = new Font("Segoe UI", 9F);
+            GamesWinLiveText.ForeColor = Color.Fuchsia;
+            GamesWinLiveText.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            GamesWinLiveText.Location = new Point(10, 19);
+            GamesWinLiveText.Margin = new Padding(5, 4, 5, 4);
+            GamesWinLiveText.Multiline = true;
+            GamesWinLiveText.Name = "GamesWinLiveText";
+            GamesWinLiveText.PasswordChar = '\0';
+            GamesWinLiveText.PlaceholderText = "";
+            GamesWinLiveText.SelectedText = "";
+            GamesWinLiveText.Size = new Size(266, 208);
+            GamesWinLiveText.TabIndex = 1;
             // 
             // GamesWinLiveDwn
             // 
-            this.GamesWinLiveDwn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.GamesWinLiveDwn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.GamesWinLiveDwn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.GamesWinLiveDwn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.GamesWinLiveDwn.FillColor = System.Drawing.Color.Black;
-            this.GamesWinLiveDwn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.GamesWinLiveDwn.ForeColor = System.Drawing.Color.White;
-            this.GamesWinLiveDwn.HoverState.ForeColor = System.Drawing.Color.Magenta;
-            this.GamesWinLiveDwn.Location = new System.Drawing.Point(8, 95);
-            this.GamesWinLiveDwn.Name = "GamesWinLiveDwn";
-            this.GamesWinLiveDwn.Size = new System.Drawing.Size(200, 23);
-            this.GamesWinLiveDwn.TabIndex = 0;
-            this.GamesWinLiveDwn.Text = "Download";
-            this.GamesWinLiveDwn.Click += new System.EventHandler(this.GamesWinLiveDwn_Click);
+            GamesWinLiveDwn.DisabledState.BorderColor = Color.DarkGray;
+            GamesWinLiveDwn.DisabledState.CustomBorderColor = Color.DarkGray;
+            GamesWinLiveDwn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            GamesWinLiveDwn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            GamesWinLiveDwn.FillColor = Color.Black;
+            GamesWinLiveDwn.Font = new Font("Segoe UI", 9F);
+            GamesWinLiveDwn.ForeColor = Color.White;
+            GamesWinLiveDwn.HoverState.ForeColor = Color.Magenta;
+            GamesWinLiveDwn.Location = new Point(10, 236);
+            GamesWinLiveDwn.Margin = new Padding(5, 4, 5, 4);
+            GamesWinLiveDwn.Name = "GamesWinLiveDwn";
+            GamesWinLiveDwn.Size = new Size(266, 36);
+            GamesWinLiveDwn.TabIndex = 0;
+            GamesWinLiveDwn.Text = "Download";
+            GamesWinLiveDwn.Click += GamesWinLiveDwn_Click;
             // 
             // About
             // 
-            this.About.BackColor = System.Drawing.Color.Black;
-            this.About.Controls.Add(this.Repo2);
-            this.About.Controls.Add(this.CPUStat);
-            this.About.Controls.Add(this.MBoard);
-            this.About.Controls.Add(this.CPU);
-            this.About.Controls.Add(this.GPU);
-            this.About.Controls.Add(this.TestLabel);
-            this.About.Controls.Add(this.ConInfo);
-            this.About.Controls.Add(this.StatusInfo);
-            this.About.Controls.Add(this.AppVer);
-            this.About.Controls.Add(this.DCCopyTag);
-            this.About.Controls.Add(this.linkLabel1);
-            this.About.Controls.Add(this.label2);
-            this.About.Controls.Add(this.label1);
-            this.About.Controls.Add(this.siticonePictureBox1);
-            this.About.Location = new System.Drawing.Point(4, 44);
-            this.About.Name = "About";
-            this.About.Padding = new System.Windows.Forms.Padding(3);
-            this.About.Size = new System.Drawing.Size(780, 413);
-            this.About.TabIndex = 4;
-            this.About.Text = "About";
+            About.BackColor = Color.Black;
+            About.Controls.Add(Repo2);
+            About.Controls.Add(CPUStat);
+            About.Controls.Add(MBoard);
+            About.Controls.Add(CPU);
+            About.Controls.Add(GPU);
+            About.Controls.Add(TestLabel);
+            About.Controls.Add(ConInfo);
+            About.Controls.Add(StatusInfo);
+            About.Controls.Add(AppVer);
+            About.Controls.Add(DCCopyTag);
+            About.Controls.Add(linkLabel1);
+            About.Controls.Add(label2);
+            About.Controls.Add(label1);
+            About.Controls.Add(siticonePictureBox1);
+            About.Location = new Point(4, 44);
+            About.Margin = new Padding(5, 4, 5, 4);
+            About.Name = "About";
+            About.Padding = new Padding(5, 4, 5, 4);
+            About.Size = new Size(1042, 661);
+            About.TabIndex = 4;
+            About.Text = "About";
             // 
             // Repo2
             // 
-            this.Repo2.AutoSize = true;
-            this.Repo2.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Repo2.LinkColor = System.Drawing.Color.Magenta;
-            this.Repo2.Location = new System.Drawing.Point(531, 368);
-            this.Repo2.Name = "Repo2";
-            this.Repo2.Size = new System.Drawing.Size(243, 22);
-            this.Repo2.TabIndex = 42;
-            this.Repo2.TabStop = true;
-            this.Repo2.Text = " Click Here For GitHub Repo";
-            this.Repo2.Click += new System.EventHandler(this.GithubRepo_Click);
+            Repo2.AutoSize = true;
+            Repo2.Font = new Font("Arial Black", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Repo2.LinkColor = Color.Magenta;
+            Repo2.Location = new Point(729, 601);
+            Repo2.Margin = new Padding(5, 0, 5, 0);
+            Repo2.Name = "Repo2";
+            Repo2.Size = new Size(304, 27);
+            Repo2.TabIndex = 42;
+            Repo2.TabStop = true;
+            Repo2.Text = " Click Here For GitHub Repo";
+            Repo2.Click += GithubRepo_Click;
             // 
             // CPUStat
             // 
-            this.CPUStat.AutoSize = true;
-            this.CPUStat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPUStat.ForeColor = System.Drawing.Color.Fuchsia;
-            this.CPUStat.Location = new System.Drawing.Point(2, 365);
-            this.CPUStat.Name = "CPUStat";
-            this.CPUStat.Size = new System.Drawing.Size(118, 16);
-            this.CPUStat.TabIndex = 25;
-            this.CPUStat.Text = "CPU-Status: ???";
+            CPUStat.AutoSize = true;
+            CPUStat.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CPUStat.ForeColor = Color.Fuchsia;
+            CPUStat.Location = new Point(1, 579);
+            CPUStat.Margin = new Padding(5, 0, 5, 0);
+            CPUStat.Name = "CPUStat";
+            CPUStat.Size = new Size(150, 20);
+            CPUStat.TabIndex = 25;
+            CPUStat.Text = "CPU-Status: ???";
             // 
             // MBoard
             // 
-            this.MBoard.AutoSize = true;
-            this.MBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MBoard.ForeColor = System.Drawing.Color.Fuchsia;
-            this.MBoard.Location = new System.Drawing.Point(3, 383);
-            this.MBoard.Name = "MBoard";
-            this.MBoard.Size = new System.Drawing.Size(98, 16);
-            this.MBoard.TabIndex = 24;
-            this.MBoard.Text = "M-Board: ???";
+            MBoard.AutoSize = true;
+            MBoard.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MBoard.ForeColor = Color.Fuchsia;
+            MBoard.Location = new Point(1, 607);
+            MBoard.Margin = new Padding(5, 0, 5, 0);
+            MBoard.Name = "MBoard";
+            MBoard.Size = new Size(123, 20);
+            MBoard.TabIndex = 24;
+            MBoard.Text = "M-Board: ???";
             // 
             // CPU
             // 
-            this.CPU.AutoSize = true;
-            this.CPU.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPU.ForeColor = System.Drawing.Color.Fuchsia;
-            this.CPU.Location = new System.Drawing.Point(2, 347);
-            this.CPU.Name = "CPU";
-            this.CPU.Size = new System.Drawing.Size(70, 16);
-            this.CPU.TabIndex = 23;
-            this.CPU.Text = "CPU: ???";
+            CPU.AutoSize = true;
+            CPU.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CPU.ForeColor = Color.Fuchsia;
+            CPU.Location = new Point(1, 551);
+            CPU.Margin = new Padding(5, 0, 5, 0);
+            CPU.Name = "CPU";
+            CPU.Size = new Size(89, 20);
+            CPU.TabIndex = 23;
+            CPU.Text = "CPU: ???";
             // 
             // GPU
             // 
-            this.GPU.AutoSize = true;
-            this.GPU.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GPU.ForeColor = System.Drawing.Color.Fuchsia;
-            this.GPU.Location = new System.Drawing.Point(2, 330);
-            this.GPU.Name = "GPU";
-            this.GPU.Size = new System.Drawing.Size(71, 16);
-            this.GPU.TabIndex = 22;
-            this.GPU.Text = "GPU: ???";
+            GPU.AutoSize = true;
+            GPU.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            GPU.ForeColor = Color.Fuchsia;
+            GPU.Location = new Point(1, 524);
+            GPU.Margin = new Padding(5, 0, 5, 0);
+            GPU.Name = "GPU";
+            GPU.Size = new Size(90, 20);
+            GPU.TabIndex = 22;
+            GPU.Text = "GPU: ???";
             // 
             // TestLabel
             // 
-            this.TestLabel.AutoSize = true;
-            this.TestLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TestLabel.ForeColor = System.Drawing.Color.Fuchsia;
-            this.TestLabel.Location = new System.Drawing.Point(3, 312);
-            this.TestLabel.Name = "TestLabel";
-            this.TestLabel.Size = new System.Drawing.Size(117, 16);
-            this.TestLabel.TabIndex = 21;
-            this.TestLabel.Text = "OS Version: ???";
+            TestLabel.AutoSize = true;
+            TestLabel.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TestLabel.ForeColor = Color.Fuchsia;
+            TestLabel.Location = new Point(2, 501);
+            TestLabel.Margin = new Padding(5, 0, 5, 0);
+            TestLabel.Name = "TestLabel";
+            TestLabel.Size = new Size(147, 20);
+            TestLabel.TabIndex = 21;
+            TestLabel.Text = "OS Version: ???";
             // 
             // ConInfo
             // 
-            this.ConInfo.AutoSize = true;
-            this.ConInfo.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConInfo.ForeColor = System.Drawing.Color.White;
-            this.ConInfo.Location = new System.Drawing.Point(442, 188);
-            this.ConInfo.Name = "ConInfo";
-            this.ConInfo.Size = new System.Drawing.Size(0, 18);
-            this.ConInfo.TabIndex = 20;
+            ConInfo.AutoSize = true;
+            ConInfo.Font = new Font("Arial Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ConInfo.ForeColor = Color.White;
+            ConInfo.Location = new Point(585, 289);
+            ConInfo.Margin = new Padding(5, 0, 5, 0);
+            ConInfo.Name = "ConInfo";
+            ConInfo.Size = new Size(0, 24);
+            ConInfo.TabIndex = 20;
             // 
             // StatusInfo
             // 
-            this.StatusInfo.AutoSize = true;
-            this.StatusInfo.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusInfo.ForeColor = System.Drawing.Color.White;
-            this.StatusInfo.Location = new System.Drawing.Point(299, 188);
-            this.StatusInfo.Name = "StatusInfo";
-            this.StatusInfo.Size = new System.Drawing.Size(146, 18);
-            this.StatusInfo.TabIndex = 19;
-            this.StatusInfo.Text = "Connection Status:";
+            StatusInfo.AutoSize = true;
+            StatusInfo.Font = new Font("Arial Black", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            StatusInfo.ForeColor = Color.White;
+            StatusInfo.Location = new Point(402, 289);
+            StatusInfo.Margin = new Padding(5, 0, 5, 0);
+            StatusInfo.Name = "StatusInfo";
+            StatusInfo.Size = new Size(186, 24);
+            StatusInfo.TabIndex = 19;
+            StatusInfo.Text = "Connection Status:";
             // 
             // AppVer
             // 
-            this.AppVer.AutoSize = true;
-            this.AppVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AppVer.ForeColor = System.Drawing.Color.Magenta;
-            this.AppVer.Location = new System.Drawing.Point(6, 379);
-            this.AppVer.Name = "AppVer";
-            this.AppVer.Size = new System.Drawing.Size(0, 18);
-            this.AppVer.TabIndex = 18;
+            AppVer.AutoSize = true;
+            AppVer.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AppVer.ForeColor = Color.Magenta;
+            AppVer.Location = new Point(8, 583);
+            AppVer.Margin = new Padding(5, 0, 5, 0);
+            AppVer.Name = "AppVer";
+            AppVer.Size = new Size(0, 24);
+            AppVer.TabIndex = 18;
             // 
             // DCCopyTag
             // 
-            this.DCCopyTag.AutoSize = true;
-            this.DCCopyTag.LinkColor = System.Drawing.Color.Magenta;
-            this.DCCopyTag.Location = new System.Drawing.Point(2, 24);
-            this.DCCopyTag.Name = "DCCopyTag";
-            this.DCCopyTag.Size = new System.Drawing.Size(158, 13);
-            this.DCCopyTag.TabIndex = 7;
-            this.DCCopyTag.TabStop = true;
-            this.DCCopyTag.Text = "Discord Tag:  .reneehopeblasey";
-            this.DCCopyTag.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            DCCopyTag.AutoSize = true;
+            DCCopyTag.LinkColor = Color.Magenta;
+            DCCopyTag.Location = new Point(2, 37);
+            DCCopyTag.Margin = new Padding(5, 0, 5, 0);
+            DCCopyTag.Name = "DCCopyTag";
+            DCCopyTag.Size = new Size(214, 20);
+            DCCopyTag.TabIndex = 7;
+            DCCopyTag.TabStop = true;
+            DCCopyTag.Text = "Discord Tag:  .reneehopeblasey";
+            DCCopyTag.LinkClicked += linkLabel2_LinkClicked;
             // 
             // linkLabel1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Magenta;
-            this.linkLabel1.Location = new System.Drawing.Point(2, 55);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(170, 13);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Discord Server: Dovahkiin Lounge";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            linkLabel1.AutoSize = true;
+            linkLabel1.LinkColor = Color.Magenta;
+            linkLabel1.Location = new Point(2, 84);
+            linkLabel1.Margin = new Padding(5, 0, 5, 0);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(231, 20);
+            linkLabel1.TabIndex = 6;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Discord Server: Dovahkiin Lounge";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Magenta;
-            this.label2.Location = new System.Drawing.Point(33, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "▼ Click To Join▼";
+            label2.AutoSize = true;
+            label2.ForeColor = Color.Magenta;
+            label2.Location = new Point(43, 64);
+            label2.Margin = new Padding(5, 0, 5, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(120, 20);
+            label2.TabIndex = 5;
+            label2.Text = "▼ Click To Join▼";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Magenta;
-            this.label1.Location = new System.Drawing.Point(33, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "▼ Click To Copy▼";
+            label1.AutoSize = true;
+            label1.ForeColor = Color.Magenta;
+            label1.Location = new Point(43, 9);
+            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(128, 20);
+            label1.TabIndex = 3;
+            label1.Text = "▼ Click To Copy▼";
             // 
             // siticonePictureBox1
             // 
-            this.siticonePictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("siticonePictureBox1.BackgroundImage")));
-            this.siticonePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.siticonePictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.siticonePictureBox1.ImageRotate = 0F;
-            this.siticonePictureBox1.Location = new System.Drawing.Point(308, 6);
-            this.siticonePictureBox1.Name = "siticonePictureBox1";
-            this.siticonePictureBox1.Size = new System.Drawing.Size(186, 179);
-            this.siticonePictureBox1.TabIndex = 0;
-            this.siticonePictureBox1.TabStop = false;
+            siticonePictureBox1.BackgroundImage = (Image)resources.GetObject("siticonePictureBox1.BackgroundImage");
+            siticonePictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            siticonePictureBox1.FillColor = Color.Transparent;
+            siticonePictureBox1.ImageRotate = 0F;
+            siticonePictureBox1.Location = new Point(402, 9);
+            siticonePictureBox1.Margin = new Padding(5, 4, 5, 4);
+            siticonePictureBox1.Name = "siticonePictureBox1";
+            siticonePictureBox1.Size = new Size(248, 276);
+            siticonePictureBox1.TabIndex = 0;
+            siticonePictureBox1.TabStop = false;
             // 
             // siticoneTabControl1
             // 
-            this.siticoneTabControl1.Controls.Add(this.About);
-            this.siticoneTabControl1.Controls.Add(this.FixTool);
-            this.siticoneTabControl1.Controls.Add(this.Settings);
-            this.siticoneTabControl1.Controls.Add(this.Credits);
-            this.siticoneTabControl1.ItemSize = new System.Drawing.Size(125, 40);
-            this.siticoneTabControl1.Location = new System.Drawing.Point(0, 0);
-            this.siticoneTabControl1.Name = "siticoneTabControl1";
-            this.siticoneTabControl1.SelectedIndex = 0;
-            this.siticoneTabControl1.Size = new System.Drawing.Size(788, 461);
-            this.siticoneTabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
-            this.siticoneTabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.Black;
-            this.siticoneTabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.siticoneTabControl1.TabButtonHoverState.ForeColor = System.Drawing.Color.Cyan;
-            this.siticoneTabControl1.TabButtonHoverState.InnerColor = System.Drawing.Color.Black;
-            this.siticoneTabControl1.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
-            this.siticoneTabControl1.TabButtonIdleState.FillColor = System.Drawing.Color.Black;
-            this.siticoneTabControl1.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.siticoneTabControl1.TabButtonIdleState.ForeColor = System.Drawing.Color.White;
-            this.siticoneTabControl1.TabButtonIdleState.InnerColor = System.Drawing.Color.Black;
-            this.siticoneTabControl1.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
-            this.siticoneTabControl1.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
-            this.siticoneTabControl1.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.siticoneTabControl1.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
-            this.siticoneTabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
-            this.siticoneTabControl1.TabButtonSize = new System.Drawing.Size(125, 40);
-            this.siticoneTabControl1.TabIndex = 0;
-            this.siticoneTabControl1.TabMenuBackColor = System.Drawing.Color.Black;
-            this.siticoneTabControl1.TabMenuOrientation = Siticone.Desktop.UI.WinForms.TabMenuOrientation.HorizontalTop;
-            this.siticoneTabControl1.SelectedIndexChanged += new System.EventHandler(this.siticoneTabControl1_SelectedIndexChanged);
+            siticoneTabControl1.Controls.Add(About);
+            siticoneTabControl1.Controls.Add(FixTool);
+            siticoneTabControl1.Controls.Add(Settings);
+            siticoneTabControl1.Controls.Add(Credits);
+            siticoneTabControl1.ItemSize = new Size(125, 40);
+            siticoneTabControl1.Location = new Point(0, 0);
+            siticoneTabControl1.Margin = new Padding(5, 4, 5, 4);
+            siticoneTabControl1.Name = "siticoneTabControl1";
+            siticoneTabControl1.SelectedIndex = 0;
+            siticoneTabControl1.Size = new Size(1050, 709);
+            siticoneTabControl1.TabButtonHoverState.BorderColor = Color.Empty;
+            siticoneTabControl1.TabButtonHoverState.FillColor = Color.Black;
+            siticoneTabControl1.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F);
+            siticoneTabControl1.TabButtonHoverState.ForeColor = Color.Cyan;
+            siticoneTabControl1.TabButtonHoverState.InnerColor = Color.Black;
+            siticoneTabControl1.TabButtonIdleState.BorderColor = Color.Empty;
+            siticoneTabControl1.TabButtonIdleState.FillColor = Color.Black;
+            siticoneTabControl1.TabButtonIdleState.Font = new Font("Segoe UI Semibold", 10F);
+            siticoneTabControl1.TabButtonIdleState.ForeColor = Color.White;
+            siticoneTabControl1.TabButtonIdleState.InnerColor = Color.Black;
+            siticoneTabControl1.TabButtonSelectedState.BorderColor = Color.Empty;
+            siticoneTabControl1.TabButtonSelectedState.FillColor = Color.FromArgb(29, 37, 49);
+            siticoneTabControl1.TabButtonSelectedState.Font = new Font("Segoe UI Semibold", 10F);
+            siticoneTabControl1.TabButtonSelectedState.ForeColor = Color.White;
+            siticoneTabControl1.TabButtonSelectedState.InnerColor = Color.FromArgb(76, 132, 255);
+            siticoneTabControl1.TabButtonSize = new Size(125, 40);
+            siticoneTabControl1.TabIndex = 0;
+            siticoneTabControl1.TabMenuBackColor = Color.Black;
+            siticoneTabControl1.TabMenuOrientation = Siticone.Desktop.UI.WinForms.TabMenuOrientation.HorizontalTop;
+            siticoneTabControl1.SelectedIndexChanged += siticoneTabControl1_SelectedIndexChanged;
             // 
             // Infos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(783, 443);
-            this.Controls.Add(this.ExitBtn);
-            this.Controls.Add(this.siticoneTabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Infos";
-            this.Text = "Information";
-            this.Load += new System.EventHandler(this.Infos_Load);
-            this.Credits.ResumeLayout(false);
-            this.Credits.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DCAV2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DCAV1)).EndInit();
-            this.Settings.ResumeLayout(false);
-            this.Settings.PerformLayout();
-            this.FixTool.ResumeLayout(false);
-            this.About.ResumeLayout(false);
-            this.About.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.siticonePictureBox1)).EndInit();
-            this.siticoneTabControl1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
+            ClientSize = new Size(1043, 681);
+            Controls.Add(ExitBtn);
+            Controls.Add(siticoneTabControl1);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(5, 4, 5, 4);
+            Name = "Infos";
+            Text = "Information";
+            Load += Infos_Load;
+            Credits.ResumeLayout(false);
+            Credits.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DCAV2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DCAV1).EndInit();
+            Settings.ResumeLayout(false);
+            Settings.PerformLayout();
+            FixTool.ResumeLayout(false);
+            About.ResumeLayout(false);
+            About.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)siticonePictureBox1).EndInit();
+            siticoneTabControl1.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
@@ -1051,9 +1167,9 @@
         private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton1;
         private Siticone.Desktop.UI.WinForms.SiticoneButton SaveSet;
         private Siticone.Desktop.UI.WinForms.SiticoneCheckBox ConsoleHideBox;
-        private Siticone.Desktop.UI.WinForms.SiticoneTextBox siticoneTextBox11;
+        private Siticone.Desktop.UI.WinForms.SiticoneTextBox inittxt;
         private Siticone.Desktop.UI.WinForms.SiticoneCheckBox siticoneCheckBox1;
-        private Siticone.Desktop.UI.WinForms.SiticoneTextBox siticoneTextBox10;
+        private Siticone.Desktop.UI.WinForms.SiticoneTextBox HotkeyTxT;
         private System.Windows.Forms.TabPage Credits;
         private System.Windows.Forms.Label CRA2;
         private System.Windows.Forms.Label CRA;
@@ -1066,5 +1182,8 @@
         private System.Windows.Forms.PictureBox DCAV1;
         private System.Windows.Forms.Label GLName;
         private System.Windows.Forms.Label GLName2;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton RemovePatch;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton StateUpd;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton RemoveGWLD;
     }
 }
