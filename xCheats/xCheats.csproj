@@ -3,7 +3,7 @@
     <WebView2UseWinRT>False</WebView2UseWinRT>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <TargetFramework>net8.0-windows8.0</TargetFramework>
     <OutputType>Exe</OutputType>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
