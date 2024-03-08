@@ -1,5 +1,4 @@
 ﻿using System;
-using AltoHttp;
 using System.Diagnostics;
 using System.Windows.Forms;
 using x = xCheats.Calls.API;
@@ -11,11 +10,7 @@ using Color = System.Drawing.Color;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
 using System.Net;
-using System.Drawing.Imaging;
-using System.Drawing.Drawing2D;
 using System.Text;
-using System.Drawing;
-using System.Security.Policy;
 using System.Threading;
 using IWshRuntimeLibrary;
 using Microsoft.Win32;
@@ -25,6 +20,8 @@ using xCheats.Calls;
 using System.ComponentModel;
 using System.Globalization;
 using System.Resources;
+using AltoHttp;
+using GS = xCheatsFunctions.GlobalSettings;
 
 namespace xCheats.Loader
 {
@@ -33,6 +30,10 @@ namespace xCheats.Loader
 
         CultureInfo lang = CultureInfo.CurrentCulture;
         ResourceManager rm = new ResourceManager("xCheats.Lang.Lang", typeof(Infos).Assembly);
+        static string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        static string appFolderPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats");
+        static string configFilePath = Path.Combine(appFolderPath, "Config\\config.ini");
+        IniConfig config = new IniConfig();
 
         private const string DOWNLOAD_URL = "https://github.com/CelinaxCute/xCheatsv2/raw/master/Assets/Game%20Fix%20Tools/GFWL/Release.zip";
         private const string DOWNLOAD_URL2 = "https://github.com/CelinaxCute/xCheatsv2/raw/master/Assets/Game%20Fix%20Tools/4GB%20Patch%20for%2032bit%20Games/Release.zip";
@@ -123,7 +124,7 @@ namespace xCheats.Loader
             RemoveGWLD.Text = rm.GetString("RemoveBtn", lang);
             RemovePatch.Text = rm.GetString("RemoveBtn", lang);
             inittxt.Text = rm.GetString("initconsole", lang);
-            GamesWinLiveDwn.Text = rm.GetString("DwnBtn" , lang);
+            GamesWinLiveDwn.Text = rm.GetString("DwnBtn", lang);
             PatchDwn.Text = rm.GetString("DwnBtn", lang);
 
         }
@@ -173,7 +174,9 @@ namespace xCheats.Loader
 
         private void Infos_Load(object sender, EventArgs e)
         {
+
             UpdateToggleButtonLabel();
+            config.Load(configFilePath);
             if (API.backgroundWork == true)
             {
                 AutoStartBtn.Enabled = true;
@@ -355,19 +358,30 @@ namespace xCheats.Loader
 
         private void ToggleButton_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.Autostart == 1)
+            // Update AutostartMode before checking
+            GS.AutostartMode = GS.AutostartMode == 0 ? 1 : 0;
+
+            if (GS.AutostartMode == 0)
             {
                 DeleteShortcut();
-                Properties.Settings.Default.Autostart = 0;
+                config.SetValue("Settings", "AutoStart", "1");
             }
             else
             {
                 CreateShortcut();
-                Properties.Settings.Default.Autostart = 1;
+                config.SetValue("Settings", "AutoStart", "0");
             }
 
-            Properties.Settings.Default.Save();
+            config.Save(configFilePath);
+            Thread.Sleep(100);
             UpdateToggleButtonLabel();
+        }
+
+        private void UpdateToggleButtonLabel()
+        {
+            config.Load(configFilePath);
+            AutoStartBtn.Text = GS.AutostartMode == 1 ? "Delete Autostart" : "Create Autostart";
+            AutoStartBtn.Enabled = GS.BackgroundWork == true ? true : false;
         }
 
         private void CreateShortcut()
@@ -386,7 +400,7 @@ namespace xCheats.Loader
             shortcut.WindowStyle = (int)WshWindowStyle.WshMinimizedNoFocus;
             shortcut.Save();
 
-            MessageBox.Show(rm.GetString("addstart", lang));
+            MessageBox.Show(rm.GetString("addstart", lang), "Oh Yeah!");
         }
         private void DeleteShortcut()
         {
@@ -403,12 +417,7 @@ namespace xCheats.Loader
             }
         }
 
-        private void UpdateToggleButtonLabel()
-        {
-            AutoStartBtn.Text = Properties.Settings.Default.Autostart == 1 ? "Delete Autostart" : "Create Autostart";
-            AutoStartBtn.Enabled = Properties.Settings.Default.BackgroundWork == true ? true : false;
-            AutoInjectCB.Enabled = Properties.Settings.Default.BackgroundWork == true ? true : false;
-        }
+
         private void GithubRepo_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/CelinaxCute/xCheats");

@@ -30,9 +30,6 @@ namespace xCheats.Calls
         const int SW_HIDE = 0;
         const int SW_SHOW = 5;
 
-        static string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        static string appFolderPath = Path.Combine(appDataPath, "xCheats");
-        static string configFilePath = Path.Combine(appFolderPath, "data\\Config\\config.ini");
         public static bool isOfflineMode = GlobalSettings.IsOfflineMode;
         public static bool backgroundWork = GlobalSettings.BackgroundWork;
         public static bool isAdmin = GlobalSettings.AdminMode;

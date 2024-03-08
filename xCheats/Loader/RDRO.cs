@@ -20,7 +20,7 @@ namespace xCheats.Loader
 {
     public partial class RDRO : Form
     {
-        static string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        static string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         static string appFolderPath = Path.Combine(appDataPath,"DovahkiinLounge Group", "xCheats");
         static string configFilePath = Path.Combine(appFolderPath, "Config\\config.ini");
         IniConfig config = new IniConfig();
@@ -48,8 +48,8 @@ namespace xCheats.Loader
                 // Disable the button when the path is already set
                 //PfadBtn.Enabled = false;
             }
-            int buttonModes = GlobalSettings.buttonMode;
-
+            int buttonModes = GlobalSettings.ButtonMode;
+            
             if (buttonModes == 1)
             {
                 // Set button text to "Reset Path"
@@ -252,7 +252,7 @@ namespace xCheats.Loader
         private void PfadBtn_Click(object sender, EventArgs e)
         {
 
-            int buttonModes = GlobalSettings.buttonMode;
+            int buttonModes = GlobalSettings.ButtonMode;
 
             if (buttonModes == 1)
             {

@@ -8,7 +8,6 @@ using System.Net.NetworkInformation;
 using System.Threading;
 using System.IO;
 using System.Diagnostics;
-using System.Security.Principal;
 using System.Drawing;
 using Microsoft.Win32;
 using xCheats;
@@ -19,7 +18,6 @@ using Timer = System.Windows.Forms.Timer;
 using xCheats.Calls;
 using System.Reflection;
 using xCheatsFunctions;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO.Pipes;
@@ -31,20 +29,10 @@ namespace xCheats
 {
     public partial class LoaderMain : Form
     {
-        public readonly AoBScanner scanner = new AoBScanner();
         private Timer timer;
-        private string rdr2ProcessName = "RDR2"; // Name des Red Dead Redemption 2-Prozesses
-        private string programPath = Environment.CurrentDirectory + "\\data\\Dlls\\Injector.exe";
-        //public static string DllName = Properties.Settings.Default.DllName;// Pfad zu deinem Programm
-        //private string programArguments = $"--process-name RDR2.exe --inject {DllName}.dll"; // Argumente für dein Programm
-        private bool isRDR2Running = true;
-        static Process targetProcess;
-        //static string programPath;
-        //static string programArguments;
-        static bool isProcessRunning = false;
         CultureInfo lang = CultureInfo.CurrentCulture;
         ResourceManager rm = new ResourceManager("xCheats.Lang.Lang", typeof(LoaderMain).Assembly);
-
+        IniConfig config = new IniConfig();
 
         bool ProcOpen = false;
         public LoaderMain()
@@ -86,8 +74,6 @@ namespace xCheats
 
         private void xCheatsBtn_Click(object sender, EventArgs e)
         {
-
-
             if (xCheats.Text == "4 HD Edition")
             {
                 RE4 RE4 = new RE4();
@@ -283,36 +269,12 @@ namespace xCheats
 
         private void CheckRDR2Process()
         {
-            // Überprüfe, ob der RDR2-Prozess läuft
-            bool isRunning = false;
-            foreach (Process process in Process.GetProcesses())
-            {
-                if (process.ProcessName.Equals(rdr2ProcessName, StringComparison.OrdinalIgnoreCase))
-                {
-                    isRunning = true;
-                    break;
-                }
-            }
-
-            if (isRunning)
-            {
-                // Wenn RDR2 läuft und der einmalige Start noch nicht erfolgt ist
-                if (isRDR2Running)
-                {
-                    Thread.Sleep(10000);
-                    Process.Start(programPath, GameList.RDR2);
-                    isRDR2Running = false;
-                }
-            }
-            else
-            {
-                isRDR2Running = true;
-            }
+           
         }
 
         private void RDR2InjST_Click(object sender, EventArgs e)
         {
-            Process.Start(programPath, GameList.RDR2);
+        
         }
 
         private void Notify_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -320,18 +282,6 @@ namespace xCheats
             Show();
             WindowState = FormWindowState.Normal;
             BringToFront();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void NotifyMenu_MouseClick(object sender, MouseEventArgs e)
-        {
-
         }
 
         private void TmpCleaner_Click(object sender, EventArgs e)

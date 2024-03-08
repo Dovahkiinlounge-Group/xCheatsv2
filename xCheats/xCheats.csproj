@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Calls\Functions - Kopie.cs" />
+    <EmbeddedResource Remove="Lang\Lang.pl.resx" />
     <EmbeddedResource Remove="Mods\GTAVC - Kopie.resx" />
     <EmbeddedResource Remove="Mods\HFTR - Kopie.resx" />
     <EmbeddedResource Remove="Mods\RE4 - Kopie.resx" />
