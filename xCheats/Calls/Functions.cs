@@ -12,7 +12,6 @@ using System.Security.Cryptography.X509Certificates;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using Microsoft.Win32;
 using System.Reflection;
-using AutoUpdaterDotNET;
 using xCheatsFunctions;
 using System.Configuration;
 

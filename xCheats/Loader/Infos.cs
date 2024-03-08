@@ -9,7 +9,6 @@ using System.Runtime.InteropServices;
 using System.Net.NetworkInformation;
 using Color = System.Drawing.Color;
 using System.Collections.ObjectModel;
-using System.Management.Automation;
 using System.Text.RegularExpressions;
 using System.Net;
 using System.Drawing.Imaging;
@@ -304,35 +303,6 @@ namespace xCheats.Loader
             }
         }
 
-
-
-        private void Defender_Click(object sender, EventArgs e)
-        {
-            DialogResult result = FolderDial.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                try
-                {
-                    string path = FolderDial.SelectedPath;
-
-
-                    using (PowerShell PowerShellInst = PowerShell.Create())
-                    {
-                        PowerShellInst.AddScript(@"Add-MpPreference -ExclusionPath '" + path + "'");
-                        Collection<PSObject> PSOutput = PowerShellInst.Invoke();
-                        Console.WriteLine("[+] " + path + " | to Windows Defender as Exclusion");
-                        MessageBox.Show("Added " + "(" + path + ")" +
-                            " to Windows Defender as Exclusion",
-                            "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                }
-            }
-        }
-
         private void Automation_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             setDiscordUserdata();
@@ -405,16 +375,18 @@ namespace xCheats.Loader
             string shortcutPath = Environment.GetFolderPath(Environment.SpecialFolder.Startup) + @"\xCheats.lnk";
             string targetPath = Environment.CurrentDirectory + @"\xCheats.exe"; // Geben Sie den Pfad zu Ihrem Programm an
             string description = "for starting xCheats";
+            string arguments = "-u6sq8#bhysa68@1c0&$"; // Ersetze "/your_argument_here" durch das gewünschte Startargument
 
             WshShell shell = new WshShell();
             IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutPath);
 
             shortcut.TargetPath = targetPath;
+            shortcut.Arguments = arguments; // Hier wird das Startargument hinzugefügt
             shortcut.Description = description;
             shortcut.WindowStyle = (int)WshWindowStyle.WshMinimizedNoFocus;
             shortcut.Save();
 
-            MessageBox.Show("Programm start now after PC Restart");
+            MessageBox.Show(rm.GetString("addstart", lang));
         }
         private void DeleteShortcut()
         {
@@ -423,7 +395,7 @@ namespace xCheats.Loader
             if (File.Exists(shortcutPath))
             {
                 File.Delete(shortcutPath);
-                MessageBox.Show("Deactivate Sucess!");
+                MessageBox.Show(rm.GetString("rmstart", lang));
             }
             else
             {

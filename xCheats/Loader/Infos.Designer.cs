@@ -58,7 +58,6 @@
             AutoInjTB = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
             AutoStartBtn = new Siticone.Desktop.UI.WinForms.SiticoneGradientButton();
             WS = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
-            siticoneButton1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             SaveSet = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             ConsoleHideBox = new Siticone.Desktop.UI.WinForms.SiticoneCheckBox();
             inittxt = new Siticone.Desktop.UI.WinForms.SiticoneTextBox();
@@ -336,7 +335,6 @@
             Settings.Controls.Add(AutoInjTB);
             Settings.Controls.Add(AutoStartBtn);
             Settings.Controls.Add(WS);
-            Settings.Controls.Add(siticoneButton1);
             Settings.Controls.Add(SaveSet);
             Settings.Controls.Add(ConsoleHideBox);
             Settings.Controls.Add(inittxt);
@@ -525,26 +523,6 @@
             WS.SelectedText = "";
             WS.Size = new Size(266, 96);
             WS.TabIndex = 29;
-            // 
-            // siticoneButton1
-            // 
-            siticoneButton1.BackColor = Color.Black;
-            siticoneButton1.DisabledState.BorderColor = Color.DarkGray;
-            siticoneButton1.DisabledState.CustomBorderColor = Color.DarkGray;
-            siticoneButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            siticoneButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            siticoneButton1.FillColor = Color.Black;
-            siticoneButton1.Font = new Font("Segoe UI", 9F);
-            siticoneButton1.ForeColor = Color.Magenta;
-            siticoneButton1.HoverState.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            siticoneButton1.HoverState.ForeColor = Color.Green;
-            siticoneButton1.Location = new Point(615, 574);
-            siticoneButton1.Margin = new Padding(5, 4, 5, 4);
-            siticoneButton1.Name = "siticoneButton1";
-            siticoneButton1.Size = new Size(311, 41);
-            siticoneButton1.TabIndex = 28;
-            siticoneButton1.Text = "Add Exclusion to Windows Defender";
-            siticoneButton1.Click += Defender_Click;
             // 
             // SaveSet
             // 
@@ -1170,7 +1148,6 @@
         private Siticone.Desktop.UI.WinForms.SiticoneTextBox AutoInjTB;
         private Siticone.Desktop.UI.WinForms.SiticoneGradientButton AutoStartBtn;
         private Siticone.Desktop.UI.WinForms.SiticoneTextBox WS;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton1;
         private Siticone.Desktop.UI.WinForms.SiticoneButton SaveSet;
         private Siticone.Desktop.UI.WinForms.SiticoneCheckBox ConsoleHideBox;
         private Siticone.Desktop.UI.WinForms.SiticoneTextBox inittxt;

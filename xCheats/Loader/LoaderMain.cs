@@ -18,7 +18,6 @@ using System.Timers;
 using Timer = System.Windows.Forms.Timer;
 using xCheats.Calls;
 using System.Reflection;
-using AutoUpdaterDotNET;
 using xCheatsFunctions;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +27,6 @@ using System.Text;
 using System.Globalization;
 using xCheats_Launcher;
 using System.Resources;
-using CustomControls.RJControls;
 namespace xCheats
 {
     public partial class LoaderMain : Form
@@ -77,14 +75,12 @@ namespace xCheats
                     xCheats.Visible = false;
                     xCheatsBtn.Visible = false;
                 }
-                AutoUpdater.Start("https://xcheats.dovahkiinlounge.de/update.php");
             };
             timer.Start();
             Version assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version;
             Version truncatedVersion = new Version(assemblyVersion.Major, assemblyVersion.Minor, assemblyVersion.Build);
             string AV = string.Format("{0}.{1}.{2}", truncatedVersion.Major, truncatedVersion.Minor, truncatedVersion.Build.ToString("D"));
             AppVer.Text = "Version: " + AV;
-            //Lang
             Infos.Text = rm.GetString("infos/more", lang);
         }
 
