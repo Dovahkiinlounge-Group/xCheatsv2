@@ -30,11 +30,7 @@ namespace xCheats_Launcher
             var resources = new ComponentResourceManager(typeof(Launcher));
             System.Threading.Thread.Sleep(500);
             config.Check(configFilePath);
-            //AutoUpdater.Start("https://xcheats.dovahkiinlounge.de/update.php");
-            //AutoUpdater.ShowSkipButton = false;
-            //AutoUpdater.LetUserSelectRemindLater = false;
-            //AutoUpdater.RemindLaterTimeSpan = RemindLaterFormat.Hours;
-            //AutoUpdater.RemindLaterAt = 1;
+
             InitializeComponent();
             OffTggl.ForeColor = Color.Red;
             clickTimer = new Timer();
