@@ -10,11 +10,21 @@ using System.Text;
 using System.Linq;
 using xCheats.Calls;
 using xCheatsFunctions;
+using System.Runtime.CompilerServices;
 
 namespace xCheats
 {
     public static class Program
     {
+
+        private static bool minimized;
+
+        public static bool Minimized
+        {
+            get { return minimized; }
+            private set { minimized = value; }
+        }
+
         [STAThread]
         static void Main(string[] args)
         {
@@ -52,5 +62,6 @@ namespace xCheats
                 ErrorLogv2.LogError(ex);
             }
         }
+
     }
 }

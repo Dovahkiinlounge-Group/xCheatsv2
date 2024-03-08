@@ -32,12 +32,16 @@ namespace xCheats
         private Timer timer;
         CultureInfo lang = CultureInfo.CurrentCulture;
         ResourceManager rm = new ResourceManager("xCheats.Lang.Lang", typeof(LoaderMain).Assembly);
+        static string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        static string appFolderPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats");
+        static string configFilePath = Path.Combine(appFolderPath, "Config\\config.ini");
         IniConfig config = new IniConfig();
-
         bool ProcOpen = false;
         public LoaderMain()
         {
             InitializeComponent();
+            config.Load(configFilePath);
+
             x.hide();
             Console.WriteLine(rm.GetString("welcomeConsole", lang));
             System.Timers.Timer timer = new System.Timers.Timer
@@ -70,6 +74,9 @@ namespace xCheats
             string AV = string.Format("{0}.{1}.{2}", truncatedVersion.Major, truncatedVersion.Minor, truncatedVersion.Build.ToString("D"));
             AppVer.Text = "Version: " + AV;
             Infos.Text = rm.GetString("infos/more", lang);
+
+
+
         }
 
         private void xCheatsBtn_Click(object sender, EventArgs e)
@@ -150,9 +157,14 @@ namespace xCheats
             OffImg.Enabled = false;
             UpdateImg.Enabled = false;
             UpdateImg.Visible = false;
-            if (Properties.Settings.Default.BGInj == true)
+            Console.WriteLine(GlobalSettings.AutostartMode);
+            if (GlobalSettings.AutostartMode == 1)
             {
-                InitializeTimer();
+                
+            }
+            else if (GlobalSettings.AutostartMode == 0)
+            {
+
             }
 
         }
@@ -269,12 +281,12 @@ namespace xCheats
 
         private void CheckRDR2Process()
         {
-           
+
         }
 
         private void RDR2InjST_Click(object sender, EventArgs e)
         {
-        
+
         }
 
         private void Notify_MouseDoubleClick(object sender, MouseEventArgs e)
