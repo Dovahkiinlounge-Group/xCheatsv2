@@ -358,20 +358,16 @@ namespace xCheats.Loader
 
         private void ToggleButton_Click(object sender, EventArgs e)
         {
-            // Update AutostartMode before checking
-            GS.AutostartMode = GS.AutostartMode == 0 ? 1 : 0;
-
-            if (GS.AutostartMode == 0)
+            if (AutoStartBtn.Text == "Delete Autostart")
             {
                 DeleteShortcut();
-                config.SetValue("Settings", "AutoStart", "1");
-            }
-            else
-            {
-                CreateShortcut();
                 config.SetValue("Settings", "AutoStart", "0");
             }
-
+            else if (AutoStartBtn.Text == "Create Autostart")
+            {
+                CreateShortcut();
+                config.SetValue("Settings", "AutoStart", "1");
+            }
             config.Save(configFilePath);
             Thread.Sleep(100);
             UpdateToggleButtonLabel();
@@ -381,7 +377,7 @@ namespace xCheats.Loader
         {
             config.Load(configFilePath);
             AutoStartBtn.Text = GS.AutostartMode == 1 ? "Delete Autostart" : "Create Autostart";
-            AutoStartBtn.Enabled = GS.BackgroundWork == true ? true : false;
+            AutoStartBtn.Enabled = GS.BackgroundWork; // No need for the ternary expression here
         }
 
         private void CreateShortcut()
