@@ -19,4 +19,8 @@ namespace System.Configuration
             throw new NotImplementedException();
         }
     }
+
+    internal class Global
+    {
+    }
 }

@@ -34,21 +34,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Global.Designer.cs">
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Global.settings</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Global.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Global.Designer.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <Using Include="System.Diagnostics" />
     <Using Include="System.Management" />
     <Using Include="System.Runtime.InteropServices" />

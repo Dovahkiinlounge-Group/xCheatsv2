@@ -7,18 +7,19 @@
 
         static GlobalSettings() // Static constructor
         {
-            config = new IniConfig();
+             config = new IniConfig();
              string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
              string appFolderPath = Path.Combine(appDataPath, "DovahkiinLounge Group", "xCheats");
              configFilePath = Path.Combine(appFolderPath, "Config\\config.ini");
-            LoadSettings();
+             LoadSettings();
         }
 
         public static bool AdminMode { get; set; }
         public static bool IsOfflineMode { get; set; }
         public static bool BackgroundWork { get; set; }
         public static string SelectedInstallPath { get; set; }
-        public static int buttonMode { get; set; }
+        public static int ButtonMode { get; set; }
+        public static int AutostartMode { get; set; }
 
         private static void LoadSettings()
         {
@@ -28,11 +29,13 @@
             bool.TryParse(config.GetValue("Settings", "BackgroundWork"), out bool backgroundWorkValue);
             string SelectedPath = config.GetStringValue("Path", "RedDead2", "");
             int btnmode = config.GetIntValue("Path", "RedDead2Btn");
+            int autostart = config.GetIntValue("Settings" ,"AutoStart");
             BackgroundWork = backgroundWorkValue;
             AdminMode = adminModeValue;
             IsOfflineMode = offlineModeValue;
             SelectedInstallPath = SelectedPath;
-            buttonMode = btnmode;
+            ButtonMode = btnmode;
+            AutostartMode = autostart;
         }
     }
 }

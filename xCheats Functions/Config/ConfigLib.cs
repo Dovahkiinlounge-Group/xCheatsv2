@@ -140,6 +140,7 @@ namespace xCheatsFunctions
                     SetValue("Settings", "OfflineMode", "false");
                     SetValue("Settings", "AdminMode", "false");
                     SetValue("Settings", "BackgroundWork", "false");
+                    SetValue("Settings", "AutoStart", "0");
                     SetValue("Path", "RedDead2", "");
                     SetValue("Path", "RedDead2Btn", "0"); // Changed default value to "0"
                     SetValue("IGNORE","First Start", "0");
@@ -174,6 +175,11 @@ namespace xCheatsFunctions
                     if (GetValue("Path", "RedDead2Btn") == "")
                     {
                         SetValue("Path", "RedDead2Btn", "0");
+                        configChanged = true;
+                    }
+                    if (GetValue("Settings", "AutoStart") == "")
+                    {
+                        SetValue("Settings", "AutoStart", "0");
                         configChanged = true;
                     }
                     if (configChanged)
